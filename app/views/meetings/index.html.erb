@@ -1,0 +1,73 @@
+<div class="page-header">
+  <%= link_to new_meeting_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Meeting
+  <% end %>
+  <h1>Listing meetings</h1>
+</div>
+
+<div class="table-responsive">
+  <h2>Suggested Meetings</h2>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Address</th>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Confirm</th>
+            <th>Useridtext</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @meetings) do |meeting| %>
+        <% if meeting.confirm == false %>
+            <td><%= meeting.address %></td>
+            <td><%= meeting.time %></td>
+            <td><%= meeting.subject %></td>
+            <td><%= meeting.confirm %></td>
+            <td><%= meeting.useridtext %></td>
+            <td><%= link_to 'Show', meeting %></td>
+        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <h2>Confirmed Meetings</h2>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Address</th>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Confirm</th>
+            <th>Useridtext</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @meetings) do |meeting| %>
+        <% if meeting.confirm == true %>
+            <td><%= meeting.address %></td>
+            <td><%= meeting.time %></td>
+            <td><%= meeting.subject %></td>
+            <td><%= meeting.confirm %></td>
+            <td><%= meeting.useridtext %></td>
+            <td><%= link_to 'Show', meeting %></td>
+        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
