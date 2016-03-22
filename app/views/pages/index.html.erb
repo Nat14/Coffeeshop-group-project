@@ -1,5 +1,20 @@
 
+<!-- clock script -->
+<script src="assets/javascripts/clock.js"></script>
+
+
+<!-- end of clock script  -->
+
+<!-- clock span -->
+<span id="clock">&nbsp;</span>
+
+<!-- clock body tag -->
+<body id = "clock" onload="updateClock(); setInterval('updateClock()', 1000 )">
+
+</body>
+
+
 <form class="" action="index.html" method="post">
-  <input type='text' placeholder="Let's Meet" />
+  <input id="resizer" type='text' placeholder="Let's Meet" />
   <button type="button" class="btn btn-default">Find Me a Spot Nearby</button>
 </form>
