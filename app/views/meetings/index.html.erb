@@ -29,7 +29,7 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.useridtext %></td>
+            <td><%= meeting.users[0].email %></td>
             <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -62,7 +62,7 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.useridtext %></td>
+            <td><%= meeting.users[0].email  %></td>
             <td><%= link_to 'Show', meeting %></td>
         <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
         <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
