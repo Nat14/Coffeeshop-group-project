@@ -27,7 +27,7 @@
   background-size: cover;
    }
 
- input[type='text']{
+ #landing-input {
 
      color: #333;
      width: 280px;
@@ -50,7 +50,7 @@
      border: 0px;
  }
 
- button[type='button']{
+ #meeting_list_btn{
 
      color: #333;
      width: 280px;

@@ -3,9 +3,11 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+  <% if user_signed_in? && current_user.email == @meeting.users.first.email %>
+    <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
   <% end %>
   <h1>Show meeting</h1>
 </div>
@@ -23,7 +25,6 @@
   <dt>Confirm:</dt>
   <dd><%= @meeting.confirm %></dd>
 
-  <dt>Useridtext:</dt>
-  <dd><%= @meeting.useridtext %></dd>
-
+  <dt>Email Address</dt>
+  <dd><%= @meeting.users.first.email %></dd>
 </dl>
