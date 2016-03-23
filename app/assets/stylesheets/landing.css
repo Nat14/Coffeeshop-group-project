@@ -1,0 +1,87 @@
+
+body {
+   background: url("coffeeshops.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   }
+
+ #resizer {
+
+     color: #333;
+     width: 280px;
+     height: 38px;
+     margin-left: -150px;
+     margin-top: -19px;
+     position: fixed;
+     left: 50%;
+     top: 50%;
+     padding-left: 10px;
+     padding-right: 10px;
+
+
+     transition: box-shadow 320ms;
+
+     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.12);
+
+     border-radius: 3px;
+     font-size: 18px;
+     border: 0px;
+ }
+
+ #button {
+
+     color: #333;
+     width: 280px;
+     height: 38px;
+     margin-left: -150px;
+     margin-top: -19px;
+     position: fixed;
+     left: 50%;
+     top: 60%;
+     padding-left: 10px;
+     padding-right: 10px;
+
+
+     transition: box-shadow 320ms;
+
+     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.12);
+
+     border-radius: 3px;
+     font-size: 18px;
+     border: 0px;
+ }
+
+
+#resizer:focus {
+
+     outline: 0px;
+     outline-offset: 0px;
+     box-shadow: 0px 0px 1px 5px rgba(0,0,0,0.52);
+ }
+
+ button[type='button']:focus {
+
+     outline: 0px;
+     outline-offset: 0px;
+     box-shadow: 0px 0px 1px 5px rgba(0,0,0,0.52);
+ }
+
+
+ input:-moz-placeholder {
+     color: #cccccc;
+ }
+
+ #navbar {
+   float:right;
+ }
+
+
+.navbar {
+   background-color: black;
+   background: rgba(0,0,0,0.30);
+   border-color: rgba(0,0,0,0.09);
+}
+
+.navbar li { color: #000 }

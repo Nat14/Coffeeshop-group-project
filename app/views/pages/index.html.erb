@@ -1,20 +1,27 @@
 
-<!-- clock script -->
-<script src="assets/javascripts/clock.js"></script>
+  <div class="support"></div>
+  <div class="clock">
+    <div class="numbers">
+      <ul>
+        <li>12</li>
+        <li>3</li>
+        <li>6</li>
+        <li>9</li>
+      </ul>
+    </div>
+    <div id="clock">
+
+    <div class="clockwise">
+      <div class="center"></div>
+      <div class="hand-second" id="analogsecond"></div>
+      <div class="hand-minute" id="analogminute"></div>
+      <div class="hand-hour" id="analoghour"></div>
+    </div>
+  </div>
+</div>
 
 
-<!-- end of clock script  -->
-
-<!-- clock span -->
-<span id="clock">&nbsp;</span>
-
-<!-- clock body tag -->
-<body id = "clock" onload="updateClock(); setInterval('updateClock()', 1000 )">
-
-</body>
-
-
-<form class="" action="index.html" method="post">
+<form class="landing" action="index.html" method="post">
   <input id="resizer" type='text' placeholder="Let's Meet" />
-  <button type="button" class="btn btn-default">Find Me a Spot Nearby</button>
+  <button id="button" type="button" class="btn btn-default">Find Me a Spot Nearby</button>
 </form>
