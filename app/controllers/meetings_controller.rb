@@ -1,5 +1,7 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!
+
 
   # GET /meetings
   # GET /meetings.json
@@ -14,7 +16,9 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    @meeting = Meeting.new
+    # @meeting = Meeting.new
+    @meeting = current_user.meetings.new
+
   end
 
   # GET /meetings/1/edit
@@ -24,10 +28,15 @@ class MeetingsController < ApplicationController
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = Meeting.new(meeting_params)
+    # @meeting = Meeting.new(meeting_params)
+    @meeting = current_user.meetings.new(meeting_params)
+    @usermeetings = Usermeeting.new
+    @usermeetings.user_id = current_user.id
 
     respond_to do |format|
       if @meeting.save
+        @usermeetings.meeting_id = @meeting.id
+        @usermeetings.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
         format.json { render :show, status: :created, location: @meeting }
       else
@@ -69,6 +78,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :confirm, :useridtext)
+      params.require(:meeting).permit(:address, :time, :subject, :confirm)
     end
 end

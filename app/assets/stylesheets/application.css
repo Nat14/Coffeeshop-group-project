@@ -27,7 +27,7 @@
   background-size: cover;
    }
 
- input[type='text']{
+ #landing-input {
 
      color: #333;
      width: 280px;
