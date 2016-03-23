@@ -16,9 +16,7 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    # @meeting = Meeting.new
     @meeting = current_user.meetings.new
-
   end
 
   # GET /meetings/1/edit
@@ -63,6 +61,7 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1
   # DELETE /meetings/1.json
   def destroy
+    Usermeeting.find_by_meeting_id(@meeting.id).destroy
     @meeting.destroy
     respond_to do |format|
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
