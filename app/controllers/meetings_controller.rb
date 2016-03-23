@@ -16,7 +16,11 @@ class MeetingsController < ApplicationController
 
   # GET /meetings/new
   def new
-    @meeting = current_user.meetings.new
+    if !user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @meeting = current_user.meetings.new
+    end
   end
 
   # GET /meetings/1/edit
@@ -72,7 +76,12 @@ class MeetingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      @meeting = Meeting.find(params[:id])
+      if !user_signed_in? && current_user.email == meeting.users.first.email
+        redirect_to new_user_session_path
+      else
+        # TODO: when you go to this link http://localhost:3000/meetings/edit it will show error
+        @meeting = Meeting.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
