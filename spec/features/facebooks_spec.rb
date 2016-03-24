@@ -1,16 +1,20 @@
 require 'rails_helper'
 
-RSpec.feature "facebooks", type: :feature do
+RSpec.feature "facebooks", type: :feature,  js:true do
 
-  describe "as a user, I can login with facebook" do
-    john = User.new([{email: 'isaac.vonderau@uleth.ca'}, {password:'somethingrandom'},   {provider: "facebook"}, {uid: "794483024320"}])
-    expect(john.email).to be('isaac.vonderau@uleth.ca')
-  end
+  describe "User is able to log in with Facebook" do
 
-  describe "as a user, I can login with facebook" do
-  it "as a used who registered through facebook, I cannot re-register", :js =>true do
+    it "goes to Facebook login page" do
       visit "/"
-      click_link('Sign in with Facebook')
+      expect(page).to have_content("Sign in with Facebook")
     end
+
+    it "goes to the Facebook login page" do
+      visit "/"
+      click_link "Sign in with Facebook"
+      expect(page).to have_content("Sign in to Facebook and allow access")
+    end
+
   end
-end
+
+ end
