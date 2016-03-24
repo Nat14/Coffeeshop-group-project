@@ -7,26 +7,26 @@
         New Meeting
         <% end %>
     <% end %>
-    <br><h1>Listing Meetings</h1>
+    <h1>Listing meetings</h1>
   </div>
 </div>
 
 <div id="boo">
   <div class="table-responsive">
-    <h2>Suggested Meetings</h2>
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-              <th>Address</th>
-              <th>Time</th>
-              <th>Subject</th>
-              <th>Confirm</th>
-              <th>User</th>
+  <h2>Suggested Meetings</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+            <th>Address</th>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Confirm</th>
+            <th>Owner</th>
+            <th></th>
+            <% if user_signed_in? %>
               <th></th>
-              <% if user_signed_in? %>
-                <th></th>
-                <th></th>
-              <% end %>
+              <th></th>
+            <% end %>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +36,7 @@
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
               <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.users.first.email  %></a></td>
+              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -78,7 +78,7 @@
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
               <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.users.first.email  %></a></td>
+              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -87,9 +87,6 @@
           <% end %>
         <% end %>
         </tbody>
-      </table>
-    </div>
+    </table>
   </div>
-
-
-<br></br>
+</div>
