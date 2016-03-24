@@ -3,6 +3,12 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
+  <% if user_signed_in? && current_user.email != @meeting.users.first.email %>
+    <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Join
+    <% end %>
+  <% end %>
   <% if user_signed_in? && current_user.email == @meeting.users.first.email %>
     <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon-pencil"></span>
