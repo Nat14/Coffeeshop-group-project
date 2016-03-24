@@ -1,5 +1,7 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+  before_action :set_meeting, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!
+
 
   # GET /meetings
   # GET /meetings.json
@@ -10,11 +12,16 @@ class MeetingsController < ApplicationController
   # GET /meetings/1
   # GET /meetings/1.json
   def show
+    @meeting = Meeting.find(params[:id])
   end
 
   # GET /meetings/new
   def new
-    @meeting = Meeting.new
+    if !user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @meeting = current_user.meetings.new
+    end
   end
 
   # GET /meetings/1/edit
@@ -24,10 +31,15 @@ class MeetingsController < ApplicationController
   # POST /meetings
   # POST /meetings.json
   def create
-    @meeting = Meeting.new(meeting_params)
+    # @meeting = Meeting.new(meeting_params)
+    @meeting = current_user.meetings.new(meeting_params)
+    @usermeetings = Usermeeting.new
+    @usermeetings.user_id = current_user.id
 
     respond_to do |format|
       if @meeting.save
+        @usermeetings.meeting_id = @meeting.id
+        @usermeetings.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
         format.json { render :show, status: :created, location: @meeting }
       else
@@ -54,6 +66,7 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1
   # DELETE /meetings/1.json
   def destroy
+    Usermeeting.find_by_meeting_id(@meeting.id).destroy
     @meeting.destroy
     respond_to do |format|
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
@@ -64,11 +77,16 @@ class MeetingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      @meeting = Meeting.find(params[:id])
+      if !user_signed_in? && current_user.email == meeting.users.first.email
+        redirect_to new_user_session_path
+      else
+        # TODO: when you go to this link http://localhost:3000/meetings/edit it will show error
+        @meeting = Meeting.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :confirm, :useridtext)
+      params.require(:meeting).permit(:address, :time, :subject, :confirm)
     end
 end
