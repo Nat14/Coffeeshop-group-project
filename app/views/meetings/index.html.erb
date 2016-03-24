@@ -1,7 +1,9 @@
 <div class="page-header">
-  <%= link_to new_meeting_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Meeting
+  <% if user_signed_in? %>
+    <%= link_to new_meeting_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      New Meeting
+      <% end %>
   <% end %>
   <h1>Listing meetings</h1>
 </div>
@@ -15,10 +17,12 @@
             <th>Time</th>
             <th>Subject</th>
             <th>Confirm</th>
-            <th>Useridtext</th>
+            <th>Email Address</th>
             <th></th>
-        <th></th>
-        <th></th>
+            <% if user_signed_in? %>
+              <th></th>
+              <th></th>
+            <% end %>
       </tr>
     </thead>
 
@@ -29,10 +33,12 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.useridtext %></td>
+            <td><%= meeting.users.first.email %></td>
             <td><%= link_to 'Show', meeting %></td>
-        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+              <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+              <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
         <% end %>
       <% end %>
     </tbody>
@@ -48,10 +54,12 @@
             <th>Time</th>
             <th>Subject</th>
             <th>Confirm</th>
-            <th>Useridtext</th>
+            <th>Email Address</th>
             <th></th>
-        <th></th>
-        <th></th>
+            <% if user_signed_in? %>
+              <th></th>
+              <th></th>
+            <% end %>
       </tr>
     </thead>
 
@@ -62,10 +70,12 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.useridtext %></td>
+            <td><%= meeting.users.first.email  %></td>
             <td><%= link_to 'Show', meeting %></td>
-        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+              <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+              <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
         <% end %>
       <% end %>
     </tbody>
