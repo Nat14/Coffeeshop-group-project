@@ -7,7 +7,7 @@ body {
   background-size: cover;
    }
 
- #resizer {
+ #landing-input {
 
      color: #333;
      width: 280px;
@@ -30,7 +30,7 @@ body {
      border: 0px;
  }
 
- #button {
+ #meeting_list_btn {
 
      color: #333;
      width: 280px;
@@ -46,7 +46,7 @@ body {
 
      transition: box-shadow 320ms;
 
-     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.12);
+     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.02);
 
      border-radius: 3px;
      font-size: 18px;
@@ -54,14 +54,14 @@ body {
  }
 
 
-#resizer:focus {
+#landing-input:focus {
 
      outline: 0px;
      outline-offset: 0px;
      box-shadow: 0px 0px 1px 5px rgba(0,0,0,0.52);
  }
 
- button[type='button']:focus {
+#meeting_list_btn:focus {
 
      outline: 0px;
      outline-offset: 0px;
@@ -73,16 +73,3 @@ body {
      color: #cccccc;
 
  }
-
- #navbar {
-   float:right;
- }
-
-
-.navbar {
-   background-color: black;
-   background: rgba(0,0,0,0.30);
-   border-color: rgba(0,0,0,0.09);
-}
-
-.navbar li { color: #000 }
