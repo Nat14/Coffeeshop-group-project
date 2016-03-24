@@ -31,7 +31,7 @@
       </thead>
       <tbody>
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
-          <% if meeting.confirm == false %>
+          <% if meeting.confirm == false && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
@@ -43,12 +43,13 @@
                 <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
           <% end %>
+        <% end %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
+<br>
 <div id="boo">
   <div class="table-responsive">
     <h2>Confirmed Meetings</h2>
@@ -70,7 +71,7 @@
 
       <tbody>
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
-          <% if meeting.confirm == true %>
+          <% if meeting.confirm == true && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
@@ -82,6 +83,7 @@
                 <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
           <% end %>
+        <% end %>
         </tbody>
       </table>
     </div>

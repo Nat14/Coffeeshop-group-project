@@ -2,7 +2,6 @@ class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:edit, :update, :destroy]
   # before_action :authenticate_user!
 
-
   # GET /meetings
   # GET /meetings.json
   def index
@@ -77,7 +76,7 @@ class MeetingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      if !user_signed_in? && current_user.email == meeting.users.first.email
+      if !user_signed_in?
         redirect_to new_user_session_path
       else
         # TODO: when you go to this link http://localhost:3000/meetings/edit it will show error

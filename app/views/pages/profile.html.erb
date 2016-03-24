@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-4">
+
+    </div>
+
+    <div class="col-sm-4">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+                <th>Address</th>
+                <th>Subject</th>
+                <th></th>
+                <% if user_signed_in? %>
+                  <th></th>
+                  <th></th>
+                <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= content_tag_for(:tr, @meetings) do |meeting| %>
+            <% if Meeting.all.count != 0 && user_signed_in? && current_user.email == meeting.users.first.email %>
+                <td><%= meeting.address %></td>
+                <td><%= meeting.subject %></td>
+
+                <td><%= link_to 'Show', meeting %></td>
+                <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+                  <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+                  <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+            <% end %>
+          <% end %>
+          </tbody>
+        </table>
+    </div>
+
+    <div class="col-sm-4">
+
+    </div>
+
+
+  </div>
+</div>

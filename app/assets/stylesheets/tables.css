@@ -1,7 +1,7 @@
 #boo {
   text-align: center;
-  /*align-content: center;*/
-  /*justify-content: center;*/
+  align-content: center;
+  justify-content: center;
   background-color: rgba(0,0,0,0.50);
   border-radius:1%;
 }
