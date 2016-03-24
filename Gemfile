@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #
 gem 'devise'
 
+gem 'omniauth-facebook'
+
 gem 'paperclip'
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -46,7 +48,7 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
-  # gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
 
 end
