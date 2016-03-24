@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      
+      user.email = auth.info.email
+      user.avatar_file_name = auth.info.image
+      # url = auth.info.image
+      # avatar_url = url.gsub("­http","htt­ps")
+      # user.avatar = URI.parse(avatar_url)
     end
   end
 
@@ -38,6 +42,17 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+
+  private
+
+    def process_uri(uri)
+      require 'open-uri'
+      require 'open_uri_redirections'
+      open(uri, :allow_redirections => :safe) do |r|
+        r.base_uri.to_s
+      end
+    end
 
 
 
