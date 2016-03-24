@@ -22,7 +22,7 @@ RSpec.feature "Profile", type: :feature do
       fill_in 'Email', with: 'A@yahoo.com'
       fill_in 'Password', with: 'password1'
       fill_in 'Password confirmation', with: 'password1'
-      click_button 'Sign up'
+      click_button 'Sign Up'
     end
     def new_meeting
       visit 'meetings/new'

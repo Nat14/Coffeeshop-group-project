@@ -62,7 +62,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       check 'Confirm'
       click_button 'Create Meeting'
       click_on 'Log Out'
-      click_on 'Find Me a Spot Nearby'
+      click_on ''
       expect(page).to have_content '100 Main St. San Diego 92103'
     end
   end
@@ -72,7 +72,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'A@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    click_button 'Sign up'
+    click_button 'Sign Up'
   end
   def new_meeting
     visit 'meetings/new'

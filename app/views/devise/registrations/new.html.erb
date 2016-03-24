@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+
+<div  id="boo">
+<h2>Sign Up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -25,10 +27,12 @@
     Add Your <%= f.label :image %>:
     <%= f.file_field :image %>
  </div> -->
-
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign Up" %>
   </div>
 <% end %>
+<br>
 
-<%= render "devise/shared/links" %>
+
+</div>
