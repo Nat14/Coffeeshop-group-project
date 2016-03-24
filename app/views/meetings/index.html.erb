@@ -17,7 +17,7 @@
             <th>Time</th>
             <th>Subject</th>
             <th>Confirm</th>
-            <th>Email Address</th>
+            <th>Owner</th>
             <th></th>
             <% if user_signed_in? %>
               <th></th>
@@ -33,9 +33,9 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.users.first.email %></td>
+            <td><%= meeting.usermeetings.find_by_owner(true).user.email %></td>
             <td><%= link_to 'Show', meeting %></td>
-            <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
               <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
               <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
@@ -54,7 +54,7 @@
             <th>Time</th>
             <th>Subject</th>
             <th>Confirm</th>
-            <th>Email Address</th>
+            <th>Owner</th>
             <th></th>
             <% if user_signed_in? %>
               <th></th>
@@ -70,9 +70,9 @@
             <td><%= meeting.time %></td>
             <td><%= meeting.subject %></td>
             <td><%= meeting.confirm %></td>
-            <td><%= meeting.users.first.email  %></td>
+            <td><%= meeting.usermeetings.find_by_owner(true).user.email %></td>
             <td><%= link_to 'Show', meeting %></td>
-            <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
               <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
               <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>

@@ -3,12 +3,29 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <% if user_signed_in? && current_user.email == @meeting.users.first.email %>
-    <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-      Edit
+  <!-- sign in user can see join and edit -->
+  <% if user_signed_in? %>
+  <!--not the owner can see join, already join cannot see join -->
+    <% if current_user.email != @meeting.usermeetings.find_by_owner(true).user.email %>
+      <% if @meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
+        <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Join
+        <% end %>
+      <% else %>
+      <%= link_to '#', class: 'btn btn-primary' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          Joined
+      <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        Edit
+      <% end %>
     <% end %>
   <% end %>
+
   <h1>Show meeting</h1>
 </div>
 

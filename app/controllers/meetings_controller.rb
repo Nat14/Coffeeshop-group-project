@@ -35,12 +35,31 @@ class MeetingsController < ApplicationController
     @meeting = current_user.meetings.new(meeting_params)
     @usermeetings = Usermeeting.new
     @usermeetings.user_id = current_user.id
+    @usermeetings.owner = true
 
     respond_to do |format|
       if @meeting.save
         @usermeetings.meeting_id = @meeting.id
         @usermeetings.save
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
+        format.json { render :show, status: :created, location: @meeting }
+      else
+        format.html { render :new }
+        format.json { render json: @meeting.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def join_meeting
+    @usermeetings = Usermeeting.new
+    @usermeetings.user_id = current_user.id
+    @usermeetings.meeting_id = params[:meeting_id]
+    @usermeetings.owner = false
+
+    respond_to do |format|
+      if @usermeetings.save
+        Meeting.find(@usermeetings.meeting_id).update(confirm: true)
+        format.html { redirect_to Meeting.find(params[:meeting_id]), notice: 'You have successfully joined a meeting.' }
         format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new }
@@ -77,7 +96,7 @@ class MeetingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meeting
-      if !user_signed_in? && current_user.email == meeting.users.first.email
+      if !user_signed_in?
         redirect_to new_user_session_path
       else
         # TODO: when you go to this link http://localhost:3000/meetings/edit it will show error

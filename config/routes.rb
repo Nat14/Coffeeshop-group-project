@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :meetings
-
+  resources :meetings do
+    post 'join_meeting'
+  end
 
   root 'pages#index'
 

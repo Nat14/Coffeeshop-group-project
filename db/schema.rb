@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160323184114) do
 
   # These are extensions that must be enabled in order to support this database
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160323184114) do
     t.integer  "meeting_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "owner"
   end
 
   add_index "usermeetings", ["meeting_id"], name: "index_usermeetings_on_meeting_id", using: :btree

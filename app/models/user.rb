@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
 
@@ -12,7 +13,11 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      
+      user.email = auth.info.email
+      user.avatar_file_name = auth.info.image
+      # url = auth.info.image
+      # avatar_url = url.gsub("­http","htt­ps")
+      # user.avatar = URI.parse(avatar_url)
     end
   end
 
@@ -38,7 +43,4 @@ class User < ActiveRecord::Base
       super
     end
   end
-
-
-
 end
