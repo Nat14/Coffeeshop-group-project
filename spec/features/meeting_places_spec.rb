@@ -61,7 +61,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log Out'
       click_on 'Log In'
       new_register_and_login
-      click_on 'Find Me a Spot Nearby'
+      click_on ''
       click_on 'Show'
       click_on 'Join'
       expect(page).to have_content 'Joined'
@@ -74,7 +74,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log Out'
       click_on 'Log In'
       new_register_and_login
-      click_on 'Find Me a Spot Nearby'
+      click_on ''
       click_on 'Show'
       click_on 'Join'
       click_on 'Back'
@@ -103,7 +103,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       check 'Confirm'
       click_button 'Create Meeting'
       click_on 'Log Out'
-      click_on 'Find Me a Spot Nearby'
+      click_on ''
       expect(page).to have_content '100 Main St. San Diego 92103'
     end
   end
@@ -113,7 +113,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    click_button 'Sign up'
+    click_button 'Sign Up'
   end
 
   def new_register_and_login
@@ -121,7 +121,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    click_button 'Sign up'
+    click_button 'Sign Up'
   end
 
   def new_meeting

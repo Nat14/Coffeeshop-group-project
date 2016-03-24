@@ -1,5 +1,24 @@
 
+  <div class="clock">
+    <div class="numbers">
+      <ul>
+        <li>12</li>
+        <li>3</li>
+        <li>6</li>
+        <li>9</li>
+      </ul>
+    </div>
+    <div id="clock">
 
-  <input id="landing-input" type='text' name="id" placeholder="Let's Meet" />
-  <!-- <button id="meeting_list_btn" type="submit" class="btn btn-default">Find Me a Spot Nearby</button> -->
-  <%= button_to 'Find Me a Spot Nearby', meetings_path, id: 'meeting_list_btn', method: :get %>
+    <div class="clockwise">
+      <div class="center"></div>
+      <div class="hand-second" id="analogsecond"></div>
+      <div class="hand-minute" id="analogminute"></div>
+      <div class="hand-hour" id="analoghour"></div>
+    </div>
+  </div>
+</div>
+
+<input id="landing-input" type='text' name="id" placeholder="Find a Place to Meet" autofocus/>
+<!-- <button id="meeting_list_btn" type="submit" class="btn btn-default">Find Me a Spot Nearby</button> -->
+<%= button_to '', meetings_path, id: 'meeting_list_btn', method: :get %>

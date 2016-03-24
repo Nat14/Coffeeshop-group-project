@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'bootstrap-generators'
 gem 'geocoder'
 gem 'gmaps4rails'

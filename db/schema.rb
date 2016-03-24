@@ -57,6 +57,10 @@ ActiveRecord::Schema.define(version: 20160324201544) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.string   "provider"
     t.string   "uid"
   end

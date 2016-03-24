@@ -1,0 +1,78 @@
+
+body {
+   background: url("coffeeshops.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   }
+
+ #landing-input {
+
+     color: #333;
+     width: 280px;
+     height: 55px;
+     margin-left: -150px;
+     margin-top: -5px;
+     position: fixed;
+     left: 50%;
+     top: 50%;
+     padding-left: 15px;
+     padding-right: 10px;
+
+
+     transition: box-shadow 1920ms;
+
+     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.13);
+
+     border-radius: 3px;
+     font-size: 20px;
+     border: 0px;
+ }
+
+ #meeting_list_btn {
+
+     color: #333;
+     width: 280px;
+     height: 38px;
+     margin-left: -90px;
+     margin-top: -55px;
+     position: fixed;
+     left: 50%;
+     top: 60%;
+     padding-left: 10px;
+     padding-right: 10px;
+
+
+     transition: box-shadow 320ms;
+
+     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.02);
+
+     border-radius: 50px;
+     font-size: 18px;
+     border: 0px;
+ }
+
+
+#landing-input:focus {
+
+     outline: 0px;
+     outline-offset: 0px;
+     box-shadow: 0px 0px 1px 5px rgba(0,0,0,0.52);
+ }
+
+
+ input:-moz-placeholder {
+     color: #cccccc;
+
+ }
+
+ #meeting_list_btn{
+    background:url("cup.png");
+    background-repeat: no-repeat;
+    height:250px;
+    width:250px;
+    border: none;
+    outline: 0;
+
+}

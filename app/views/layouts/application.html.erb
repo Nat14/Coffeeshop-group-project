@@ -8,6 +8,14 @@
   <meta name="author" content="">
   <title>Coffee Shop | Find a place to study</title>
 
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
+
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
@@ -16,7 +24,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
+
+
 <body>
 
   <script>
@@ -40,28 +51,34 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "Coffee Shop", "/", class: "navbar-brand" %>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <%= link_to "☕️ Coffee Shop", "/", class: "navbar-brand" %>
       </div>
+
       <div id="navbar" class="collapse navbar-collapse">
+
         <ul class="nav navbar-nav">
-          <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
-          <li id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </li>
-          <li id="logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-
-          <% if current_user %>
-          <%= image_tag(current_user.avatar(:thumb), class: "foundation_or_bootstrap_class") %>
+          <% if !user_signed_in? %>
+            <li><%= link_to "Log In", new_user_session_path, method: :get %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path, method: :get %></li>
+            <li id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </li>
+          <% else %>
+            <li id="logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <li id="profile"><%= link_to "Profile", pages_profile_path, method: :get %></li>
           <% end %>
-
+          <% if current_user %>
+            <%= image_tag(current_user.avatar(:thumb), class: "foundation_or_bootstrap_class") %>
+          <% end %>
         </ul>
       </div>
     </div>
   </nav>
+
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
@@ -69,6 +86,7 @@
         <%= msg %>
       <% end %>
     <% end %>
+
     <%= yield %>
     <div
       class="fb-like"

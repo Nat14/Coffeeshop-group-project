@@ -1,47 +1,48 @@
-<div class="page-header">
-  <%= link_to meetings_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <!-- sign in user can see join and edit -->
-  <% if user_signed_in? %>
-  <!--not the owner can see join, already join cannot see join -->
-    <% if current_user.email != @meeting.usermeetings.find_by_owner(true).user.email %>
-      <% if @meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
-        <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-          Join
+<div id="boo">
+  <div class="page-header">
+    <%= link_to meetings_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+    <% end %>
+    <!-- sign in user can see join and edit -->
+    <% if user_signed_in? %>
+    <!--not the owner can see join, already join cannot see join -->
+      <% if current_user.email != @meeting.usermeetings.find_by_owner(true).user.email %>
+        <% if @meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
+          <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+            Join
+          <% end %>
+        <% else %>
+        <%= link_to '#', class: 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+            Joined
+        <% end %>
         <% end %>
       <% else %>
-      <%= link_to '#', class: 'btn btn-primary' do %>
+        <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
           <span class="glyphicon glyphicon-pencil"></span>
-          Joined
-      <% end %>
-      <% end %>
-    <% else %>
-      <%= link_to edit_meeting_path(@meeting), class: 'btn btn-primary' do %>
-        <span class="glyphicon glyphicon-pencil"></span>
-        Edit
+          Edit
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+    <br><h1>Show meeting</h1>
+  </div>
 
-  <h1>Show meeting</h1>
+  <dl class="dl-horizontal">
+    <dt>Address:</dt>
+    <dd><%= @meeting.address %></dd>
+
+    <dt>Subject:</dt>
+    <dd><%= @meeting.subject %></dd>
+
+    <dt>Time:</dt>
+    <dd><%= @meeting.time %></dd>
+
+    <dt>Confirm:</dt>
+    <dd><%= @meeting.confirm %></dd>
+
+    <dt>Email Address</dt>
+    <dd><%= @meeting.users.first.email %></dd>
+  </dl>
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Address:</dt>
-  <dd><%= @meeting.address %></dd>
-
-  <dt>Time:</dt>
-  <dd><%= @meeting.time %></dd>
-
-  <dt>Subject:</dt>
-  <dd><%= @meeting.subject %></dd>
-
-  <dt>Confirm:</dt>
-  <dd><%= @meeting.confirm %></dd>
-
-  <dt>Email Address</dt>
-  <dd><%= @meeting.users.first.email %></dd>
-</dl>
