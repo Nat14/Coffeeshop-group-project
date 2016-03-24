@@ -1,0 +1,21 @@
+#boo {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.30);
+  border-radius:1%;
+  flex-wrap: wrap;
+
+}
+
+/*#form_border {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.30);
+  border-radius:1%;
+
+  height:440px;
+  width:300px;
+ flex-wrap: wrap;
+}*/

@@ -3,8 +3,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  #
+  # has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
+  # validates_attachment :image, presence: true,
+  #   content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
+  #   size: { in: 0..10.megabytes }
+
+
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
 
@@ -12,11 +21,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.email = auth.info.email
-      user.avatar_file_name = auth.info.image
-      # url = auth.info.image
-      # avatar_url = url.gsub("­http","htt­ps")
-      # user.avatar = URI.parse(avatar_url)
+
     end
   end
 
@@ -53,7 +58,6 @@ class User < ActiveRecord::Base
         r.base_uri.to_s
       end
     end
-
 
 
 end
