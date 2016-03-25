@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.email = auth.info.email
       user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
+
     end
   end
 
@@ -48,5 +49,17 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+
+  private
+
+    def process_uri(uri)
+      require 'open-uri'
+      require 'open_uri_redirections'
+      open(uri, :allow_redirections => :safe) do |r|
+        r.base_uri.to_s
+      end
+    end
+
 
 end

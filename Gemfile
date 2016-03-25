@@ -33,6 +33,9 @@ gem 'devise'
 
 gem 'omniauth-facebook'
 
+gem 'open_uri_redirections'
+
+
 gem 'paperclip'
 # Use Unicorn as the app server
 # gem 'unicorn'
