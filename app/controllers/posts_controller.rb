@@ -27,10 +27,18 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.meeting = Meeting.find(params[:meeting_id])
+    @post.user_id = current_user.id
+
+    @usermeetings = Usermeeting.new
+    @usermeetings.user_id = current_user.id
+    @usermeetings.meeting_id = params[:meeting_id]
+    @usermeetings.owner = false
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        @usermeetings.save
+        Meeting.find(@usermeetings.meeting_id).update(confirm: true)
+        format.html { redirect_to @post, notice: 'See you there.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -44,7 +52,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Reply was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }

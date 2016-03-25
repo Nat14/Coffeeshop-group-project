@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= link_to posts_path, class: 'btn btn-default' do %>
+  <%= link_to meetings_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
@@ -7,7 +7,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show post</h1>
+  <h1>You signed up successfully!</h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -15,6 +15,6 @@
   <dd><%= @post.description %></dd>
 
   <dt>User:</dt>
-  <dd><%= @post.user %></dd>
+  <dd><%= @post.user.email %></dd>
 
 </dl>

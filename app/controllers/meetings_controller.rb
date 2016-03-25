@@ -14,6 +14,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1.json
   def show
     @meeting = Meeting.find(params[:id])
+    @post = Post.find_by_meeting_id(@meeting.id)
   end
 
   # GET /meetings/new
@@ -22,6 +23,7 @@ class MeetingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @meeting = current_user.meetings.new
+      # @post = current_user.posts.new
     end
   end
 
@@ -32,35 +34,25 @@ class MeetingsController < ApplicationController
   # POST /meetings
   # POST /meetings.json
   def create
-    # @meeting = Meeting.new(meeting_params)
+    # create new meeting
     @meeting = current_user.meetings.new(meeting_params)
+    # create new join table record
     @usermeetings = Usermeeting.new
     @usermeetings.user_id = current_user.id
     @usermeetings.owner = true
+    # create new post
+    @post = Post.new
+    @post.description = meeting_params[:description]
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @meeting.save
         @usermeetings.meeting_id = @meeting.id
         @usermeetings.save
+        @post.meeting_id = @meeting.id
+        @post.save
+
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render :show, status: :created, location: @meeting }
-      else
-        format.html { render :new }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def join_meeting
-    @usermeetings = Usermeeting.new
-    @usermeetings.user_id = current_user.id
-    @usermeetings.meeting_id = params[:meeting_id]
-    @usermeetings.owner = false
-
-    respond_to do |format|
-      if @usermeetings.save
-        Meeting.find(@usermeetings.meeting_id).update(confirm: true)
-        format.html { redirect_to Meeting.find(params[:meeting_id]), notice: 'You have successfully joined a meeting.' }
         format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new }
@@ -72,8 +64,10 @@ class MeetingsController < ApplicationController
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
   def update
+
     respond_to do |format|
       if @meeting.update(meeting_params)
+        Post.find_by_meeting_id(@meeting.id).update(description: meeting_params[:description])
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
@@ -87,6 +81,7 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1.json
   def destroy
     Usermeeting.find_by_meeting_id(@meeting.id).destroy
+    Post.find_by_meeting_id(@meeting.id).destroy 
     @meeting.destroy
     respond_to do |format|
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
@@ -107,6 +102,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :confirm)
+      params.require(:meeting).permit(:address, :time, :subject, :confirm, :description)
     end
 end

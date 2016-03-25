@@ -64,7 +64,8 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on ''
       click_on 'Show'
       click_on 'Join'
-      expect(page).to have_content 'Joined'
+      click_on 'Join'
+      expect(page).to have_content 'a@yahoo.com'
     end
 
     it "user cannot join meeting that user has alredy joined" do
@@ -90,8 +91,8 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Show'
       expect(page).to have_no_content 'Joined'
       expect(page).to have_content 'Edit'
-
     end
+
 
 
   end

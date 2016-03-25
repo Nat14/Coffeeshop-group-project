@@ -9,12 +9,14 @@
     <!--not the owner can see join, already join cannot see join -->
       <% if current_user.email != @meeting.usermeetings.find_by_owner(true).user.email %>
         <% if @meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
-          <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
+          <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
+          <%= link_to new_meeting_post_path(@meeting), class: 'btn btn-primary' do %>
+
             <span class="glyphicon glyphicon-pencil"></span>
             Join
           <% end %>
         <% else %>
-        <%= link_to '#', class: 'btn btn-primary' do %>
+        <%= link_to "#", class: 'btn btn-primary' do %>
             <span class="glyphicon glyphicon-pencil"></span>
             Joined
         <% end %>
@@ -44,5 +46,11 @@
 
     <dt>Email Address</dt>
     <dd><%= @meeting.users.first.email %></dd>
+
+    <% if !@post.nil? %>
+      <dt>Post:</dt>
+      <dd><%= @post.description %></dd>
+    <% end %>
+
   </dl>
 </div>
