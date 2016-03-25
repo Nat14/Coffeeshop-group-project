@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :posts, except: [:new, :create]
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
     post 'join_meeting'
+    resources :posts, only: [:new, :create, :update]
   end
 
   root 'pages#index'

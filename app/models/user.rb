@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
 
+  has_many :posts
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
