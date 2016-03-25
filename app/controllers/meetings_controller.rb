@@ -69,6 +69,9 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
   def update
