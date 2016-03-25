@@ -7,12 +7,6 @@ html {
   height:100%;
 }
 
-body {
-  background: radial-gradient(center center, circle cover, #c9c2b6, #7a726f);
-  background: -moz-radial-gradient(center center, circle cover, #c9c2b6 0%, #7a726f 100%);
-  background: -webkit-radial-gradient(center center, circle cover, #c9c2b6 0%, #7a726f 100%);
-  font-family: Arial, helvetica, 'sans';
-}
 .clock {
   width:193px;
   height:193px;

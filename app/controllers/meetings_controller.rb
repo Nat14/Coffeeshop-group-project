@@ -16,6 +16,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find(params[:id])
   end
 
+
   # GET /meetings/new
   def new
     if !user_signed_in?

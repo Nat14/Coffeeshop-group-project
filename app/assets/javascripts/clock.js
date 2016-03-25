@@ -77,4 +77,5 @@ var oClockAnalog = {
             }
         }
     }
-};   ClockInit();
+};
+ // ClockInit();

@@ -64,7 +64,7 @@ body {
 
  input:-moz-placeholder {
      color: #cccccc;
-
+  
  }
 
  #meeting_list_btn{
@@ -74,5 +74,18 @@ body {
     width:250px;
     border: none;
     outline: 0;
+
+}
+
+#facebook_landing{
+  text-align: center;
+  justify-content: center;
+  margin-left: -120px;
+  margin-top: 420px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding-left: 15px;
+  padding-right: 10px;
 
 }
