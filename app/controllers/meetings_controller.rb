@@ -69,6 +69,17 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def search
+    @meetings = Meeting.basic_search(params[:q])
+    if !@meetings.empty?
+      render "search"
+    else
+      @user = User.basic_search(params[:q])
+      @meetings = @user.first.meetings
+      render "search"
+    end
+  end
+
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
   def update
