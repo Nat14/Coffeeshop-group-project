@@ -14,10 +14,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
-      user.avatar_file_name = auth.info.image
-      # url = auth.info.image
-      # avatar_url = url.gsub("­http","htt­ps")
-      # user.avatar = URI.parse(avatar_url)
+      user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
     end
   end
 
