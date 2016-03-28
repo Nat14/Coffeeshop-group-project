@@ -35,6 +35,7 @@ gem 'omniauth-facebook'
 
 gem 'open_uri_redirections'
 
+gem 'textacular', '~> 3.0'
 
 gem 'paperclip'
 # Use Unicorn as the app server
