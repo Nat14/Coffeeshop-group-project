@@ -9,14 +9,16 @@
     <!--not the owner can see join, already join cannot see join -->
       <% if current_user.email != @meeting.usermeetings.find_by_owner(true).user.email %>
         <% if @meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
-          <%= link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %>
+          <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
+          <%= link_to new_meeting_post_path(@meeting), class: 'btn btn-primary' do %>
+
             <span class="glyphicon glyphicon-pencil"></span>
             Join
           <% end %>
         <% else %>
-        <%= link_to '#', class: 'btn btn-primary' do %>
+        <%= link_to new_meeting_post_path(@meeting), class: 'btn btn-primary' do %>
             <span class="glyphicon glyphicon-pencil"></span>
-            Joined
+            Unjoin
         <% end %>
         <% end %>
       <% else %>
@@ -37,12 +39,22 @@
     <dd><%= @meeting.subject %></dd>
 
     <dt>Time:</dt>
-    <dd><%= @meeting.time %></dd>
+    <dd><%= @meeting.time.to_s(:short) %></dd>
 
-    <dt>Confirm:</dt>
-    <dd><%= @meeting.confirm %></dd>
+    <dt>Created By:</dt>
+    <dd><%= @meeting.usermeetings.find_by_owner(true).user.email%></dd>
 
-    <dt>Email Address</dt>
-    <dd><%= @meeting.users.first.email %></dd>
+    <dt>Attendees:</dt>
+    <% @meeting.usermeetings.each do |meeting| %>
+      <dd><%= meeting.user.email %></dd>
+    <% end %>
+    <br/>
+    <% if !@post.nil? %>
+      <dt>Post:</dt>
+      <% @post.each do |post| %>
+        <dd><%= User.find(post.user_id).email + "(#{post.updated_at.to_s(:short)}): " + post.description %></dd>
+      <% end %>
+    <% end %>
+
   </dl>
 </div>
