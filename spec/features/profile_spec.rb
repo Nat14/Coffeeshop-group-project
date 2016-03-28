@@ -15,7 +15,6 @@ RSpec.feature "Profile", type: :feature do
     it "will allow a user to create a meeting, and have that meeting appear on their profile page" do
       register_and_login
       new_meeting
-      check 'Confirm'
       click_on 'Create Meeting'
       expect(page).to have_content("100 Main St. San Diego 92103")
     end

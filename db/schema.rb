@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20160328192315) do
 
   add_index "meetings", ["user_id"], name: "index_meetings_on_user_id", using: :btree
 
+  create_table "posts", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "meeting_id"
+  end
+
+  add_index "posts", ["meeting_id"], name: "index_posts_on_meeting_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
   create_table "usermeetings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "meeting_id"
@@ -67,6 +78,8 @@ ActiveRecord::Schema.define(version: 20160328192315) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "meetings", "users"
+  add_foreign_key "posts", "meetings"
+  add_foreign_key "posts", "users"
   add_foreign_key "usermeetings", "meetings"
   add_foreign_key "usermeetings", "users"
 end
