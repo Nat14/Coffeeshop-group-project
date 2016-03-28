@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :searches
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
