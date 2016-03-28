@@ -6,8 +6,9 @@ RSpec.feature "Profile", type: :feature do
 
     it "will allow a user to visit their profile page" do
       register_and_login
-      click_on 'A@yahoo.com'
-      expect(page).to have_content("A@yahoo.com")
+      visit "/"
+      click_on 'a@yahoo.com'
+      expect(page).to have_content("a@yahoo.com")
     end
   end
 
