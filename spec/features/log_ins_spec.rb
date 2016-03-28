@@ -8,11 +8,12 @@ RSpec.feature "LogIns", type: :feature do
       expect(page).to have_content("Sign Up")
     end
 
-    it "will allow a user to enter an email address, password, password confirm and register" do
+    it "will allow a user to enter an email address, password, password confirm, upload an avatar and register" do
       visit "/users/sign_up"
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       expect(page).to have_content("Welcome! You have signed up successfully.")
     end
@@ -21,14 +22,25 @@ RSpec.feature "LogIns", type: :feature do
       visit "/users/sign_up"
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       expect(page).to have_content("Email can't be blank")
+    end
+
+    it "requires an avatar" do
+      visit "/users/sign_up"
+      fill_in 'Email', with: 'J@yahoo.com'
+      fill_in 'Password', with: 'password123'
+      fill_in 'Password confirmation', with: 'password123'
+      click_button 'Sign Up'
+      expect(page).to have_content("Avatar can't be blank")
     end
 
     it "requires a password" do
       visit "/users/sign_up"
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password confirmation', with: 'password123'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       expect(page).to have_content("Password can't be blank")
     end
@@ -37,12 +49,13 @@ RSpec.feature "LogIns", type: :feature do
       visit "/users/sign_up"
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password', with: 'password123'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 
-  describe "as a user, I can visit the login page" do
+  describe "as a registered user, I can visit the login page" do
     it "will allow a user to visit the login page" do
     visit "/users/sign_in"
       expect(page).to have_content("Log In")
@@ -53,6 +66,7 @@ RSpec.feature "LogIns", type: :feature do
       fill_in 'Email', with: 'A@yahoo.com'
       fill_in 'Password', with: 'password1'
       fill_in 'Password confirmation', with: 'password1'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       click_on 'Log Out'
       visit "/users/sign_in"
@@ -83,6 +97,7 @@ RSpec.feature "LogIns", type: :feature do
       fill_in 'Email', with: 'A@yahoo.com'
       fill_in 'Password', with: 'password1'
       fill_in 'Password confirmation', with: 'password1'
+      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       click_on 'Log Out'
       expect(page).to have_content("Signed out successfully")
