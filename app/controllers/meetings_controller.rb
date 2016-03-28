@@ -69,6 +69,7 @@ class MeetingsController < ApplicationController
     end
   end
 
+# this method assumes that the search of teh meetings table does not overlap with the email search. If the meetings search is empty, we search for the email address
   def search
     @meetings = Meeting.basic_search(params[:q])
     if user_signed_in?
@@ -76,9 +77,6 @@ class MeetingsController < ApplicationController
       @search.user_id = current_user.id
       @search.user_search = params[:q]
       @search.save
-    else
-      puts "??????????????????????????"
-      puts params[:q]
     end
     if !@meetings.empty?
       render "search"
@@ -88,6 +86,7 @@ class MeetingsController < ApplicationController
       render "search"
     end
   end
+
 
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
