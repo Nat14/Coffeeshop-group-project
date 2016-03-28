@@ -71,6 +71,15 @@ class MeetingsController < ApplicationController
 
   def search
     @meetings = Meeting.basic_search(params[:q])
+    if user_signed_in?
+      @search = Search.new
+      @search.user_id = current_user.id
+      @search.user_search = params[:q]
+      @search.save
+    else
+      puts "??????????????????????????"
+      puts params[:q]
+    end
     if !@meetings.empty?
       render "search"
     else
