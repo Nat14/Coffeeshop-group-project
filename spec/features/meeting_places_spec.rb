@@ -65,25 +65,25 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Show'
       click_on 'Join'
       click_on 'Join'
-      expect(page).to have_content 'a@yahoo.com'
+      expect(page).to have_content 'b@yahoo.com'
     end
 
-    it "user cannot join meeting that user has alredy joined" do
+    it "user cannot join meeting that user has already joined" do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
       click_on 'Log Out'
-      click_on 'Log In'
       new_register_and_login
-      click_on ''
+      click_on 'meeting_list_btn'
       click_on 'Show'
+      click_on 'Join'
       click_on 'Join'
       click_on 'Back'
       click_on 'Show'
       expect(page).to have_content 'Joined'
     end
 
-    it "user cannot join meeting that user has alredy created & can edit created meeting" do
+    it "user cannot join his own meeting but user can edit his own meeting" do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
@@ -133,4 +133,11 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Subject', with: 'Ruby on Rails'
 
   end
+
+  def login
+    fill_in 'Email', with: 'a@yahoo.com'
+    fill_in 'Password', with: 'password1'
+    click_button 'Log In'
+  end
+
 end
