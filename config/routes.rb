@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
-    post 'join_meeting'
     resources :posts, only: [:new, :create, :update]
   end
 

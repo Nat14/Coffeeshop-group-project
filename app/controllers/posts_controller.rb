@@ -29,16 +29,21 @@ class PostsController < ApplicationController
     @post.meeting = Meeting.find(params[:meeting_id])
     @post.user_id = current_user.id
 
-    @usermeetings = Usermeeting.new
-    @usermeetings.user_id = current_user.id
-    @usermeetings.meeting_id = params[:meeting_id]
-    @usermeetings.owner = false
-
     respond_to do |format|
       if @post.save
-        @usermeetings.save
-        Meeting.find(@usermeetings.meeting_id).update(confirm: true)
-        format.html { redirect_to @post, notice: 'See you there.' }
+        # for user to join meeting, create new usermeenting record and also mark owner as false
+        if Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil?
+          @usermeetings = Usermeeting.new
+          @usermeetings.user_id = current_user.id
+          @usermeetings.meeting_id = params[:meeting_id]
+          @usermeetings.owner = false
+          @usermeetings.save
+          format.html { redirect_to @post, notice: 'See you there.' }
+        else
+          Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).destroy
+          format.html { redirect_to @post, notice: 'See you next time.' }
+        end
+        Meeting.find(params[:meeting_id]).update(confirm: true)
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }

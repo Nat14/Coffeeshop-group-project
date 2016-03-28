@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :set_meeting, only: [:edit, :update, :destroy]
+
   # before_action :authenticate_user!
 
 
@@ -14,7 +15,7 @@ class MeetingsController < ApplicationController
   # GET /meetings/1.json
   def show
     @meeting = Meeting.find(params[:id])
-    @post = Post.find_by_meeting_id(@meeting.id)
+    @post = Post.where(meeting: @meeting.id)
   end
 
   # GET /meetings/new
@@ -36,6 +37,7 @@ class MeetingsController < ApplicationController
   def create
     # create new meeting
     @meeting = current_user.meetings.new(meeting_params)
+    @meeting.confirm = false
     # create new join table record
     @usermeetings = Usermeeting.new
     @usermeetings.user_id = current_user.id
@@ -78,7 +80,7 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.update(meeting_params)
-        Post.find_by_meeting_id(@meeting.id).update(description: meeting_params[:description])
+        # Post.find_by_meeting_id(@meeting.id).update(description: meeting_params[:description])
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
@@ -92,7 +94,7 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1.json
   def destroy
     Usermeeting.find_by_meeting_id(@meeting.id).destroy
-    Post.find_by_meeting_id(@meeting.id).destroy 
+    Post.find_by_meeting_id(@meeting.id).destroy
     @meeting.destroy
     respond_to do |format|
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
@@ -113,6 +115,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :confirm, :description)
+      params.require(:meeting).permit(:address, :time, :subject, :description)
     end
 end

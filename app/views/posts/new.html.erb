@@ -3,7 +3,13 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <h1>Join this meeting</h1>
+
+  <% if Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil? %>
+    <h1>Join this meeting</h1>
+  <% else %>
+    <h1>Unjoin this meeting</h1>  
+  <% end %>
+
 </div>
 
 <%= render 'form' %>

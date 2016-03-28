@@ -16,7 +16,11 @@
     <%= f.label :description, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <% if @post.description.nil? %>
-        <%= f.text_area :description, class: "form-control", value: "I'll be there too."  %>
+        <% if !Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil? %>
+          <%= f.text_area :description, class: "form-control", value: "Sorry I will not be able to attend..."  %>
+        <% else %>
+          <%= f.text_area :description, class: "form-control", value: "I'll be there too."  %>
+        <% end %>
       <% else %>
         <%= f.text_area :description, class: "form-control", value: @post.description %>
       <% end %>
@@ -26,8 +30,15 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <% if @post.id.nil? %>
-        <%= f.submit "Join", class: "btn btn-primary" %>
+        <% if Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil? %>
+        <!-- no record for this meeting id and user id in usermeeting table  -->
+          <%= f.submit "Join", class: "btn btn-primary" %>
+        <% else %>
+        <!-- record for this meeting id and user id already exist in usermeeting table  -->
+          <%= f.submit "Unjoin", class: "btn btn-primary" %>
+        <% end %>
       <% else %>
+      <!-- post id is not nil (for edit) -->
         <%= f.submit "Edit Reply", class: "btn btn-primary" %>
       <% end %>
     </div>
