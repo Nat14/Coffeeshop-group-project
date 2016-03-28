@@ -1,4 +1,5 @@
 class MeetingsController < ApplicationController
+
   before_action :set_meeting, only: [:edit, :update, :destroy]
   # before_action :authenticate_user!
 
@@ -8,12 +9,23 @@ class MeetingsController < ApplicationController
 
   def index
     @meetings = Meeting.all
+
+    @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
+     marker.lat meetings.latitude
+     marker.lng meetings.longitude
+     marker.infowindow meetings.address
+   end
   end
 
   # GET /meetings/1
   # GET /meetings/1.json
   def show
     @meeting = Meeting.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@meeting) do |meeting, marker|
+     marker.lat meeting.latitude
+     marker.lng meeting.longitude
+     marker.infowindow meeting.address
+   end
   end
 
 
@@ -72,14 +84,24 @@ class MeetingsController < ApplicationController
 
   def search
     @meetings = Meeting.basic_search(params[:q])
+    @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
+     marker.lat meetings.latitude
+     marker.lng meetings.longitude
+     marker.infowindow meetings.address
+   end
     if !@meetings.empty?
       render "search"
     else
       @user = User.basic_search(params[:q])
       @meetings = @user.first.meetings
-      render "search"
+      redirect_to pages_profile_path(email: @user.first.email)
     end
   end
+
+
+
+
+
 
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json

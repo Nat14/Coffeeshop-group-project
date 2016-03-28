@@ -7,7 +7,7 @@
         New Meeting
         <% end %>
     <% end %>
-    <h1>Listing meetings</h1>
+    <h1>Search Results</h1>
   </div>
 </div>
 
@@ -36,7 +36,7 @@
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
               <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -78,7 +78,7 @@
               <td><%= meeting.time %></td>
               <td><%= meeting.subject %></td>
               <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -90,3 +90,20 @@
     </table>
   </div>
 </div>
+
+<br>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(12);
+});
+</script>
+
+</br>
