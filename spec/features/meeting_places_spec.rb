@@ -114,6 +114,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
+    attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
     click_button 'Sign Up'
   end
 
@@ -122,6 +123,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
+    attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
     click_button 'Sign Up'
   end
 
@@ -129,5 +131,6 @@ RSpec.feature "MeetingPlaces", type: :feature do
     visit 'meetings/new'
     fill_in 'Address', with: '100 Main St. San Diego 92103'
     fill_in 'Subject', with: 'Ruby on Rails'
+
   end
 end
