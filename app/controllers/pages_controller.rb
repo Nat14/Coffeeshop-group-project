@@ -18,10 +18,10 @@ class PagesController < ApplicationController
     @searches = []
 
     @keywords.each do |word|
-      @searches = @searches + Meeting.basic_search(word.user_search)
-      @user = User.basic_search(word.user_search)
+      @searches = @searches + Meeting.basic_search(word.keyword)
+      @user = User.basic_search(word.keyword)
 
-      @user = User.basic_search(word.user_search)
+      @user = User.basic_search(word.keyword)
       if !@user.empty?
         @searches = @searches + @user.first.meetings
       end

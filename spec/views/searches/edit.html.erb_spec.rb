@@ -4,7 +4,7 @@ RSpec.describe "searches/edit", type: :view do
 #   before(:each) do
 #     @search = assign(:search, Search.create!(
 #       :user => nil,
-#       :user_search => "MyString"
+#       :keyword => "MyString"
 #     ))
 #   end
 #
@@ -15,7 +15,7 @@ RSpec.describe "searches/edit", type: :view do
 #
 #       assert_select "input#search_user_id[name=?]", "search[user_id]"
 #
-#       assert_select "input#search_user_search[name=?]", "search[user_search]"
+#       assert_select "input#search_keyword[name=?]", "search[keyword]"
 #     end
 #   end
 end

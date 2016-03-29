@@ -11,7 +11,7 @@ RSpec.feature "searches", type: :feature,  js:true do
         click_button 'Create Meeting'
         visit "/"
         fill_in 'landing-input', with: 'J@yahoo.com'
-        click_on 'search'
+        find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("Main")
       end
 
@@ -21,7 +21,7 @@ RSpec.feature "searches", type: :feature,  js:true do
         click_button 'Create Meeting'
         click_on 'Log Out'
         fill_in 'landing-input', with: 'Main'
-        click_on 'search'
+        find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("100 Main St. San Diego 92103")
       end
     end

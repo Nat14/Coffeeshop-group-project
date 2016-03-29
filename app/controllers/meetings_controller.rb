@@ -83,7 +83,7 @@ class MeetingsController < ApplicationController
     if user_signed_in?
       @search = Search.new
       @search.user_id = current_user.id
-      @search.user_search = params[:q]
+      @search.keyword = params[:q]
       @search.save
     end
 

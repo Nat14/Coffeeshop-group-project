@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Search do
 
   it "must belong to a User" do
-    search =  Search.new(user_search: "ruby")
+    search =  Search.new(keyword: "ruby")
     expect(search.save).to be false
 
     user = User.new
@@ -11,8 +11,8 @@ describe Search do
     user.password = 'password123'
     user.avatar =  File.new('/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
     user.save
-    user.searches << Search.new(user_search: "ruby")
-    expect(user.searches.first.user_search).to include("ruby")
+    user.searches << Search.new(keyword: "ruby")
+    expect(user.searches.first.keyword).to include("ruby")
   end
 
 

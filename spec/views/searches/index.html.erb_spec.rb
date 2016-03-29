@@ -5,11 +5,11 @@ RSpec.describe "searches/index", type: :view do
   #   assign(:searches, [
   #     Search.create!(
   #       :user => nil,
-  #       :user_search => "User Search"
+  #       :keyword => "User Search"
   #     ),
   #     Search.create!(
   #       :user => nil,
-  #       :user_search => "User Search"
+  #       :keyword => "User Search"
   #     )
   #   ])
   # end
