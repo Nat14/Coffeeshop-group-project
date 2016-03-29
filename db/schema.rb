@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160328173802) do
+=======
+ActiveRecord::Schema.define(version: 20160328192315) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,13 +26,16 @@ ActiveRecord::Schema.define(version: 20160328173802) do
     t.text     "subject"
     t.boolean  "confirm"
     t.integer  "useridtext"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "user_id"
+    t.decimal  "latitude",   precision: 10, scale: 6
+    t.decimal  "longitude",  precision: 10, scale: 6
   end
 
   add_index "meetings", ["user_id"], name: "index_meetings_on_user_id", using: :btree
 
+<<<<<<< HEAD
   create_table "searches", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "user_search"
@@ -37,6 +44,18 @@ ActiveRecord::Schema.define(version: 20160328173802) do
   end
 
   add_index "searches", ["user_id"], name: "index_searches_on_user_id", using: :btree
+=======
+  create_table "posts", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "meeting_id"
+  end
+
+  add_index "posts", ["meeting_id"], name: "index_posts_on_meeting_id", using: :btree
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+>>>>>>> master
 
   create_table "usermeetings", force: :cascade do |t|
     t.integer  "user_id"
@@ -74,7 +93,12 @@ ActiveRecord::Schema.define(version: 20160328173802) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "meetings", "users"
+<<<<<<< HEAD
   add_foreign_key "searches", "users"
+=======
+  add_foreign_key "posts", "meetings"
+  add_foreign_key "posts", "users"
+>>>>>>> master
   add_foreign_key "usermeetings", "meetings"
   add_foreign_key "usermeetings", "users"
 end

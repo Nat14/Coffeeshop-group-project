@@ -7,7 +7,7 @@
         New Meeting
         <% end %>
     <% end %>
-    <h1>Listing meetings</h1>
+    <br><h1>Meetings</h1>
   </div>
 </div>
 
@@ -20,8 +20,7 @@
             <th>Address</th>
             <th>Time</th>
             <th>Subject</th>
-            <th>Confirm</th>
-            <th>Owner</th>
+            <th>Suggested By</th>
             <th></th>
             <% if user_signed_in? %>
               <th></th>
@@ -33,12 +32,11 @@
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
           <% if meeting.confirm == false && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
-              <td><%= meeting.time %></td>
+              <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
               <td><%= link_to 'Show', meeting %></td>
-              <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+              <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
                 <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
@@ -61,8 +59,8 @@
               <th>Address</th>
               <th>Time</th>
               <th>Subject</th>
-              <th>Confirm</th>
-              <th>User</th>
+              <th>Created By</th>
+              <th>Attendees</th>
               <th></th>
               <% if user_signed_in? %>
                 <th></th>
@@ -75,12 +73,12 @@
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
           <% if meeting.confirm == true && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
-              <td><%= meeting.time %></td>
+              <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= meeting.confirm %></td>
-              <td><a href="/pages/profile"><%= meeting.usermeetings.find_by_owner(true).user.email  %></a></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
+              <td> <%= meeting.usermeetings.count %> </td>
               <td><%= link_to 'Show', meeting %></td>
-              <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+              <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
                 <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
@@ -90,3 +88,20 @@
     </table>
   </div>
 </div>
+
+<br>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(5);
+});
+</script>
+
+</br>

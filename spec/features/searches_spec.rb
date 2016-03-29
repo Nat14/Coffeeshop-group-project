@@ -8,18 +8,16 @@ RSpec.feature "searches", type: :feature,  js:true do
       it "can visit the meetings page and do a keyword search over meetings" do
         new_register_and_login
         new_meeting
-        check 'Confirm'
         click_button 'Create Meeting'
-        click_on 'Log Out'
+        visit "/"
         fill_in 'landing-input', with: 'J@yahoo.com'
         click_on 'search'
-        expect(page).to have_content("100 Main St. San Diego 92103")
+        expect(page).to have_content("Main")
       end
 
       it "can visit the meetings page and do a keyword search over users" do
         new_register_and_login
         new_meeting
-        check 'Confirm'
         click_button 'Create Meeting'
         click_on 'Log Out'
         fill_in 'landing-input', with: 'Main'

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
@@ -9,15 +10,11 @@ class User < ActiveRecord::Base
   validates_attachment :avatar, presence: true
 
 
-  # has_attached_file :avatar, styles: { small: "64x64", med: "100x100", large: "200x200" }
-  # validates_attachment :avatar, presence: true,
-  #   content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
-  #   size: { in: 0..10.megabytes }
-
-
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
   has_many :searches
+
+  has_many :posts
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

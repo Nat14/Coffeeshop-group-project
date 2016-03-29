@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap-generators'
 gem 'geocoder'
 gem 'gmaps4rails'

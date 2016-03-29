@@ -1,5 +1,7 @@
 class MeetingsController < ApplicationController
+
   before_action :set_meeting, only: [:edit, :update, :destroy]
+
   # before_action :authenticate_user!
 
 
@@ -8,13 +10,26 @@ class MeetingsController < ApplicationController
 
   def index
     @meetings = Meeting.all
+
+    @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
+     marker.lat meetings.latitude
+     marker.lng meetings.longitude
+     marker.infowindow meetings.address
+   end
   end
 
   # GET /meetings/1
   # GET /meetings/1.json
   def show
     @meeting = Meeting.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@meeting) do |meeting, marker|
+       marker.lat meeting.latitude
+       marker.lng meeting.longitude
+       marker.infowindow meeting.address
+    end
+    @post = Post.where(meeting: @meeting.id)
   end
+
 
   # GET /meetings/new
   def new
@@ -22,6 +37,7 @@ class MeetingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @meeting = current_user.meetings.new
+      # @post = current_user.posts.new
     end
   end
 
@@ -32,35 +48,26 @@ class MeetingsController < ApplicationController
   # POST /meetings
   # POST /meetings.json
   def create
-    # @meeting = Meeting.new(meeting_params)
+    # create new meeting
     @meeting = current_user.meetings.new(meeting_params)
+    @meeting.confirm = false
+    # create new join table record
     @usermeetings = Usermeeting.new
     @usermeetings.user_id = current_user.id
     @usermeetings.owner = true
+    # create new post
+    @post = Post.new
+    @post.description = meeting_params[:description]
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @meeting.save
         @usermeetings.meeting_id = @meeting.id
         @usermeetings.save
+        @post.meeting_id = @meeting.id
+        @post.save
+
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
-        format.json { render :show, status: :created, location: @meeting }
-      else
-        format.html { render :new }
-        format.json { render json: @meeting.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def join_meeting
-    @usermeetings = Usermeeting.new
-    @usermeetings.user_id = current_user.id
-    @usermeetings.meeting_id = params[:meeting_id]
-    @usermeetings.owner = false
-
-    respond_to do |format|
-      if @usermeetings.save
-        Meeting.find(@usermeetings.meeting_id).update(confirm: true)
-        format.html { redirect_to Meeting.find(params[:meeting_id]), notice: 'You have successfully joined a meeting.' }
         format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new }
@@ -72,18 +79,26 @@ class MeetingsController < ApplicationController
 # this method assumes that the search of teh meetings table does not overlap with the email search. If the meetings search is empty, we search for the email address
   def search
     @meetings = Meeting.basic_search(params[:q])
+
     if user_signed_in?
       @search = Search.new
       @search.user_id = current_user.id
       @search.user_search = params[:q]
       @search.save
     end
+
+    @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
+     marker.lat meetings.latitude
+     marker.lng meetings.longitude
+     marker.infowindow meetings.address
+    end
+
     if !@meetings.empty?
       render "search"
     else
       @user = User.basic_search(params[:q])
       @meetings = @user.first.meetings
-      render "search"
+      redirect_to pages_profile_path(email: @user.first.email)
     end
   end
 
@@ -91,8 +106,10 @@ class MeetingsController < ApplicationController
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
   def update
+
     respond_to do |format|
       if @meeting.update(meeting_params)
+        # Post.find_by_meeting_id(@meeting.id).update(description: meeting_params[:description])
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
@@ -106,6 +123,7 @@ class MeetingsController < ApplicationController
   # DELETE /meetings/1.json
   def destroy
     Usermeeting.find_by_meeting_id(@meeting.id).destroy
+    Post.find_by_meeting_id(@meeting.id).destroy
     @meeting.destroy
     respond_to do |format|
       format.html { redirect_to meetings_url, notice: 'Meeting was successfully destroyed.' }
@@ -126,6 +144,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :confirm)
+      params.require(:meeting).permit(:address, :time, :subject, :description)
     end
 end
