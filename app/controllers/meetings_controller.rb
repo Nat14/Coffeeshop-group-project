@@ -76,13 +76,23 @@ class MeetingsController < ApplicationController
     end
   end
 
+# this method assumes that the search of teh meetings table does not overlap with the email search. If the meetings search is empty, we search for the email address
   def search
     @meetings = Meeting.basic_search(params[:q])
+
+    if user_signed_in?
+      @search = Search.new
+      @search.user_id = current_user.id
+      @search.keyword = params[:q]
+      @search.save
+    end
+
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
      marker.lat meetings.latitude
      marker.lng meetings.longitude
      marker.infowindow meetings.address
-   end
+    end
+
     if !@meetings.empty?
       render "search"
     else
@@ -91,10 +101,6 @@ class MeetingsController < ApplicationController
       redirect_to pages_profile_path(email: @user.first.email)
     end
   end
-
-
-
-
 
 
   # PATCH/PUT /meetings/1
