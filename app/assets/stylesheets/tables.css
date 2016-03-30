@@ -2,8 +2,20 @@
   text-align: center;
   align-content: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.30);
-
+  background-color: rgba(0,0,0,0.50);
+  display:block;
   flex-wrap: wrap;
+  position: relative;
+}
 
+#map{
+  flex-wrap:wrap;
+}
+
+.table-responsive{
+  border:none;
+}
+
+.page-header{
+  border:none;
 }

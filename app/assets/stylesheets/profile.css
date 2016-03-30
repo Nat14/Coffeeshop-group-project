@@ -1,0 +1,20 @@
+
+#profile_pic{
+  display: flex;
+  margin-top: 70px;
+  align-content: center;
+  align-items: center;
+}
+
+.row{
+  margin-top: 70px;
+}
+
+
+#aboutme{
+  display: flex;
+
+  margin-top: 70px;
+
+
+}

@@ -1,38 +1,127 @@
-<div id="boo">
+<div class="container">
 
-        <div class="table-responsive">
-          <h2><%= @user %> </h2>
+	<div class="row">
 
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                    <th>Address</th>
-                    <th>Subject</th>
-                    <th>Time</th>
-                    <th></th>
-                    <% if user_signed_in? %>
-                      <th></th>
-                      <th></th>
-                    <% end %>
-              </tr>
-            </thead>
+		<div class="col-md-3">
+			<div id="aboutme"><p> Hello, My name is Isaac and I love caffiene and cigarettes. Please study with me.
+			</p>
+			</div>
+		</div>
 
-            <tbody>
-              <%= content_tag_for(:tr, @meetings) do |meeting| %>
-                <% if Meeting.all.count != 0 && user_signed_in? && @user == meeting.users.first.email %>
-                    <td><%= meeting.address %></td>
-                    <td><%= meeting.subject %></td>
-                    <td><%= meeting.time %></td>
+		<div class="col-md-3">
+			<div id="profile_pic"><% if current_user %>
+					<%= image_tag(current_user.avatar(:medium), class: "foundation_or_bootstrap_class") %>
+				<% end %>
+			</div>
+		</div>
 
-                    <td><%= link_to 'Show', meeting %></td>
-                    <% if user_signed_in? && current_user.email == meeting.users.first.email %>
-                      <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-                      <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <% end %>
+		<div class="col-md-6" id="create_meeting">
+			<div class="statusbar">
+				<section id="statusbarsection">
+					<form id="theform" class="simform">
+						<div class="simform-inner">
+							<ol class="questions">
+
+								<li>
+									<span><label for="q1">Hi, let's create a meeting!</label></span>
+									<input id="q1" name="place" type="text" placeholder="enter your study location" autofocus/>
+								</li>
+
+								<li>
+									<span><label for="q2">and what are you going to study?</label></span>
+									<input id="q2" name="subject" type="text" placeholder="enter a subject" autofocus/>
+								</li>
+
+								<li>
+									<span><label for="q3">and when will you be studying?</label></span>
+									<input id="q3" name="time" type="text" placeholder="enter a time"  autofocus/>
+								</li>
+
+								<li>
+									<span><label for="q4">any last minute reminders?</label></span>
+									<input id="q4" name="post" type="text" placeholder="I'll be here!"  autofocus/>
+								</li>
+
+								<li>
+									<span><label for="q6">All set?</label></span>
+
+									<div class="media-option">
+
+				            <div class="mediabox">
+								      <input type="radio" name="profession" value="Create" autofocus/>
+				              <span>  <% if current_user %>
+				                  <%= image_tag(current_user.avatar(:thumb), class: "foundation_or_bootstrap_class") %>
+				                <% end %></span>
+								      <p>Create meeting!</p>
+							      </div>
+				          </div>
+								</li>
+							</ol>
+
+				      <!-- <div class="continue">
+				        <button >Meeting was created!</button>
+				      </div> -->
+
+							<div class="controls">
+				        <button style="visibility:hidden;" class="next glyphicon glyphicon-arrow-right"></button>
+				        <span class="error-message">this is the test message</span>
+							</div>
+				    </div>
+
+					</form>
+				      <div class="login">
+				          	<span class="final-message">Thank you!</span>
+				               <button >Login Here</button>
+				      </div>
+				</section>
+
+			    <!-- <div class="progess">
+			      <div class="progress-step" step="1">1</div>
+			      <div class="progress-step" step="2">2</div>
+			      <div class="progress-step" step="3">3</div>
+			      <div class="progress-step" step="4">4</div>
+			      <div class="progress-step" step="5">5</div>
+			      <div class="progress-step" step="6">6</div>
+			    </div> -->
+			</div>
+		</div>
+
+
+	<div id="boo" class="col-md-12">
+    <div class="table-responsive">
+      <h2><%= @user %> </h2>
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+                <th>Address</th>
+                <th>Subject</th>
+                <th>Time</th>
+                <th></th>
+                <% if user_signed_in? %>
+                  <th></th>
+                  <th></th>
                 <% end %>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+          </tr>
+        </thead>
 
+        <tbody>
+          <%= content_tag_for(:tr, @meetings) do |meeting| %>
+            <% if Meeting.all.count != 0 && user_signed_in? && @user == meeting.users.first.email %>
+                <td><%= meeting.address %></td>
+                <td><%= meeting.subject %></td>
+                <td><%= meeting.time %></td>
+
+                <td><%= link_to 'Show', meeting %></td>
+                <% if user_signed_in? && current_user.email == meeting.users.first.email %>
+                  <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+                  <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+	</div>
+</div>
 </div>
