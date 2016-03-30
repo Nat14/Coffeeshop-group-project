@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get 'registrations/new'
 
-
   get 'users/show'
 
   get 'search' => 'meetings#search'
