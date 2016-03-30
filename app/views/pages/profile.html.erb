@@ -1,6 +1,5 @@
 
 <div class="container">
-
 	<div class="row">
 
 		<div class="col-md-3">
@@ -17,7 +16,7 @@
 		</div>
 
 		<div class="col-md-6" id="create_meeting">
-			<div class="statusbar">
+			<!-- <div class="statusbar">
 				<section id="statusbarsection">
 					<form id="theform" class="simform">
 						<div class="simform-inner">
@@ -63,7 +62,7 @@
 				        <button >Meeting was created!</button>
 				      </div> -->
 
-							<div class="controls">
+							<!-- <div class="controls">
 				        <button style="visibility:hidden;" class="next glyphicon glyphicon-arrow-right"></button>
 				        <span class="error-message">this is the test message</span>
 							</div>
@@ -74,7 +73,7 @@
 				          	<span class="final-message">Thank you!</span>
 				               <button >Login Here</button>
 				      </div>
-				</section>
+				</section> -->
 
 			    <!-- <div class="progess">
 			      <div class="progress-step" step="1">1</div>
@@ -84,85 +83,76 @@
 			      <div class="progress-step" step="5">5</div>
 			      <div class="progress-step" step="6">6</div>
 			    </div> -->
-			</div>
-		</div>
-
+			<!-- </div> -->
+		</div> -->
+	</div>
+</div>
 
 <form action="/search" method="get">
   <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
   <input id: 'q' type="submit" name="commit" value="search"/>
 </form>
 
-<div id="boo">
-        <div class="table-responsive">
-          <h2><%= current_user.email %> </h2>
 
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                    <th>Address</th>
-                    <th>Subject</th>
-                    <th>Time</th>
-                    <th>Attendees</th>
-                    <th></th>
-                    <% if user_signed_in? %>
-                      <th></th>
-                      <th></th>
-                    <% end %>
-              </tr>
-            </thead>
+<!-- grid layout for user meetings -->
+<div class="wrapper">
+  <header><%= current_user.email %>
+      <div class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></div>
+    </header>
 
-            <tbody>
-              <%= content_tag_for(:tr, @usermeetings) do |usermeeting| %>
-                <% if Meeting.all.count != 0 && user_signed_in? %>
-                    <td><%= usermeeting.meeting.address %></td>
-                    <td><%= usermeeting.meeting.subject %></td>
-                    <td><%= usermeeting.meeting.time.to_s(:short) %></td>
-                    <td> <%= usermeeting.meeting.usermeetings.count %> </td>
-                    <td><%= link_to 'Show', usermeeting.meeting %></td>
-                    <% if user_signed_in? && usermeeting.owner == true %>
-                      <td><%= link_to 'Edit', edit_meeting_path(usermeeting.meeting) %></td>
-                      <td><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <% end %>
-                <% end %>
-              <% end %>
-            </tbody>
-          </table>
+    <div class="container">
 
-        </div>
-
-    </div>
-	</div>
-</div>
-</div>
-
-<div id="boo">
-  <div class="table-responsive">
-    <h2>Saved Searches</h2>
-    <table class="table table-striped table-hover table-condensed">
-      <thead>
-        <tr>
-              <th>Address</th>
-              <th>Time</th>
-              <th>Subject</th>
-              <th>User</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <%= content_tag_for(:tr, @searches) do |meeting| %>
-          <% if Meeting.all.count != 0 %>
-              <td><%= meeting.address %></td>
-              <td><%= meeting.time %></td>
-              <td><%= meeting.subject %></td>
-              <td><%= link_to 'Show', meeting %></td>
-              <% if user_signed_in? && current_user.email == meeting.users.first.email %>
-                <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-                <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-          <% end %>
+      <% @usermeetings.each do |usermeeting| %>
+			<% if Meeting.all.count != 0 && user_signed_in? %>
+          <div class="box">
+            <p><%= usermeeting.meeting.address %></p>
+            <p><%= usermeeting.meeting.time.to_s(:short) %></p>
+            <p><%= usermeeting.meeting.subject %></p>
+						<p>Attendees: <%= usermeeting.meeting.usermeetings.count %></p>
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', usermeeting.meeting %></p>
+						<% if user_signed_in? && usermeeting.owner == true %>
+							<p><%= link_to 'Edit', edit_meeting_path(usermeeting.meeting) %></p>
+							<p><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
+          </div>
         <% end %>
-        </tbody>
-    </table>
-  </div>
+      <% end %>
+    </div>
 </div>
+
+<div class="wrapper">
+  <header>Saved Searches</header>
+
+    <div class="container">
+
+      <% @searches.each do |meeting| %>
+			<% if Meeting.all.count != 0 %>
+          <div class="box">
+            <p><%= meeting.address %></p>
+            <p><%= meeting.time.to_s(:short) %></p>
+            <p><%= meeting.subject %></p>
+
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
+						<% if user_signed_in? && current_user.email == meeting.users.first.email %>
+							<p><%= link_to 'Edit', edit_meeting_path(meeting) %></p>
+							<p><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+<!-- scripts were not working in JS file, so we added it here.  -->
+<script>
+  $('.show-list').click(function(){
+  	$('.wrapper').addClass('list-mode');
+  });
+
+  $('.hide-list').click(function(){
+  	$('.wrapper').removeClass('list-mode');
+  });
+
+</script>
+<!-- end -->
