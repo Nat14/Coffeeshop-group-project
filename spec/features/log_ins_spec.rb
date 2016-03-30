@@ -8,7 +8,7 @@ RSpec.feature "LogIns", type: :feature do
       expect(page).to have_content("Sign Up")
     end
 
-    it "will allow a user to enter an email address, password, password confirm, upload an avatar and register" do
+    it "will allow a user to enter a username, email address, password, password confirm, upload an avatar and register" do
       visit "/users/sign_up"
       fill_in 'Username', with: 'J'
       fill_in 'Email', with: 'J@yahoo.com'
@@ -17,6 +17,16 @@ RSpec.feature "LogIns", type: :feature do
       attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
       expect(page).to have_content("Welcome! You have signed up successfully.")
+    end
+
+    it "requires a username" do
+      visit "/users/sign_up"
+      fill_in 'Email', with: 'J@yahoo.com'
+      fill_in 'Password', with: 'password123'
+      fill_in 'Password confirmation', with: 'password123'
+      attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
+      click_button 'Sign Up'
+      expect(page).to have_content("Username can't be blank")
     end
 
     it "requires an email address" do
