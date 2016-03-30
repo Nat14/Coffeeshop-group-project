@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def profile
 
     @meetings = Meeting.all
+    @usermeetings = Usermeeting.where(user_id: current_user.id)
     @user = (params[:email])
     # @searches.user_id = current_user.id
     #this gives a list of saved words for current user

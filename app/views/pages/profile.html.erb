@@ -16,6 +16,7 @@
                     <th>Address</th>
                     <th>Subject</th>
                     <th>Time</th>
+                    <th>Attendees</th>
                     <th></th>
                     <% if user_signed_in? %>
                       <th></th>
@@ -25,21 +26,22 @@
             </thead>
 
             <tbody>
-              <%= content_tag_for(:tr, @meetings) do |meeting| %>
-                <% if Meeting.all.count != 0 && user_signed_in? && @user == meeting.users.first.email %>
-                    <td><%= meeting.address %></td>
-                    <td><%= meeting.subject %></td>
-                    <td><%= meeting.time %></td>
-
-                    <td><%= link_to 'Show', meeting %></td>
-                    <% if user_signed_in? && current_user.email == meeting.users.first.email %>
-                      <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-                      <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <%= content_tag_for(:tr, @usermeetings) do |usermeeting| %>
+                <% if Meeting.all.count != 0 && user_signed_in? %>
+                    <td><%= usermeeting.meeting.address %></td>
+                    <td><%= usermeeting.meeting.subject %></td>
+                    <td><%= usermeeting.meeting.time.to_s(:short) %></td>
+                    <td> <%= usermeeting.meeting.usermeetings.count %> </td>
+                    <td><%= link_to 'Show', usermeeting.meeting %></td>
+                    <% if user_signed_in? && usermeeting.owner == true %>
+                      <td><%= link_to 'Edit', edit_meeting_path(usermeeting.meeting) %></td>
+                      <td><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% end %>
                 <% end %>
               <% end %>
             </tbody>
           </table>
+
         </div>
 
 </div>

@@ -25,7 +25,7 @@ RSpec.feature "Profile", type: :feature do
     fill_in 'Email', with: 'A@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
+    attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
     click_button 'Sign Up'
   end
   def new_meeting
