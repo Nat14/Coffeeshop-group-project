@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def profile
 
     @meetings = Meeting.all
+    @usermeetings = Usermeeting.where(user_id: current_user.id)
     @user = (params[:email])
 
   end

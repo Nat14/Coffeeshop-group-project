@@ -50,7 +50,10 @@ class MeetingsController < ApplicationController
   def create
     # create new meeting
     @meeting = current_user.meetings.new(meeting_params)
+    # new meeting status as unconfirmed 
     @meeting.confirm = false
+    # add date and time from params to ruby datetime format
+    @meeting.time = (meeting_params[:meetingdate] + " " + @meeting.time.hour.to_s + ":" +@meeting.time.min.to_s + ":00").to_datetime
     # create new join table record
     @usermeetings = Usermeeting.new
     @usermeetings.user_id = current_user.id
@@ -79,23 +82,25 @@ class MeetingsController < ApplicationController
   def search
     @meetings = Meeting.basic_search(params[:q])
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
-     marker.lat meetings.latitude
-     marker.lng meetings.longitude
-     marker.infowindow meetings.address
-   end
+       marker.lat meetings.latitude
+       marker.lng meetings.longitude
+       marker.infowindow meetings.address
+    end
     if !@meetings.empty?
+      # found word search in meeting table
       render "search"
     else
+      # if not found in meeting table search user table
       @user = User.basic_search(params[:q])
-      @meetings = @user.first.meetings
-      redirect_to pages_profile_path(email: @user.first.email)
+      # found word search in user table
+      if !@user.empty?
+        @meetings = @user.first.meetings
+        redirect_to pages_profile_path(email: @user.first.email)
+      else
+        redirect_to meetings_path
+      end
     end
   end
-
-
-
-
-
 
   # PATCH/PUT /meetings/1
   # PATCH/PUT /meetings/1.json
@@ -103,7 +108,8 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       if @meeting.update(meeting_params)
-        # Post.find_by_meeting_id(@meeting.id).update(description: meeting_params[:description])
+        # update date and time (convert string to datetime) from user to database
+        @meeting.update(time: (meeting_params[:meetingdate] + " " + @meeting.time.hour.to_s + ":" +@meeting.time.min.to_s + ":00").to_datetime)
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { render :show, status: :ok, location: @meeting }
       else
@@ -138,6 +144,6 @@ class MeetingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meeting_params
-      params.require(:meeting).permit(:address, :time, :subject, :description)
+      params.require(:meeting).permit(:address, :time, :subject, :description, :meetingdate)
     end
 end

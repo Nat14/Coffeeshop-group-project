@@ -20,8 +20,8 @@
             <th>Address</th>
             <th>Time</th>
             <th>Subject</th>
-            <th>Confirm</th>
             <th>Owner</th>
+            <th>Attendees</th>
             <th></th>
             <% if user_signed_in? %>
               <th></th>
@@ -33,10 +33,10 @@
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
           <% if meeting.confirm == false && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
-              <td><%= meeting.time %></td>
+              <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= meeting.confirm %></td>
               <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
+              <td> <%= meeting.usermeetings.count %> </td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -61,8 +61,8 @@
               <th>Address</th>
               <th>Time</th>
               <th>Subject</th>
-              <th>Confirm</th>
-              <th>User</th>
+              <th>Owner</th>
+              <th>Attendees</th>
               <th></th>
               <% if user_signed_in? %>
                 <th></th>
@@ -75,10 +75,10 @@
         <%= content_tag_for(:tr, @meetings) do |meeting| %>
           <% if meeting.confirm == true && Meeting.all.count != 0 %>
               <td><%= meeting.address %></td>
-              <td><%= meeting.time %></td>
+              <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= meeting.confirm %></td>
               <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
+              <td> <%= meeting.usermeetings.count %> </td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.users.first.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
