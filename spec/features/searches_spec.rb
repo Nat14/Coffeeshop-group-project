@@ -11,7 +11,7 @@ RSpec.feature "searches", type: :feature,  js:true do
         click_button 'Create Meeting'
         visit "/"
         fill_in 'landing-input', with: 'J@yahoo.com'
-        click_on 'search'
+        find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("Main")
       end
 
@@ -21,7 +21,7 @@ RSpec.feature "searches", type: :feature,  js:true do
         click_button 'Create Meeting'
         click_on 'Log Out'
         fill_in 'landing-input', with: 'Main'
-        click_on 'search'
+        find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("100 Main St. San Diego 92103")
       end
     end
@@ -31,7 +31,7 @@ RSpec.feature "searches", type: :feature,  js:true do
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
-      attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
+      attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')      
       click_button 'Sign Up'
     end
 

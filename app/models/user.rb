@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
+  has_many :searches
 
   has_many :posts
 

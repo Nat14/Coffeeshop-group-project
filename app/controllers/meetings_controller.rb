@@ -50,7 +50,7 @@ class MeetingsController < ApplicationController
   def create
     # create new meeting
     @meeting = current_user.meetings.new(meeting_params)
-    # new meeting status as unconfirmed 
+    # new meeting status as unconfirmed
     @meeting.confirm = false
     # add date and time from params to ruby datetime format
     @meeting.time = (meeting_params[:meetingdate] + " " + @meeting.time.hour.to_s + ":" +@meeting.time.min.to_s + ":00").to_datetime
@@ -79,13 +79,23 @@ class MeetingsController < ApplicationController
     end
   end
 
+# this method assumes that the search of teh meetings table does not overlap with the email search. If the meetings search is empty, we search for the email address
   def search
     @meetings = Meeting.basic_search(params[:q])
+
+    if user_signed_in?
+      @search = Search.new
+      @search.user_id = current_user.id
+      @search.keyword = params[:q]
+      @search.save
+    end
+
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
        marker.lat meetings.latitude
        marker.lng meetings.longitude
        marker.infowindow meetings.address
     end
+
     if !@meetings.empty?
       # found word search in meeting table
       render "search"

@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_search_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Search
+  <% end %>
+  <h1>Listing searches</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>User</th>
+            <th>User search</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @searches) do |search| %>
+            <td><%= search.user %></td>
+            <td><%= search.keyword %></td>
+            <td><%= link_to 'Show', search %></td>
+        <td><%= link_to 'Edit', edit_search_path(search) %></td>
+        <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
