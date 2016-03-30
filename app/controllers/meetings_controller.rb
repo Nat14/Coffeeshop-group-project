@@ -86,8 +86,10 @@ class MeetingsController < ApplicationController
     if user_signed_in?
       @search = Search.new
       @search.user_id = current_user.id
-      @search.keyword = params[:q]
-      @search.save
+      if Search.where(user_id: current_user.id).find_by_keyword(params[:q]).nil?
+        @search.keyword = params[:q]
+        @search.save
+      end
     end
 
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|

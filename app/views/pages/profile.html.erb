@@ -1,6 +1,6 @@
 <form action="/search" method="get">
   <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
-  <input id: 'q' type="submit" name="commit" value="search"/>
+  <input id: 'q' type="submit" value="search"/>
 </form>
 
 <div id="boo">
@@ -52,7 +52,7 @@
     <ul>
       <% if !@keywords.empty? %>
         <% @keywords.each do |word| %>
-           <li> <%=word.keyword%> </li>
+           <li> <%= link_to word.keyword, 'search', (q: word.keyword) %> </li>
         <% end %>
       <% end %>
     </ul>
