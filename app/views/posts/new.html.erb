@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= link_to meetings_path, class: 'btn btn-default' do %>
+  <%= link_to meeting_path(@post.meeting), class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
@@ -7,7 +7,7 @@
   <% if Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil? %>
     <h1>Join this meeting</h1>
   <% else %>
-    <h1>Unjoin this meeting</h1>  
+    <h1>Unjoin this meeting</h1>
   <% end %>
 
 </div>
