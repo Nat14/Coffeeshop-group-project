@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/controllers/meetings_controller_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/controllers/meetings_controller_spec.rb": [
         1,
         null,
         null,
@@ -162,7 +162,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/rails_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -266,14 +266,14 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/environment.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/application.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/application.rb": [
         1,
         null,
         1,
@@ -310,12 +310,12 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/boot.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/environments/test.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/environments/test.rb": [
         1,
         null,
         null,
@@ -359,7 +359,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/assets.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -372,7 +372,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/backtrace_silencers.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -381,12 +381,12 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/cookies_serializer.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/devise.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -656,13 +656,13 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/filter_parameter_logging.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/inflections.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -680,18 +680,18 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/mime_types.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/session_store.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/initializers/wrap_parameters.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -707,7 +707,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/factories.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/factories.rb": [
         1,
         1,
         1,
@@ -720,7 +720,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/config/routes.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/config/routes.rb": [
         1,
         null,
         null,
@@ -800,7 +800,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/models/user.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/models/user.rb": [
         1,
         null,
         null,
@@ -866,31 +866,31 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/application_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/meetings_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/meetings_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/omniauth_callbacks_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/omniauth_callbacks_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/pages_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/posts_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/posts_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/helpers/searches_helper.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/helpers/searches_helper.rb": [
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/meetings_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/meetings_controller.rb": [
         1,
         null,
         1,
@@ -971,23 +971,23 @@
         null,
         null,
         1,
-        4,
-        null,
-        4,
-        3,
-        3,
-        3,
         3,
         null,
+        3,
+        2,
+        2,
+        2,
+        2,
         null,
-        4,
+        null,
         3,
-        3,
-        3,
+        2,
+        2,
+        2,
         null,
         null,
-        4,
         3,
+        2,
         null,
         1,
         1,
@@ -1041,7 +1041,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/application_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -1058,14 +1058,14 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/controllers/omniauth_callbacks_controller_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/controllers/omniauth_callbacks_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/omniauth_callbacks_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/omniauth_callbacks_controller.rb": [
         1,
         1,
         0,
@@ -1080,14 +1080,14 @@
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/controllers/pages_controller_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/controllers/pages_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/pages_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/pages_controller.rb": [
         1,
         null,
         null,
@@ -1098,183 +1098,22 @@
         null,
         1,
         null,
-        5,
-        5,
+        4,
+        4,
         null,
         null,
         null,
-        5,
+        4,
         null,
-        5,
+        4,
         null,
-        5,
-        3,
-        3,
+        4,
+        2,
+        2,
         null,
-        3,
-        3,
+        2,
+        2,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/controllers/posts_controller_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -1282,7 +1121,168 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/posts_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/controllers/posts_controller_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/posts_controller.rb": [
         1,
         1,
         null,
@@ -1373,7 +1373,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/controllers/searches_controller_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/controllers/searches_controller_spec.rb": [
         1,
         null,
         null,
@@ -1534,7 +1534,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/controllers/searches_controller.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/controllers/searches_controller.rb": [
         1,
         1,
         null,
@@ -1610,7 +1610,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/facebooks_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/facebooks_spec.rb": [
         1,
         null,
         1,
@@ -1634,7 +1634,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/log_ins_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/log_ins_spec.rb": [
         1,
         null,
         1,
@@ -1746,7 +1746,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/meeting_places_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/meeting_places_spec.rb": [
         1,
         null,
         1,
@@ -1942,7 +1942,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/profile_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/profile_spec.rb": [
         1,
         null,
         1,
@@ -1953,7 +1953,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null,
         null,
@@ -1981,7 +1981,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/searches_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/searches_spec.rb": [
         1,
         null,
         1,
@@ -2028,7 +2028,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/features/user_searches_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/features/user_searches_spec.rb": [
         1,
         null,
         1,
@@ -2053,10 +2053,10 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -2092,7 +2092,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/helpers/meetings_helper_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/helpers/meetings_helper_spec.rb": [
         1,
         null,
         null,
@@ -2109,7 +2109,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/helpers/omniauth_callbacks_helper_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/helpers/omniauth_callbacks_helper_spec.rb": [
         1,
         null,
         null,
@@ -2126,7 +2126,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/helpers/pages_helper_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/helpers/pages_helper_spec.rb": [
         1,
         null,
         null,
@@ -2143,7 +2143,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/helpers/posts_helper_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/helpers/posts_helper_spec.rb": [
         1,
         null,
         null,
@@ -2160,7 +2160,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/helpers/searches_helper_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/helpers/searches_helper_spec.rb": [
         1,
         null,
         null,
@@ -2177,14 +2177,14 @@
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/models/meeting_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/models/meeting_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/models/meeting.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/models/meeting.rb": [
         1,
         1,
         1,
@@ -2197,20 +2197,20 @@
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/models/post_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/models/post_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/models/post.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/models/post.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/models/search_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/models/search_spec.rb": [
         1,
         null,
         null,
@@ -2235,52 +2235,40 @@
         null,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/models/search.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/models/usermeeting_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/app/models/usermeeting.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/requests/meetings_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/requests/posts_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/models/search.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/models/usermeeting_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/app/models/usermeeting.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/requests/meetings_spec.rb": [
         1,
         null,
         1,
@@ -2292,7 +2280,19 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/requests/searches_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/requests/posts_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/requests/searches_spec.rb": [
         1,
         null,
         1,
@@ -2304,48 +2304,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/routing/meetings_routing_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/routing/posts_routing_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/routing/meetings_routing_spec.rb": [
         1,
         null,
         1,
@@ -2386,7 +2345,48 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/routing/searches_routing_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/routing/posts_routing_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/routing/searches_routing_spec.rb": [
         1,
         null,
         1,
@@ -2427,7 +2427,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/meetings/edit.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/meetings/edit.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2456,7 +2456,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/meetings/index.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/meetings/index.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2486,7 +2486,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/meetings/new.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/meetings/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2515,7 +2515,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/meetings/show.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/meetings/show.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2537,7 +2537,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/posts/edit.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/posts/edit.html.erb_spec.rb": [
         1,
         null,
         null,
@@ -2560,95 +2560,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/posts/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/posts/new.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/posts/show.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/searches/edit.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/searches/index.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/posts/index.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2672,7 +2584,7 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/searches/new.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/posts/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2695,7 +2607,95 @@
         null,
         null
       ],
-      "/Users/rebeccacolavin/Coffeeshop-group-project/spec/views/searches/show.html.erb_spec.rb": [
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/posts/show.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/searches/edit.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/searches/index.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/searches/new.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/learn/Desktop/Coffeeshop-group-project/spec/views/searches/show.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -2714,6 +2714,6 @@
         null
       ]
     },
-    "timestamp": 1459307425
+    "timestamp": 1459357018
   }
 }

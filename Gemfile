@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap-generators'
 gem 'geocoder'

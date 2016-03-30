@@ -1,4 +1,5 @@
 
+<!-- header -->
 <div id="boo">
   <div class="page-header">
     <% if user_signed_in? %>
@@ -11,7 +12,85 @@
   </div>
 </div>
 
-<div id="boo">
+<!-- tables -->
+<div class="wrapper">
+  <header>New Meetings in the Area
+      <a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a>
+    </header>
+
+    <div class="container">
+
+      <% @meetings.each do |meeting| %>
+        <% if meeting.confirm == false && Meeting.all.count != 0 %>
+          <div class="box">
+            <p><%= meeting.address %></p>
+            <p>Time: <%= meeting.time.to_s(:short) %></p>
+            <p>Subject: <%= meeting.subject %>
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+
+<div class="wrapper">
+ 	<header>Confirmed Meetings
+    	<a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a>
+    </header>
+
+    <div class="container">
+
+      <% @meetings.each do |meeting| %>
+        <% if meeting.confirm == true && Meeting.all.count != 0 %>
+          <div class="box">
+            <p><%= meeting.address %></p>
+            <p>Time: <%= meeting.time.to_s(:short) %></p>
+            <p>Subject: <%= meeting.subject %>
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+<!-- scripts were not working in JS file, so we added it here.  -->
+<script>
+  $('.show-list').click(function(){
+  	$('.wrapper').addClass('list-mode');
+  });
+
+  $('.hide-list').click(function(){
+  	$('.wrapper').removeClass('list-mode');
+  });
+</script>
+<!-- end -->
+
+<!-- this is google map -->
+<br>
+  <div style='width: 100%;'>
+    <div id="map" style='width: 100%; height: 400px;'></div>
+  </div>
+
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(5);
+   });
+  </script>
+</br>
+
+
+<!-- <div id="boo">
   <div class="table-responsive">
   <h2>Suggested Meetings</h2>
   <table class="table table-striped table-hover">
@@ -87,21 +166,4 @@
         </tbody>
     </table>
   </div>
-</div>
-
-<br>
-<div style='width: 100%;'>
-  <div id="map" style='width: 100%; height: 400px;'></div>
-</div>
-
-<script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(<%=raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(5);
-});
-</script>
-
-</br>
+</div> -->

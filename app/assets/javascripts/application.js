@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= clock
+//= gridformat
 //= require turbolinks
 //= require bootstrap
 //= require underscore
