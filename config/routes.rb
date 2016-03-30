@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts, except: [:new, :create]
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
     resources :posts, only: [:new, :create, :update]
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'pages/profile'
+
+  get 'registrations/new'
 
 
   get 'users/show'
