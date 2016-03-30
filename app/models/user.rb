@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment :avatar, presence: true
-
+  validates :email, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
