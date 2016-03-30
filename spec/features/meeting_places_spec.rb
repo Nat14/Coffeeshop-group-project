@@ -153,6 +153,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def register_and_login
     visit "/users/sign_up"
+    fill_in 'Username', with: 'User'
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
@@ -162,6 +163,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def new_register_and_login
     visit "/users/sign_up"
+    fill_in 'Username', with: 'User1'
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
@@ -171,6 +173,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def new2_register_and_login
     visit "/users/sign_up"
+    fill_in 'Username', with: 'User2'
     fill_in 'Email', with: 'c@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
