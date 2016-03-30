@@ -38,9 +38,17 @@ class PostsController < ApplicationController
           @usermeetings.meeting_id = params[:meeting_id]
           @usermeetings.owner = false
           @usermeetings.save
+          # mark this meeting to be comfirmed
+          Meeting.find(params[:meeting_id]).update(confirm: true)
           format.html { redirect_to @post, notice: 'See you there.' }
         else
+          # user unjoin meeting, remove record from usermeeting table
           Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).destroy
+          # if only 1 record left for this meeting id in usermeeting, mark meeting as unconfirmed
+          if Usermeeting.where(meeting_id: params[:meeting_id]).count == 1
+            # TODO: this record does not change confirm back to false
+            Meeting.find(params[:meeting_id]).update(confirm: false)
+          end
           format.html { redirect_to @post, notice: 'See you next time.' }
         end
         Meeting.find(params[:meeting_id]).update(confirm: true)
