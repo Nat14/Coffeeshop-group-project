@@ -12,6 +12,8 @@ RSpec.feature "user_searches", type: :feature, js:true do
       find('#landing-input').native.send_keys(:return)
       visit "/"
       click_on "b@yahoo.com"
+
+      # will see error again after keyword search is updated 
       expect(page).to have_content("Ruby")
     end
 
