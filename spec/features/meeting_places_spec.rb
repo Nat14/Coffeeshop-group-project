@@ -32,7 +32,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
-      click_on 'Back'
+      click_on 'Meeting List'
       click_on 'Show'
       expect(page).to have_content '100 Main St. San Diego 90000'
     end
@@ -51,7 +51,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
-      click_on 'Back'
+      click_on 'Meeting List'
       click_on 'Destroy'
       expect(page).to have_content 'Meeting was successfully destroyed.'
     end
@@ -114,7 +114,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
-      click_on 'Back'
+      click_on 'Meeting List'
       click_on 'Show'
       expect(page).to have_no_content 'Joined'
       expect(page).to have_content 'Edit'
@@ -156,7 +156,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')    
+    attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
     click_button 'Sign Up'
   end
 

@@ -1,4 +1,7 @@
 class Meeting < ActiveRecord::Base
+  validates :address, presence: true
+  validates :subject, presence: true
+
   geocoded_by :address
   after_validation :geocode
 

@@ -40,7 +40,7 @@
       <% if @meeting.new_record? %>
         <%= f.text_field :meetingdate, id: "datepicker",class: "form-control" %>
       <% else %>
-        <%= f.text_field :meetingdate, id: "datepicker", value: @meeting.time.strftime("%m-%d-%Y"),class: "form-control" %>
+        <%= f.text_field :meetingdate, id: "datepicker", value: @meeting.time.strftime("%b-%d-%Y"),class: "form-control" %>
       <% end %>
     </div>
   </div>
