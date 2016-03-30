@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "user_searches", type: :feature, js:true do
-
-
-
   describe "A logged in user has saved searches" do
     it "can do a search on the main page and the search keyword is saved" do
       register_and_login1
@@ -37,7 +34,7 @@ RSpec.feature "user_searches", type: :feature, js:true do
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
+    attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
     click_button 'Sign Up'
   end
 
@@ -46,7 +43,8 @@ RSpec.feature "user_searches", type: :feature, js:true do
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
-    attach_file('user_avatar', '/Users/learn/Desktop/Coffeeshop-group-project/spec/Images/coffeecup.jpeg')
+    attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
+
     click_button 'Sign Up'
   end
 
