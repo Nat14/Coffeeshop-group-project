@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts, except: [:new, :create]
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
     resources :posts, only: [:new, :create, :update]
@@ -15,10 +15,11 @@ Rails.application.routes.draw do
 
   get 'pages/profile'
 
+  get 'registrations/new'
 
   get 'users/show'
 
-  get 'search' => 'meetings#search'
+  get 'search', to: 'meetings#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
