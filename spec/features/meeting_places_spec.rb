@@ -56,7 +56,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       expect(page).to have_content 'Meeting was successfully destroyed.'
     end
 
-    it "can join a suggested meeting" do
+    it "can join a suggested meeting and put in a post message for join" do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
@@ -66,8 +66,31 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'meeting_list_btn'
       click_on 'Show'
       click_on 'Join'
+      fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
-      expect(page).to have_content 'B'
+      expect(page).to have_content 'I will be there too and bring pizza.'
+      click_on 'Back'
+      expect(page).to have_content 'Ruby on Rails'
+    end
+
+    it "can join a suggested meeting and edit a post message for join" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      click_on 'Log Out'
+      click_on 'Log In'
+      new_register_and_login
+      click_on 'meeting_list_btn'
+      click_on 'Show'
+      click_on 'Join'
+      fill_in 'Description', with: 'I will be there too and bring pizza.'
+      click_on 'Join'
+      click_on 'Edit'
+      fill_in 'Description', with: 'I will be there too but will not bring pizza.'
+      click_on 'Edit Reply'
+      expect(page).to have_content 'I will be there too but will not bring pizza.'
+      click_on 'Back'
+      expect(page).to have_content 'Ruby on Rails'
     end
 
     it "user can see all atendees and number of attendees" do
@@ -185,7 +208,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
     visit 'meetings/new'
     fill_in 'Address', with: '100 Main St. San Diego 90000'
     fill_in 'Subject', with: 'Ruby on Rails'
-
+    fill_in 'meeting_description', with: 'I will bring donuts'
   end
 
   def login

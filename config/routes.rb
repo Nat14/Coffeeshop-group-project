@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
-  get 'search' => 'meetings#search'
+  get 'search', to: 'meetings#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

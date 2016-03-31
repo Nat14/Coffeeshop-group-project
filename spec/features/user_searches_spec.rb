@@ -29,6 +29,20 @@ RSpec.feature "user_searches", type: :feature, js:true do
       click_on "B"
       expect(page).to have_content("Ruby")
     end
+
+    it "can do a search on the main page and able to click saved keyword to go to search page" do
+      register_and_login1
+      new_meeting
+      click_on "Log Out"
+      register_and_login2
+      visit "/"
+      fill_in 'landing-input', with: 'Ruby'
+      find('#landing-input').native.send_keys(:return)
+      visit "/"
+      click_on "b@yahoo.com"
+      click_on "Ruby"
+      expect(page).to have_content("Ruby")
+    end
   end
 
   def register_and_login1
