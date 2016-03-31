@@ -1,6 +1,6 @@
 <form action="/search" method="get">
   <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
-  <input id: 'q' type="submit" name="commit" value="search"/>
+  <input id: 'q' type="submit" value="search"/>
 </form>
 
 <div id="boo">
@@ -52,7 +52,9 @@
     <ul>
       <% if !@keywords.empty? %>
         <% @keywords.each do |word| %>
-           <li> <%=word.keyword%> </li>
+        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
+          <% search_link = '/search?q=' + word.keyword %>
+           <li> <%= link_to word.keyword, search_link %> </li>
         <% end %>
       <% end %>
     </ul>

@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20160330184952) do
     t.string   "address"
     t.datetime "time"
     t.text     "subject"
-    t.boolean  "confirm",                             default: false
+    t.boolean  "confirm"
     t.integer  "useridtext"
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "user_id"
     t.decimal  "latitude",   precision: 10, scale: 6
     t.decimal  "longitude",  precision: 10, scale: 6

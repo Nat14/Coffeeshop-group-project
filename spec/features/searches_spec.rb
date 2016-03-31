@@ -24,6 +24,7 @@ RSpec.feature "searches", type: :feature,  js:true do
         find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("100 Main St. San Diego 92103")
       end
+
     end
 
     def new_register_and_login
