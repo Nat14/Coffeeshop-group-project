@@ -22,6 +22,7 @@ RSpec.feature "Profile", type: :feature do
 
   def register_and_login
     visit "/users/sign_up"
+    fill_in 'Username', with: 'J'
     fill_in 'Email', with: 'A@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'

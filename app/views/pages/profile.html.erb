@@ -142,7 +142,18 @@
         <% end %>
       <% end %>
     </div>
-</div>
+		<div id="boo">
+		  <div class="table-responsive">
+		    <h2>Saved Searches</h2>
+		    <ul>
+		      <% if !@keywords.empty? %>
+		        <% @keywords.each do |word| %>
+		           <li> <%=word.keyword%> </li>
+		        <% end %>
+		      <% end %>
+		    </ul>
+		  </div>
+		</div>
 
 <!-- scripts were not working in JS file, so we added it here.  -->
 <script>
