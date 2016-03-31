@@ -25,7 +25,7 @@ RSpec.feature "LogIns", type: :feature do
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
       click_button 'Sign Up'
-      expect(page).to have_content("j@yahoo.com")
+      expect(page).to have_content("J")
     end
 
     it "requires a username" do
