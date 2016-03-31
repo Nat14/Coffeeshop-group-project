@@ -45,6 +45,7 @@ class PostsController < ApplicationController
           # user unjoin meeting, remove record from usermeeting table
           Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).destroy
           # if only 1 record left for this meeting id in usermeeting, mark meeting as unconfirmed
+
           if Usermeeting.where(meeting_id: params[:meeting_id]).count == 1
             # TODO: this record does not change confirm back to false
             Meeting.find(params[:meeting_id]).update(confirm: false)
