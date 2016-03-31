@@ -11,7 +11,7 @@ RSpec.feature "user_searches", type: :feature, js:true do
       fill_in 'landing-input', with: 'Ruby'
       find('#landing-input').native.send_keys(:return)
       visit "/"
-      click_on "b@yahoo.com"
+      click_on "B"
 
       # will see error again after keyword search is updated
       expect(page).to have_content("Ruby")
@@ -22,11 +22,11 @@ RSpec.feature "user_searches", type: :feature, js:true do
       new_meeting
       click_on "Log Out"
       register_and_login2
-      click_on "b@yahoo.com"
+      click_on "B"
       fill_in 'profile_search', with: 'Ruby'
       find('#profile_search').native.send_keys(:return)
       visit "/"
-      click_on "b@yahoo.com"
+      click_on "B"
       expect(page).to have_content("Ruby")
     end
 
@@ -47,7 +47,7 @@ RSpec.feature "user_searches", type: :feature, js:true do
 
   def register_and_login1
     visit "/users/sign_up"
-    fill_in 'Username', with: 'User3'
+    fill_in 'Username', with: 'A'
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
@@ -57,7 +57,7 @@ RSpec.feature "user_searches", type: :feature, js:true do
 
   def register_and_login2
     visit "/users/sign_up"
-    fill_in 'Username', with: 'User4'
+    fill_in 'Username', with: 'B'
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
