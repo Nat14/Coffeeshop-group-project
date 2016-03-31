@@ -24,6 +24,18 @@ RSpec.feature "searches", type: :feature,  js:true do
         find('#landing-input').native.send_keys(:return)
         expect(page).to have_content("100 Main St. San Diego 92103")
       end
+
+      it "can visit profile page and have save search keyword" do
+        new_register_and_login
+        new_meeting
+        click_button 'Create Meeting'
+        visit "/"
+        fill_in 'landing-input', with: 'Ruby'
+        find('#landing-input').native.send_keys(:return)
+        click_on 'J@yahoo.com'
+        expect(page).to have_content("Ruby")
+      end
+
     end
 
     def new_register_and_login
@@ -31,7 +43,7 @@ RSpec.feature "searches", type: :feature,  js:true do
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
-      attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')      
+      attach_file('user_avatar', Rails.root + 'spec/Images/coffeecup.jpeg')
       click_button 'Sign Up'
     end
 
