@@ -40,6 +40,7 @@ RSpec.feature "searches", type: :feature,  js:true do
 
     def new_register_and_login
       visit "/users/sign_up"
+      fill_in 'Username', with: 'J'
       fill_in 'Email', with: 'J@yahoo.com'
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
