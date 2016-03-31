@@ -9,11 +9,16 @@ class PagesController < ApplicationController
   def profile
 
     @meetings = Meeting.all
-    @usermeetings = Usermeeting.where(user_id: current_user.id)
-    @user = (params[:email])
+    # @usermeetings = Usermeeting.where(user_id: current_user.id)
+    @usermeetings = Usermeeting.where(user_id: User.find_by_username(params[:username]).id)
+    @user = (params[:username])
     # @searches.user_id = current_user.id
     #this gives a list of saved words for current user
-    @keywords = current_user.searches
+    if user_signed_in?
+      @keywords = current_user.searches
+    else
+      redirect_to "/users/sign_in"
+    end
     ## create a list of meetings with those keywords
   end
 

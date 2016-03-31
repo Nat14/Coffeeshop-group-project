@@ -105,7 +105,7 @@ class MeetingsController < ApplicationController
       # found word search in user table
       if !@user.empty?
         @meetings = @user.first.meetings
-        redirect_to pages_profile_path(email: @user.first.email)
+        redirect_to pages_profile_path(username: @user.first.username)
       else
         redirect_to meetings_path
       end
