@@ -1,0 +1,396 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+
+
+#statusbarsection {
+	/*padding: 0em 4em;*/
+
+	text-align: center;
+}
+
+
+
+.statusbar{
+    /*margin: auto;*/
+    /*width:80%;
+    min-width: 595px;*/
+}
+
+.simform {
+	position: relative;
+	margin: 0 auto;
+	padding: 2em 0;
+	max-width: 570px;
+	width: 100%;
+
+}
+
+.simform .continue {
+	display: none;
+}
+
+
+
+/* Question list style */
+.simform ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	-webkit-transition: height 0.4s;
+	transition: height 0.4s;
+    width: 100%;
+    height: 150px;
+}
+
+
+.questions li {
+	z-index: 100;
+	height: auto;
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+}
+
+
+.questions li:not(:first-child) {
+    opacity: 0;
+    margin-top: 150px;
+}
+
+/* Labels */
+.questions li > span {
+	display: block;
+	overflow: hidden;
+}
+
+.questions li > span label {
+	display: block;
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+.questions li.current > span label,
+  .questions li > span label {
+	-webkit-transition: none;
+	transition: none;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.questions input#q5{
+    	display: inline-block;
+        width: calc(100% - 6.3em);
+}
+
+.questions #viewpswd{
+    position: absolute;
+    opacity: 0;
+}
+.questions #show{
+    float: right;
+    margin: -2em 2.8em;
+    color: rgba(255,255, 255, .4);
+}
+
+.questions #show:active, .questions #show:focus{
+    color: rgba(255,255, 255, .8);
+}
+
+.questions select.country{
+    display: inline-block;
+    margin: 0.3em 0 0 0;
+    width: 6em;
+    border: 1px solid #fff;
+    background: transparent;
+    color: rgba(0,0,0,0.8);
+    height: 60px;
+    line-height: 1;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.questions .media-option{
+   	display: block;
+	margin: 0.3em 0 0 0;
+	width: calc(100% - 2em);
+/*	border: 1px solid #fff;*/
+	background: transparent;
+	line-height: 1;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+/*    text-align: center; */
+}
+
+.questions .mediabox{
+    border: 1px solid #fff;
+    border-radius: 4px;
+    display: inline-block;
+
+    height: calc(32% - 4px);
+    padding: 1em;
+    margin: 3px;
+    text-align: center;
+}
+
+.questions .mediabox input[type='radio']{
+    display: none;
+}
+
+
+.show-next .questions li.current > span label {
+	-webkit-animation: moveUpFromDown 0.4s both;
+	animation: moveUpFromDown 0.4s both;
+}
+
+@-webkit-keyframes moveUpFromDown {
+	from { -webkit-transform: translateY(100%); }
+	to { -webkit-transform: translateY(0); }
+}
+
+@keyframes moveUpFromDown {
+	from { -webkit-transform: translateY(100%); transform: translateY(100%); }
+	to { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+/* Input field */
+.questions input {
+	display: block;
+	margin: 0.3em 0 0 0;
+	padding: 1em 1em 1em 0.7em;
+	width: 100%;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	color: rgba(255,255,255,0.8);
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.questions .current input,
+  .questions input {
+	opacity: 1;
+}
+
+.questions input:focus,
+.simform button:focus {
+	outline: none;
+}
+
+/* Next question button */
+.next {
+	position: absolute;
+	right: 0;
+/*	bottom: 2.15em;  padding-bottom of form plus progress-step bar height */
+	display: block;
+	padding: 0;
+	width: 2em;
+	height: 2em;
+	border: none;
+	background: none;
+	color: rgba(255,255,255,0.7);
+	text-align: center;
+/*	opacity: 0;*/
+	z-index: 100;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateX(-20%);
+	transform: translateX(-20%);
+	pointer-events: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.next:hover {
+	color: rgba(0,0,0,0.5);
+}
+/* progress-step bar */
+.statusbar .progess {
+    width: 100%;
+}
+.statusbar .progress-step {
+    overflow: hidden;
+	width: 0px;
+    display: inline-block;
+	height: 1.25em;
+    background: rgba(0,0,0,0.3);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+    text-align: center;
+    font-size: 2em;
+}
+
+/*
+.simform .progress-step::before {
+	position: absolute;
+	top: auto;
+	width: 90%;
+	height: inherit;
+	background: rgba(0,0,0,0.05);
+	content: '';
+}
+*/
+
+/* Number indicator */
+.simform .number {
+	position: absolute;
+	right: 0;
+	overflow: hidden;
+	margin: 0.4em 0;
+	width: 3em;
+	font-weight: 700;
+}
+
+.simform .number:after {
+	position: absolute;
+	left: 50%;
+	content: '/';
+	opacity: 0.4;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.simform .number span {
+	float: right;
+	width: 40%;
+	text-align: center;
+}
+
+.simform .number .number-current {
+	float: left;
+}
+
+.simform .number-next {
+	position: absolute;
+	left: 0;
+}
+
+.simform.show-next .number-current {
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+.simform.show-next .number-next {
+	-webkit-animation: moveUpFromDown 0.4s both;
+	animation: moveUpFromDown 0.4s both;
+}
+
+/* Error and final message */
+.simform .error-message{
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+
+.simform .error-message {
+    padding: 0.5em 1em 0.5em 0.7em;
+	width: 100%;
+	color: rgba(0,0,0,0.7);
+	font-style: italic;
+    margin-top: 50px;
+}
+
+.login{
+    opacity: 0;width: 75%;
+padding: 1.5em;
+text-align: center;
+position: absolute;
+z-index: 1000;
+font-size: 2em;
+}
+
+
+.login button{
+	display: block;
+	padding: 10px 20px;
+	border: none;
+	background: #1F8E60;
+	color: rgba(0,0,0,0.4);
+    width:150px;
+    margin: 1em auto;
+}
+
+
+.final-message {
+	top: 50%;
+	left: 0;
+	padding: 0.5em;
+	width: 100%;
+	text-align: center;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+.final-message.show {
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.simform {
+	font-size: 2em;
+}
+
+.simform .continue button {
+	display: inline-block;
+    width: 150px;
+    height: 40px;
+    opacity: 1;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	color: rgba(0,0,0,0.4);
+    margin:0 2em 0 0
+}
+
+.simform .continue {
+	display: block;
+    text-align: center;
+}
+
+.simform .controls {
+    position: absolute;
+    margin-top: -100px;
+    width: 100%;
+
+}
+
+/* Remove IE clear cross */
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+
+
+/* Adjust form for smaller screens */
+@media screen and (max-width: 44.75em) {
+	.simform {
+		font-size: 1.8em;
+	}
+
+}
+
+@media screen and (max-width: 33.5625em) {
+	.simform {
+		font-size: 1.2em;
+	}
+     .questions .mediabox{
+        width: calc(90% - 4px);
+    }
+}
+
+
+@media screen and (max-width: 44.75em) {
+	section { padding: 1em 2em; }
+}
