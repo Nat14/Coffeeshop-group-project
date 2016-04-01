@@ -1,12 +1,14 @@
 
 <div id="boo">
   <div class="page-header">
+    <!-- only signed in user can create meetings -->
     <% if user_signed_in? %>
       <%= link_to new_meeting_path, class: 'btn btn-primary' do %>
         <span class="glyphicon glyphicon-plus"></span>
         New Meeting
         <% end %>
     <% end %>
+    <!-- internet users can browse meetings by timerange -->
     <%= link_to meetings_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon"></span>
       All

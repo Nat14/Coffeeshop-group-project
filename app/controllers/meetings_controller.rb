@@ -4,7 +4,6 @@ class MeetingsController < ApplicationController
 
   # before_action :authenticate_user!
 
-
   # GET /meetings
   # GET /meetings.json
 
@@ -111,7 +110,8 @@ class MeetingsController < ApplicationController
 
     if !@meetings.empty?
       # found word search in meeting table
-      render "search"
+      render "index"
+
     else
       # if not found in meeting table search user table
       @user = User.basic_search(params[:q])

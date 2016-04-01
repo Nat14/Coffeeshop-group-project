@@ -24,7 +24,7 @@
               </tr>
             </thead>
 
-            
+
 
             <tbody>
               <%= content_tag_for(:tr, @meetings) do |meeting| %>
@@ -34,7 +34,7 @@
                     <td><%= meeting.time.to_s(:short) %></td>
                     <td> <%= meeting.usermeetings.count %> </td>
                     <td><%= link_to 'Show', meeting %></td>
-                    <% if user_signed_in? && meeting.usermeetings.first.owner == true %>
+                    <% if user_signed_in? && meeting.usermeetings.find_by_owner(true).user.username == current_user.username %>
                       <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
                       <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% end %>
