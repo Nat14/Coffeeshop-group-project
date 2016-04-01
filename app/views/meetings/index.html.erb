@@ -7,6 +7,26 @@
         New Meeting
         <% end %>
     <% end %>
+    <%= link_to meetings_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      All
+    <% end %>
+    <%= link_to meetings_path(timerange: 'this month'), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      This Month
+    <% end %>
+    <%= link_to meetings_path(timerange: 'this week'), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      This Week
+    <% end %>
+    <%= link_to meetings_path(timerange: 'tomorrow'), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      Tomorrow
+    <% end %>
+    <%= link_to meetings_path(timerange: 'today'), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      Today
+    <% end %>
     <br><h1>Meetings</h1>
   </div>
 </div>
