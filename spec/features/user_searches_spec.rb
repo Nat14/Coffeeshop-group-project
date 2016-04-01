@@ -39,7 +39,7 @@ RSpec.feature "user_searches", type: :feature, js:true do
       fill_in 'landing-input', with: 'Ruby'
       find('#landing-input').native.send_keys(:return)
       visit "/"
-      click_on "b@yahoo.com"
+      click_on "B"
       click_on "Ruby"
       expect(page).to have_content("Ruby")
     end

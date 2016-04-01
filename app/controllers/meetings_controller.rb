@@ -9,8 +9,19 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
 
   def index
-    @meetings = Meeting.all
 
+    if params[:timerange] == 'today'
+      # filter meeting records to only show for today
+      @meetings = Meeting.where("time >= ?", Time.zone.now.beginning_of_day).where("time <= ?", Time.zone.now.end_of_day)
+    elsif params[:timerange] == 'tomorrow'
+      @meetings = Meeting.where("time >= ?", Time.zone.tomorrow).where("time <= ?", Time.zone.tomorrow + 1)
+    elsif params[:timerange] == 'this week'
+      @meetings = Meeting.where("time >= ?", Time.zone.now.beginning_of_day).where("time <= ?", Time.zone.now.end_of_week)
+    elsif params[:timerange] == 'this month'
+      @meetings = Meeting.where("time >= ?", Time.zone.now.beginning_of_day).where("time <= ?", Time.zone.now.end_of_month)
+    else
+      @meetings = Meeting.where("time >= ?", Time.zone.now.beginning_of_day)
+    end
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
      marker.lat meetings.latitude
      marker.lng meetings.longitude
