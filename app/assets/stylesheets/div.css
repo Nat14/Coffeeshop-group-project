@@ -122,33 +122,3 @@ footer {
 
 a:active {text-decoration:underline;}
 ​
-/* Pulse Animation for Firefox, Opera and Internet Explorer 10 */
-@keyframes pulse {
-  from {
-    transform: scale(1.0);
-    opacity: 1.0;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1.0;
-  }
-  to {
-    transform: scale(1.0);
-    opacity: 1.0;
-  }
-}
-/* Pulse Animation for Google Chrome and Safari */
-@-webkit-keyframes pulse {
-  from {
-    -webkit-transform: scale(1.0);
-    opacity: 1.0;
-  }
-  50% {
-    -webkit-transform: scale(1.2);
-    opacity: 1.0;
-  }
-  to {
-    -webkit-transform: scale(1.0);
-    opacity: 1.0;
-  }
-}
