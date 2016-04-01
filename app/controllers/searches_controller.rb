@@ -56,7 +56,7 @@ class SearchesController < ApplicationController
   def destroy
     @search.destroy
     respond_to do |format|
-      format.html { redirect_to searches_url, notice: 'Search was successfully destroyed.' }
+      format.html { redirect_to searches_url, notice: 'Keyword was successfully deleted.' }
       format.json { head :no_content }
     end
   end

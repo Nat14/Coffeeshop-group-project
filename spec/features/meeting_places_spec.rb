@@ -69,7 +69,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
       expect(page).to have_content 'I will be there too and bring pizza.'
-      click_on 'Back'
+      click_on 'Meeting List'
       expect(page).to have_content 'Ruby on Rails'
     end
 
@@ -89,7 +89,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       fill_in 'Description', with: 'I will be there too but will not bring pizza.'
       click_on 'Edit Reply'
       expect(page).to have_content 'I will be there too but will not bring pizza.'
-      click_on 'Back'
+      click_on 'Meeting List'
       expect(page).to have_content 'Ruby on Rails'
     end
 
@@ -111,7 +111,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Show'
       click_on 'Join'
       click_on 'Join'
-      click_on 'Back'
+      click_on 'Meeting List'
       expect(page).to have_content '3'
       click_on 'Show'
       expect(page).to have_content 'B'
@@ -128,7 +128,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Show'
       click_on 'Join'
       click_on 'Join'
-      click_on 'Back'
+      click_on 'Meeting List'
       click_on 'Show'
       expect(page).to have_content 'Unjoin'
     end
@@ -154,7 +154,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Show'
       click_on 'Join'
       click_on 'Join'
-      click_on 'Back'
+      click_on 'Meeting List'
       click_on 'Show'
       click_on 'Unjoin'
       click_on 'Unjoin'

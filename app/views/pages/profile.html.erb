@@ -51,6 +51,10 @@
 <div id="boo">
   <div class="table-responsive">
     <h2>Saved Searches</h2>
+    <%= link_to searches_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon"></span>
+      Manage Keywords
+    <% end %>
     <ul>
       <% if !@keywords.empty? %>
         <% @keywords.each do |word| %>
