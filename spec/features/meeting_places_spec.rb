@@ -114,8 +114,8 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Back'
       expect(page).to have_content '3'
       click_on 'Show'
-      expect(page).to have_content 'b@yahoo.com'
-      expect(page).to have_content 'c@yahoo.com'
+      expect(page).to have_content 'B'
+      expect(page).to have_content 'C'
     end
 
     it "user cannot join meeting that user has already joined" do
@@ -176,7 +176,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def register_and_login
     visit "/users/sign_up"
-    fill_in 'Username', with: 'User'
+    fill_in 'Username', with: 'A'
     fill_in 'Email', with: 'a@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
@@ -186,7 +186,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def new_register_and_login
     visit "/users/sign_up"
-    fill_in 'Username', with: 'User1'
+    fill_in 'Username', with: 'B'
     fill_in 'Email', with: 'b@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
@@ -196,7 +196,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
 
   def new2_register_and_login
     visit "/users/sign_up"
-    fill_in 'Username', with: 'User2'
+    fill_in 'Username', with: 'C'
     fill_in 'Email', with: 'c@yahoo.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
