@@ -2,26 +2,22 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-md-3">
+		<div class="col-lg-6">
 			<div id="aboutme"><p> Hello, My name is Isaac and I love caffiene and cigarettes. Please study with me.
 			</p>
 			</div>
 		</div>
 
-		<div class="col-md-3">
+		<div class="col-lg-6">
 			<div id="profile_pic"><% if current_user %>
-					<%= image_tag(current_user.avatar(:medium), class: "foundation_or_bootstrap_class") %>
+					<%= image_tag(current_user.avatar(:large), class: "foundation_or_bootstrap_class") %>
 				<% end %>
 			</div>
 		</div>
 
-		<div class="col-md-6" id="create_meeting">
-
-		</div>
-
 	</div>
 </div>
-
+<br>
 <form action="/search" method="get">
   <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
   <input id: 'q' type="submit" value="search"/>
@@ -30,9 +26,9 @@
 
 <!-- grid layout for user meetings -->
 <div class="wrapper">
-  <header><%= current_user.email %>
-      <div class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
-        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></div>
+  <header>Welcome <%= current_user.username %>! Here are your upcoming meetings.
+      <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
     </header>
 
     <div class="container">
@@ -50,6 +46,8 @@
 							<p><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end %>
           </div>
+				<% end %>
+			<% end %>
 		</div>
 </div>
 
@@ -74,31 +72,6 @@
 
 
 
-
-<div class="wrapper">
-  <header>Saved Searches</header>
-
-    <div class="container">
-
-      <% @searches.each do |meeting| %>
-			<% if Meeting.all.count != 0 %>
-          <div class="box">
-            <p><%= meeting.address %></p>
-            <p><%= meeting.time.to_s(:short) %></p>
-            <p><%= meeting.subject %></p>
-
-            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
-						<% if user_signed_in? && current_user.email == meeting.users.first.email %>
-							<p><%= link_to 'Edit', edit_meeting_path(meeting) %></p>
-							<p><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-
-
 <!-- scripts were not working in JS file, so we added it here.  -->
 <script>
   $('.show-list').click(function(){
@@ -110,4 +83,3 @@
   });
 
 </script>
-<!-- end -->
