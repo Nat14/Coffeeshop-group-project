@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= clock
+//= require turbolinks
 //= require bootstrap
 //= require underscore
 //= require gmaps/google
