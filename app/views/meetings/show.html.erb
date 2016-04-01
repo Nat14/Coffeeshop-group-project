@@ -59,18 +59,26 @@
   </dl>
 </div>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px; color: black;'></div>
+<div style='width: 100%;'>
+  <div id="map" style='width: 100%; height: 400px; color: black;'></div>
 </div>
+
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {}, internal: {id: 'map'}},
+
+  function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(18);
-});
+    handler.getMap().setZoom(5);
+  });
+
+  navigator.geolocation.getCurrentPosition(function(position){
+    handler.addMarkers([{"lat":position.coords.latitude,"lng":position.coords.longitude,"infowindow":"Your Location"}]);
+  });
+
 </script>
 
 </br>
