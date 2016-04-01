@@ -34,7 +34,7 @@ class PostsController < ApplicationController
         # for user to join meeting, create new usermeenting record and also mark owner as false
         if Meeting.find(params[:meeting_id]).usermeetings.find_by_user_id(current_user.id).nil?
           @usermeetings = Usermeeting.new
-          @usermeetings.user_id = current_user.id
+          @usermeetings.user = current_user
           @usermeetings.meeting_id = params[:meeting_id]
           @usermeetings.owner = false
           @usermeetings.save
@@ -47,12 +47,10 @@ class PostsController < ApplicationController
           # if only 1 record left for this meeting id in usermeeting, mark meeting as unconfirmed
 
           if Usermeeting.where(meeting_id: params[:meeting_id]).count == 1
-            # TODO: this record does not change confirm back to false
             Meeting.find(params[:meeting_id]).update(confirm: false)
           end
           format.html { redirect_to @post, notice: 'See you next time.' }
         end
-        Meeting.find(params[:meeting_id]).update(confirm: true)
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
