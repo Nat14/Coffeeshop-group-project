@@ -32,17 +32,17 @@
     </header>
 
     <div class="container">
-      <% @usermeetings.each do |usermeeting| %>
+      <% @meetings.each do |meeting| %>
 			<% if Meeting.all.count != 0 && user_signed_in? %>
           <div class="box">
-            <p><%= usermeeting.meeting.address %></p>
-            <p><%= usermeeting.meeting.time.to_s(:short) %></p>
-            <p><%= usermeeting.meeting.subject %></p>
-						<p>Attendees: <%= usermeeting.meeting.usermeetings.count %></p>
-            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', usermeeting.meeting %></p>
-						<% if user_signed_in? && usermeeting.owner == true %>
-							<p><%= link_to 'Edit', edit_meeting_path(usermeeting.meeting) %></p>
-							<p><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <p><%= meeting.address %></p>
+            <p><%= meeting.time.to_s(:short) %></p>
+            <p><%= meeting.subject %></p>
+						<p>Attendees: <%= meeting.usermeetings.count %></p>
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
+						<% if user_signed_in? && meeting.usermeetings.first.owner == true %>
+							<p><%= link_to 'Edit', edit_meeting_path(meeting) %></p>
+							<p><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end %>
           </div>
 				<% end %>
