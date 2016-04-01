@@ -26,6 +26,8 @@ class MeetingsController < ApplicationController
      marker.lng meetings.longitude
      marker.infowindow meetings.address
    end
+
+
   end
 
   # GET /meetings/1
