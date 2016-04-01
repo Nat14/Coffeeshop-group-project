@@ -8,15 +8,19 @@ class PagesController < ApplicationController
 #this is the method that allows us to show user history if they are not logged in
   def profile
 
-    # @meetings = Meeting.all
-    usermeetings = Usermeeting.where(user_id: params[:email])
-    # TODO: this is for ordering meeting on profile page
+    # get only records from this username 
+    usermeetings = Usermeeting.where(user_id: User.find_by_username(params[:username]).id)
+    # TODO: this is for sort/ordering meeting on profile page
     meetings = usermeetings.map { |usermeeting| usermeeting.meeting }
     @meetings = meetings.sort_by {|meeting| meeting.time}
-    @user = (params[:email])
-    # @searches.user_id = current_user.id
+    @user = (params[:username])
+
     #this gives a list of saved words for current user
-    @keywords = current_user.searches
+    if user_signed_in?
+      @keywords = current_user.searches
+    else
+      redirect_to "/users/sign_in"
+    end
     ## create a list of meetings with those keywords
   end
 
