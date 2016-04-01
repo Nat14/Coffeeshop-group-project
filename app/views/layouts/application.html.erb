@@ -77,7 +77,7 @@
                 <li id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </li>
               <% else %>
                 <li id="logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-                <li id="profile"><%= link_to current_user.email, pages_profile_path(email: current_user.email), method: :get %></li>
+                <li id="profile"><%= link_to current_user.username, pages_profile_path(username: current_user.username), method: :get %></li>
               <% end %>
               <% if current_user %>
                 <%= image_tag(current_user.avatar(:thumb), class: "foundation_or_bootstrap_class") %>

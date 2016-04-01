@@ -16,81 +16,15 @@
 		</div>
 
 		<div class="col-md-6" id="create_meeting">
-			<!-- <div class="statusbar">
-				<section id="statusbarsection">
-					<form id="theform" class="simform">
-						<div class="simform-inner">
-							<ol class="questions">
 
-								<li>
-									<span><label for="q1">Hi, let's create a meeting!</label></span>
-									<input id="q1" name="place" type="text" placeholder="enter your study location" autofocus/>
-								</li>
+		</div>
 
-								<li>
-									<span><label for="q2">and what are you going to study?</label></span>
-									<input id="q2" name="subject" type="text" placeholder="enter a subject" autofocus/>
-								</li>
-
-								<li>
-									<span><label for="q3">and when will you be studying?</label></span>
-									<input id="q3" name="time" type="text" placeholder="enter a time"  autofocus/>
-								</li>
-
-								<li>
-									<span><label for="q4">any last minute reminders?</label></span>
-									<input id="q4" name="post" type="text" placeholder="I'll be here!"  autofocus/>
-								</li>
-
-								<li>
-									<span><label for="q6">All set?</label></span>
-
-									<div class="media-option">
-
-				            <div class="mediabox">
-								      <input type="radio" name="profession" value="Create" autofocus/>
-				              <span>  <% if current_user %>
-				                  <%= image_tag(current_user.avatar(:thumb), class: "foundation_or_bootstrap_class") %>
-				                <% end %></span>
-								      <p>Create meeting!</p>
-							      </div>
-				          </div>
-								</li>
-							</ol>
-
-				      <!-- <div class="continue">
-				        <button >Meeting was created!</button>
-				      </div> -->
-
-							<!-- <div class="controls">
-				        <button style="visibility:hidden;" class="next glyphicon glyphicon-arrow-right"></button>
-				        <span class="error-message">this is the test message</span>
-							</div>
-				    </div>
-
-					</form>
-				      <div class="login">
-				          	<span class="final-message">Thank you!</span>
-				               <button >Login Here</button>
-				      </div>
-				</section> -->
-
-			    <!-- <div class="progess">
-			      <div class="progress-step" step="1">1</div>
-			      <div class="progress-step" step="2">2</div>
-			      <div class="progress-step" step="3">3</div>
-			      <div class="progress-step" step="4">4</div>
-			      <div class="progress-step" step="5">5</div>
-			      <div class="progress-step" step="6">6</div>
-			    </div> -->
-			<!-- </div> -->
-		</div> -->
 	</div>
 </div>
 
 <form action="/search" method="get">
   <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
-  <input id: 'q' type="submit" name="commit" value="search"/>
+  <input id: 'q' type="submit" value="search"/>
 </form>
 
 
@@ -116,10 +50,30 @@
 							<p><%= link_to 'Destroy', usermeeting.meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end %>
           </div>
+		</div>
+</div>
+
+<!-- end of user meeting grid layout  -->
+
+
+
+<div id="boo">
+  <div class="table-responsive">
+    <h2>Saved Searches</h2>
+    <ul>
+      <% if !@keywords.empty? %>
+        <% @keywords.each do |word| %>
+        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
+          <% search_link = '/search?q=' + word.keyword %>
+           <li> <%= link_to word.keyword, search_link %> </li>
+
         <% end %>
       <% end %>
     </div>
 </div>
+
+
+
 
 <div class="wrapper">
   <header>Saved Searches</header>
@@ -142,18 +96,8 @@
         <% end %>
       <% end %>
     </div>
-		<div id="boo">
-		  <div class="table-responsive">
-		    <h2>Saved Searches</h2>
-		    <ul>
-		      <% if !@keywords.empty? %>
-		        <% @keywords.each do |word| %>
-		           <li> <%=word.keyword%> </li>
-		        <% end %>
-		      <% end %>
-		    </ul>
-		  </div>
-		</div>
+
+
 
 <!-- scripts were not working in JS file, so we added it here.  -->
 <script>

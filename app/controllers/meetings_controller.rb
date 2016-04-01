@@ -86,8 +86,10 @@ class MeetingsController < ApplicationController
     if user_signed_in?
       @search = Search.new
       @search.user_id = current_user.id
-      @search.keyword = params[:q]
-      @search.save
+      if Search.where(user_id: current_user.id).find_by_keyword(params[:q]).nil?
+        @search.keyword = params[:q]
+        @search.save
+      end
     end
 
     @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|
@@ -105,7 +107,7 @@ class MeetingsController < ApplicationController
       # found word search in user table
       if !@user.empty?
         @meetings = @user.first.meetings
-        redirect_to pages_profile_path(email: @user.first.email)
+        redirect_to pages_profile_path(username: @user.first.username)
       else
         redirect_to meetings_path
       end
