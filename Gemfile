@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'rake', '~> 11.1', '>= 11.1.1'
+
+gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 gem 'simplecov', :require => false, :group => :test
 gem 'bootstrap-generators'
 gem 'geocoder'
@@ -7,7 +10,7 @@ gem 'gmaps4rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
-
+gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -50,7 +53,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 group :test do
@@ -68,9 +70,4 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
 end

@@ -1,4 +1,5 @@
 
+<!-- header -->
 <div id="boo">
   <div class="page-header">
     <!-- only signed in user can create meetings -->
@@ -8,7 +9,9 @@
         New Meeting
         <% end %>
     <% end %>
+
     <!-- internet users can browse meetings by timerange -->
+
     <%= link_to meetings_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon"></span>
       All
@@ -29,11 +32,91 @@
       <span class="glyphicon glyphicon"></span>
       Today
     <% end %>
-    <br><h1>Meetings</h1>
+    <br><h1>☕️ Meetings</h1>
+
   </div>
 </div>
 
-<div id="boo">
+<!-- tables -->
+<div class="wrapper">
+  <header>Join a New Meeting
+      <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
+    </header>
+
+    <div class="container">
+
+      <% @meetings.each do |meeting| %>
+        <% if meeting.confirm == false && Meeting.all.count != 0 %>
+          <div class="box">
+            <p><%= meeting.address %></p>
+            <p>Time: <%= meeting.time.to_s(:short) %></p>
+            <p>Subject: <%= meeting.subject %>
+            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+
+<div class="wrapper">
+ 	<header>Meetings Going on Now</header>
+
+    <div class="container">
+
+      <% @meetings.each do |meeting| %>
+        <% if meeting.confirm == true && Meeting.all.count != 0 %>
+        <div class="box">
+        <div class="recipe">
+
+          <div class="image">
+              <img src="http://cache.soometa.com/image/257842_kiranatama.com">
+              <div class="likes">
+                <i class="fa fa fa-plus lv" data-test="pulse"></i>
+              </div>
+
+            <div class="name">
+              <h3><%= meeting.address %></h3>
+            </div>
+
+          </div>
+
+          <ul class="media">
+            <li><i class="fa fa-clock-o"></i><%= meeting.time.to_s(:short) %></li>
+     		    <li><i class="fa fa-book"></i><%= meeting.subject %></li>
+     		    <li><i class="fa fa-users"></i><%= meeting.usermeetings.count %></li>
+            <li><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></li>
+            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+
+
+
+<!-- scripts were not working in JS file, so we added it here.  -->
+<script>
+  $('.show-list').click(function(){
+  	$('.wrapper').addClass('list-mode');
+  });
+
+  $('.hide-list').click(function(){
+  	$('.wrapper').removeClass('list-mode');
+  });
+
+</script>
+<!-- end -->
+
+
+<!-- <div id="boo">
   <div class="table-responsive">
   <h2>Suggested Meetings</h2>
   <table class="table table-striped table-hover">
@@ -109,21 +192,35 @@
         </tbody>
     </table>
   </div>
-</div>
+<<<<<<< HEAD
+</div> -->
+
 
 <br>
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px; color: black;'></div>
+
+<div style='width: 100%;'>
+  <div id="map" style='width: 100%; height: 400px; color: black;'></div>
 </div>
+
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {}, internal: {id: 'map'}},
+
+  function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
     handler.getMap().setZoom(5);
-});
+  });
+
+  navigator.geolocation.getCurrentPosition(function(position){
+    new_marker = {"lat":position.coords.latitude,"lng":position.coords.longitude,"infowindow":"Your Location"}
+    handler.addMarker(new_marker, {fillColor: 'yellow'});
+  });
+
 </script>
+
+
 
 </br>
