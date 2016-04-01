@@ -34,7 +34,7 @@
               <td><%= meeting.address %></td>
               <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.username, pages_profile_path(username: meeting.usermeetings.find_by_owner(true).user.username) %></td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
@@ -75,7 +75,7 @@
               <td><%= meeting.address %></td>
               <td><%= meeting.time.to_s(:short) %></td>
               <td><%= meeting.subject %></td>
-              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.email, pages_profile_path(email: meeting.usermeetings.find_by_owner(true).user.email) %></td>
+              <td><%= link_to meeting.usermeetings.find_by_owner(true).user.username, pages_profile_path(username: meeting.usermeetings.find_by_owner(true).user.username) %></td>
               <td> <%= meeting.usermeetings.count %> </td>
               <td><%= link_to 'Show', meeting %></td>
               <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
