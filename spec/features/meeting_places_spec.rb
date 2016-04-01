@@ -169,8 +169,52 @@ RSpec.feature "MeetingPlaces", type: :feature do
       new_meeting
       click_button 'Create Meeting'
       click_on 'Log Out'
-      click_on ''
+      click_on 'meeting_list_btn'
       expect(page).to have_content '100 Main St. San Diego 90000'
+    end
+
+    it "can see meetings happening today and this week" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      click_on 'Log Out'
+      click_on 'meeting_list_btn'
+      click_on 'Today'
+      expect(page).to have_content '100 Main St. San Diego 90000'
+      click_on 'Tomorrow'
+      expect(page).not_to have_content '100 Main St. San Diego 90000'
+      click_on 'This Week'
+      expect(page).to have_content '100 Main St. San Diego 90000'
+    end
+
+    it "can see meetings happening tomorrow" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      new_meeting_tomorrow
+      click_button 'Create Meeting'
+      click_on 'Log Out'
+      click_on 'meeting_list_btn'
+      click_on 'Today'
+      expect(page).not_to have_content 'Javascript'
+      click_on 'Tomorrow'
+      expect(page).to have_content 'Javascript'
+    end
+
+    it "can see meetings happening this month" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      new_meeting_this_month
+      click_button 'Create Meeting'
+      click_on 'Log Out'
+      click_on 'meeting_list_btn'
+      click_on 'Today'
+      expect(page).not_to have_content 'HTML'
+      click_on 'This Week'
+      expect(page).not_to have_content 'HTML'
+      click_on 'This Month'
+      expect(page).to have_content 'HTML'
     end
   end
 
@@ -209,6 +253,23 @@ RSpec.feature "MeetingPlaces", type: :feature do
     fill_in 'Address', with: '100 Main St. San Diego 90000'
     fill_in 'Subject', with: 'Ruby on Rails'
     fill_in 'meeting_description', with: 'I will bring donuts'
+    fill_in 'datepicker', with: Date.today.strftime("%b-%d-%Y")
+  end
+
+  def new_meeting_tomorrow
+    visit '/meetings/new'
+    fill_in 'Address', with: '200 Main St. San Diego 90000'
+    fill_in 'Subject', with: 'Javascript'
+    fill_in 'meeting_description', with: 'I will bring roses'
+    fill_in 'datepicker', with: (Date.today + 1).strftime("%b-%d-%Y")
+  end
+
+  def new_meeting_this_month
+    visit '/meetings/new'
+    fill_in 'Address', with: '300 Main St. San Diego 90000'
+    fill_in 'Subject', with: 'HTML'
+    fill_in 'meeting_description', with: 'I will bring a cup of coffee'
+    fill_in 'datepicker', with: (Date.today + 20).strftime("%b-%d-%Y")
   end
 
   def login
