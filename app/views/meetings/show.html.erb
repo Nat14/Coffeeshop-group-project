@@ -44,6 +44,9 @@
     <dt>Created By:</dt>
     <dd><%= @meeting.usermeetings.find_by_owner(true).user.username%></dd>
 
+    <dt>Image</dt>
+    <dd><%= image_tag(@meeting.image) %></dd>
+
     <dt>Attendees:</dt>
     <% @meeting.usermeetings.each do |meeting| %>
       <dd><%= meeting.user.username %></dd>

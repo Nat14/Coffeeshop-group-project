@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331204821) do
+ActiveRecord::Schema.define(version: 20160401170454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(version: 20160331204821) do
     t.text     "subject"
     t.boolean  "confirm"
     t.integer  "useridtext"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "user_id"
-    t.decimal  "latitude",   precision: 10, scale: 6
-    t.decimal  "longitude",  precision: 10, scale: 6
+    t.decimal  "latitude",           precision: 10, scale: 6
+    t.decimal  "longitude",          precision: 10, scale: 6
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "meetings", ["user_id"], name: "index_meetings_on_user_id", using: :btree
