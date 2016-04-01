@@ -2,15 +2,16 @@
 <!-- header -->
 <div id="boo">
   <div class="page-header">
+    <!-- only signed in user can create meetings -->
     <% if user_signed_in? %>
       <%= link_to new_meeting_path, class: 'btn btn-primary' do %>
         <span class="glyphicon glyphicon-plus"></span>
         New Meeting
         <% end %>
     <% end %>
-<<<<<<< HEAD
-    <br><h1> ☕️ Meetings</h1>
-=======
+
+    <!-- internet users can browse meetings by timerange -->
+
     <%= link_to meetings_path, class: 'btn btn-primary' do %>
       <span class="glyphicon glyphicon"></span>
       All
@@ -31,8 +32,8 @@
       <span class="glyphicon glyphicon"></span>
       Today
     <% end %>
-    <br><h1>Meetings</h1>
->>>>>>> eced27a0dd8c4caf715de966f18fe5620521aeeb
+    <br><h1>☕️ Meetings</h1>
+
   </div>
 </div>
 
