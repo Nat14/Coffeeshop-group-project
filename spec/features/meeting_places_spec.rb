@@ -8,6 +8,15 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_button 'Create Meeting'
       expect(page).to have_content 'Meeting was successfully created.'
     end
+
+    it "can create a new meeting and upload an image" do
+      register_and_login
+      new_meeting
+      attach_file('meeting_image', Rails.root + 'spec/Images/coffeecup.jpeg')
+      click_button 'Create Meeting'
+      expect(page).to have_content 'Meeting was successfully created.'
+    end
+    
     it "can list current suggested meetings" do
       register_and_login
       new_meeting
