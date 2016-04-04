@@ -22,7 +22,7 @@ html {
   padding-right: 10px;
 
 
-  background:#f0f1e9;
+  background:rgba(240, 241, 233, 0.68);
   box-shadow: 0 10px 20px rgba(0,0,0,0.2), inset 0 3px 0 rgba(255,255,255,0.5), inset 0 -4px 0 rgba(0,0,0,0.1), 0 5px 5px rgba(0,0,0,.9);
   /* background: linear-gradient(top, #f0f1e9, #f0f1e9 100%);*/
 }
@@ -34,7 +34,7 @@ html {
   margin:auto;
   top:0; right:0; bottom:0; left:0;
   border-radius:50%;
-  background: -webkit-linear-gradient(top, #e9eae2, #f5f5ec 100%);
+  background: -webkit-linear-gradient(top, #e9eae2, rgba(#f5f5ec, 0.61) 100%);
   background: -moz-linear-gradient(top, #e9eae2, #f5f5ec 100%);
   background: linear-gradient(top, #e9eae2, #f5f5ec 100%);
 }
