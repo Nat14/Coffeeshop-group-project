@@ -44,7 +44,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       new_meeting
       click_button 'Create Meeting'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content '100 Main St. San Diego 90000'
     end
 
@@ -74,9 +74,8 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log Out'
       click_on 'Log In'
       new_register_and_login
-      click_on 'meeting_list_btn'
-      click_on 'Show'
-      click_on 'Join'
+      visit "/meetings"
+      find('i.fa fa fa-plus lv').click
       fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
       expect(page).to have_content 'I will be there too and bring pizza.'
@@ -92,7 +91,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
@@ -112,19 +111,19 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Log Out'
       click_on 'Log In'
       new2_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
       expect(page).to have_content '3'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content 'B'
       expect(page).to have_content 'C'
     end
@@ -136,11 +135,11 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log Out'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content 'Unjoin'
     end
 
@@ -149,7 +148,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       new_meeting
       click_button 'Create Meeting'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_no_content 'Joined'
       expect(page).to have_content 'Edit'
     end
@@ -162,11 +161,11 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       click_on 'Unjoin'
       click_on 'Unjoin'
       expect(page).to have_content 'Sorry I will not be able to attend...'

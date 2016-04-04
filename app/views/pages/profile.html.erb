@@ -40,9 +40,9 @@
             <p><%= meeting.subject %></p>
 						<p>Attendees: <%= meeting.usermeetings.count %></p>
             <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
-						<% if user_signed_in? && meeting.usermeetings.first.owner == true %>
-							<p><%= link_to 'Edit', edit_meeting_path(meeting) %></p>
-							<p><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+						<% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+							<p><i class="fa fa-pencil"></i> <%= link_to 'Edit', edit_meeting_path(meeting) %></p>
+							<p><i class="fa fa-trash"></i> <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end %>
           </div>
 				<% end %>
