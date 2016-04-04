@@ -73,7 +73,7 @@
         <div class="recipe">
 
           <div class="image">
-              <img src="http://cache.soometa.com/image/257842_kiranatama.com">
+              <%= image_tag(meeting.image(:medium)) %>
               <div class="likes">
                 <i class="fa fa fa-plus lv" data-test="pulse"></i>
               </div>
@@ -219,7 +219,7 @@
       // handler.map.centerOn(markers[temp.length-1]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(10);
+      handler.getMap().setZoom(5);
     });
   });
 </script>
