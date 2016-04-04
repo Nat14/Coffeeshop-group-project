@@ -3,8 +3,19 @@
 	<div class="row">
 
 		<div class="col-lg-6">
-			<div id="aboutme"><p> Hello, My name is Isaac and I love caffiene and cigarettes. Please study with me.
-			</p>
+			<h2>About <%= params[:username].capitalize %></h2>
+			<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
+	      <span id= "manage" class="glyphicon glyphicon"></span>
+	      Manage Profile
+	    <% end %>
+			<div id="aboutme">
+				<p> <span>About Me:</span> <%= @user.aboutme %></p>
+				<p> <span>Location:</span> <%= @user.location %></p>
+				<p> <span>Gender:</span> <%= @user.gender %></p>
+				<p> <span>Strengths:</span> <%= @user.strength %></p>
+				<p> <span>Weaknesses:</span> <%= @user.weakness %></p>
+				<p> <span>Interests:</span> <%= @user.interests %></p>
+				<p> <span>Home Page:</span> <%= @user.home_page_url %></p>
 			</div>
 		</div>
 
