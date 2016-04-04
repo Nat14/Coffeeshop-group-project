@@ -12,11 +12,18 @@
 
 
 #aboutme{
-  display: flex;
-
   margin-top: 70px;
+  text-align: left;
 
+}
 
+#aboutme span {
+  display: inline-block;
+  width: 120px;
+}
+
+.edit_user {
+  text-align: left;
 }
 
 #profile_search {
@@ -26,7 +33,7 @@
     height: 55px;
     /*margin-left: -190px;
     margin-top: -5px;*/
-  
+
     left: 50%;
     top: 50%;
     padding-left: 15px;
