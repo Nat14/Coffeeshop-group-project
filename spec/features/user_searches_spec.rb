@@ -12,8 +12,6 @@ RSpec.feature "user_searches", type: :feature, js:true do
       find('#landing-input').native.send_keys(:return)
       visit "/"
       click_on "B"
-
-      # will see error again after keyword search is updated
       expect(page).to have_content("Ruby")
     end
 
@@ -42,6 +40,22 @@ RSpec.feature "user_searches", type: :feature, js:true do
       click_on "B"
       click_on "Ruby"
       expect(page).to have_content("Ruby")
+    end
+
+    it "can delete saved keyword" do
+      register_and_login1
+      new_meeting
+      click_on "Log Out"
+      register_and_login2
+      visit "/"
+      fill_in 'landing-input', with: 'Ruby'
+      find('#landing-input').native.send_keys(:return)
+      visit "/"
+      click_on "B"
+      click_on 'Manage Keywords'
+      expect(page).to have_content("Ruby")
+      click_on 'Delete'
+      expect(page).not_to have_content("Ruby")
     end
   end
 
