@@ -45,7 +45,7 @@
     <dd><%= @meeting.usermeetings.find_by_owner(true).user.username%></dd>
 
     <dt>Image</dt>
-    <dd><%= image_tag(@meeting.image) %></dd>
+    <dd><%= image_tag(@meeting.image(:medium)) %></dd>
 
     <dt>Attendees:</dt>
     <% @meeting.usermeetings.each do |meeting| %>
@@ -75,7 +75,7 @@
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(5);
+    handler.getMap().setZoom(12);
   });
 
   navigator.geolocation.getCurrentPosition(function(position){

@@ -10,9 +10,9 @@ body {
  #landing-input {
 
      color: #333;
-     width: 360px;
+     width: 330px;
      height: 55px;
-     margin-left: -190px;
+     margin-left: -170px;
      margin-top: -5px;
      position: fixed;
      left: 50%;
@@ -36,8 +36,8 @@ body {
      color: #333;
      width: 280px;
      height: 38px;
-     margin-left: -90px;
-     margin-top: -55px;
+     margin-left: -85px;
+     margin-top: -45px;
      position: fixed;
      left: 50%;
      top: 60%;
@@ -89,4 +89,9 @@ body {
   padding-left: 15px;
   padding-right: 10px;
 
+}
+
+.alerts{
+ margin-top: 62px;
+ height: 20px;
 }
