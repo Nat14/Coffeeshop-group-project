@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   # validates_attachment :avatar, presence: true
   validates :email, uniqueness: true
-  validates :username, presence: true, uniqueness: true
+  # validates :username, presence: true, uniqueness: true
 
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
