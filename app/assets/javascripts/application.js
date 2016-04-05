@@ -15,7 +15,6 @@
 //= require jquery-ui/datepicker
 //= require meetings
 //= clock
-//= require turbolinks
 //= require bootstrap
 //= require underscore
 //= require gmaps/google
