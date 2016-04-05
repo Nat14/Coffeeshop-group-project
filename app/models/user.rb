@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   # validates_attachment :avatar, presence: true
   validates :email, uniqueness: true
-  # validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
   has_many :usermeetings
   has_many :meetings, through: :usermeetings
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
-      user.username = auth.info.username
+      user.username = auth.info.first_name
 
       user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
 
