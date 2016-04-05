@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-04T16:48:59-07:00">2016-04-04T16:48:59-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-05T10:04:43-07:00">2016-04-05T10:04:43-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">79.42%</span></span>
+    (<span class="covered_percent"><span class="red">49.61%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         3.05
+       <span class="red">
+         0.52
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>33</b> files in total.
-    <b>486</b> relevant lines. 
-    <span class="green"><b>386</b> lines covered</span> and
-    <span class="red"><b>100</b> lines missed </span>
+    <b>34</b> files in total.
+    <b>512</b> relevant lines. 
+    <span class="green"><b>254</b> lines covered</span> and
+    <span class="red"><b>258</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,27 +57,27 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>15.9</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#7d5aa9ecc5065c95d46af84c29a3974e35569c16" class="src_link" title="app/controllers/meetings_controller.rb">app/controllers/meetings_controller.rb</a></td>
-        <td class="red strong">65.12 %</td>
+        <td class="red strong">45.35 %</td>
         <td>174</td>
         <td>86</td>
-        <td>56</td>
-        <td>30</td>
-        <td>7.5</td>
+        <td>39</td>
+        <td>47</td>
+        <td>0.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#04c5fe84b6769d51e5d367455bb0066c9ada1f63" class="src_link" title="app/controllers/pages_controller.rb">app/controllers/pages_controller.rb</a></td>
-        <td class="red strong">30.0 %</td>
+        <td class="yellow strong">90.0 %</td>
         <td>28</td>
         <td>10</td>
-        <td>3</td>
-        <td>7</td>
-        <td>0.3</td>
+        <td>9</td>
+        <td>1</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>8.6</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -171,13 +171,23 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#8cd65294ccf5aa65511d00fab13a90e180738997" class="src_link" title="app/models/search.rb">app/models/search.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#0a6d088936d40068a505427fbca46ec1294d9cce" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">55.88 %</td>
         <td>66</td>
         <td>34</td>
         <td>19</td>
         <td>15</td>
-        <td>3.4</td>
+        <td>0.6</td>
       </tr>
       
       <tr>
@@ -362,22 +372,22 @@
       
       <tr>
         <td class="strong"><a href="#a89bf37a00e314fd00e1c9ddf1c2513dff0c7b49" class="src_link" title="spec/features/meeting_places_spec.rb">spec/features/meeting_places_spec.rb</a></td>
-        <td class="red strong">78.9 %</td>
-        <td>291</td>
-        <td>218</td>
-        <td>172</td>
+        <td class="red strong">19.17 %</td>
+        <td>293</td>
+        <td>240</td>
         <td>46</td>
-        <td>1.7</td>
+        <td>194</td>
+        <td>0.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#64d69d4be60dc0b8a4b32c28d98d4b4c8badf7aa" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
-        <td class="green strong">92.59 %</td>
+        <td class="green strong">96.3 %</td>
         <td>102</td>
         <td>27</td>
-        <td>25</td>
-        <td>2</td>
-        <td>3.5</td>
+        <td>26</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
     </tbody>
@@ -464,14 +474,14 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="53" data-linenumber="10">
-          <span class="hits">53</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :avatar, :address) }</code>
         </li>
       
-        <li class="covered" data-hits="53" data-linenumber="11">
-          <span class="hits">53</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :avatar, :address) }</code>
         </li>
@@ -501,11 +511,11 @@
         <div class="source_table" id="7d5aa9ecc5065c95d46af84c29a3974e35569c16">
   <div class="header">
     <h3>app/controllers/meetings_controller.rb</h3>
-    <h4><span class="red">65.12 %</span> covered</h4>
+    <h4><span class="red">45.35 %</span> covered</h4>
     <div>
       <b>86</b> relevant lines. 
-      <span class="green"><b>56</b> lines covered</span> and
-      <span class="red"><b>30</b> lines missed.</span>
+      <span class="green"><b>39</b> lines covered</span> and
+      <span class="red"><b>47</b> lines missed.</span>
     </div>
   </div>
   
@@ -578,8 +588,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="12">
-          <span class="hits">19</span>
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
           
           <code class="ruby">    if params[:timerange] == &#39;today&#39;</code>
         </li>
@@ -590,8 +600,8 @@
           <code class="ruby">      # filter meeting records to only show for today</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="14">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
           
           <code class="ruby">      @meetings = Meeting.where(&quot;time &gt;= ?&quot;, Time.zone.now.beginning_of_day).where(&quot;time &lt;= ?&quot;, Time.zone.now.end_of_day)</code>
         </li>
@@ -602,8 +612,8 @@
           <code class="ruby">    elsif params[:timerange] == &#39;tomorrow&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
           
           <code class="ruby">      @meetings = Meeting.where(&quot;time &gt;= ?&quot;, Time.zone.tomorrow).where(&quot;time &lt;= ?&quot;, Time.zone.tomorrow + 1)</code>
         </li>
@@ -614,8 +624,8 @@
           <code class="ruby">    elsif params[:timerange] == &#39;this week&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
           
           <code class="ruby">      @meetings = Meeting.where(&quot;time &gt;= ?&quot;, Time.zone.now.beginning_of_day).where(&quot;time &lt;= ?&quot;, Time.zone.now.end_of_week)</code>
         </li>
@@ -626,8 +636,8 @@
           <code class="ruby">    elsif params[:timerange] == &#39;this month&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
           
           <code class="ruby">      @meetings = Meeting.where(&quot;time &gt;= ?&quot;, Time.zone.now.beginning_of_day).where(&quot;time &lt;= ?&quot;, Time.zone.now.end_of_month)</code>
         </li>
@@ -638,8 +648,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="22">
-          <span class="hits">11</span>
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
           
           <code class="ruby">      @meetings = Meeting.where(&quot;time &gt;= ?&quot;, Time.zone.now.beginning_of_day)</code>
         </li>
@@ -650,26 +660,26 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="24">
-          <span class="hits">19</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
           
           <code class="ruby">    @hash = Gmaps4rails.build_markers(@meetings) do |meetings, marker|</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="25">
-          <span class="hits">21</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
           
           <code class="ruby">     marker.lat meetings.latitude</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="26">
-          <span class="hits">21</span>
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
           
           <code class="ruby">     marker.lng meetings.longitude</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="27">
-          <span class="hits">21</span>
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
           
           <code class="ruby">     marker.infowindow meetings.address</code>
         </li>
@@ -722,32 +732,32 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="36">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">    @meeting = Meeting.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="37">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
           <code class="ruby">    @hash = Gmaps4rails.build_markers(@meeting) do |meeting, marker|</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="38">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
           <code class="ruby">       marker.lat meeting.latitude</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="39">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
           
           <code class="ruby">       marker.lng meeting.longitude</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="40">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
           
           <code class="ruby">       marker.infowindow meeting.address</code>
         </li>
@@ -758,8 +768,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="42">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post = Post.where(meeting: @meeting.id)</code>
         </li>
@@ -794,8 +804,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="48">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
           
           <code class="ruby">    if !user_signed_in?</code>
         </li>
@@ -812,8 +822,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="51">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
           
           <code class="ruby">      @meeting = current_user.meetings.new</code>
         </li>
@@ -890,8 +900,8 @@
           <code class="ruby">    # create new meeting</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="64">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
           <code class="ruby">    @meeting = current_user.meetings.new(meeting_params)</code>
         </li>
@@ -902,8 +912,8 @@
           <code class="ruby">    # new meeting status as unconfirmed</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="66">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
           
           <code class="ruby">    @meeting.confirm = false</code>
         </li>
@@ -914,8 +924,8 @@
           <code class="ruby">    # add date and time from params to ruby datetime format</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="68">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
           
           <code class="ruby">    @meeting.time = (meeting_params[:meetingdate] + &quot; &quot; + @meeting.time.hour.to_s + &quot;:&quot; +@meeting.time.min.to_s + &quot;:00&quot;).to_datetime</code>
         </li>
@@ -926,20 +936,20 @@
           <code class="ruby">    # create new join table record</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="70">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
           <code class="ruby">    @usermeetings = Usermeeting.new</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="71">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
           
           <code class="ruby">    @usermeetings.user_id = current_user.id</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="72">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
           
           <code class="ruby">    @usermeetings.owner = true</code>
         </li>
@@ -950,20 +960,20 @@
           <code class="ruby">    # create new post</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="74">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post = Post.new</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="75">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post.description = meeting_params[:description]</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="76">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post.user_id = current_user.id</code>
         </li>
@@ -974,38 +984,38 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="78">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="79">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
           
           <code class="ruby">      if @meeting.save</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="80">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
           <code class="ruby">        @usermeetings.meeting_id = @meeting.id</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="81">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
           <code class="ruby">        @usermeetings.save</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="82">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
           
           <code class="ruby">        @post.meeting_id = @meeting.id</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="83">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
           
           <code class="ruby">        @post.save</code>
         </li>
@@ -1016,14 +1026,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="85">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="2" data-linenumber="85">
+          <span class="hits">2</span>
           
           <code class="ruby">        format.html { redirect_to @meeting, notice: &#39;Meeting was successfully created.&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="86">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
           
           <code class="ruby">        format.json { render :show, status: :created, location: @meeting }</code>
         </li>
@@ -1310,14 +1320,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="134">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="134">
+          
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="135">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="135">
+          
           
           <code class="ruby">      if @meeting.update(meeting_params)</code>
         </li>
@@ -1328,20 +1338,20 @@
           <code class="ruby">        # update date and time (convert string to datetime) from user to database</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="137">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="137">
+          
           
           <code class="ruby">        @meeting.update(time: (meeting_params[:meetingdate] + &quot; &quot; + @meeting.time.hour.to_s + &quot;:&quot; +@meeting.time.min.to_s + &quot;:00&quot;).to_datetime)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="138">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="138">
+          
           
           <code class="ruby">        format.html { redirect_to @meeting, notice: &#39;Meeting was successfully updated.&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="139">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="139">
+          
           
           <code class="ruby">        format.json { render :show, status: :ok, location: @meeting }</code>
         </li>
@@ -1478,8 +1488,8 @@
           <code class="ruby">    def set_meeting</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="162">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="162">
+          
           
           <code class="ruby">      if !user_signed_in?</code>
         </li>
@@ -1502,8 +1512,8 @@
           <code class="ruby">        # TODO: when you go to this link http://localhost:3000/meetings/edit it will show error</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="166">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="166">
+          
           
           <code class="ruby">        @meeting = Meeting.find(params[:id])</code>
         </li>
@@ -1538,8 +1548,8 @@
           <code class="ruby">    def meeting_params</code>
         </li>
       
-        <li class="covered" data-hits="53" data-linenumber="172">
-          <span class="hits">53</span>
+        <li class="covered" data-hits="3" data-linenumber="172">
+          <span class="hits">3</span>
           
           <code class="ruby">      params.require(:meeting).permit(:address, :time, :subject, :description, :meetingdate, :image)</code>
         </li>
@@ -1563,11 +1573,11 @@
         <div class="source_table" id="04c5fe84b6769d51e5d367455bb0066c9ada1f63">
   <div class="header">
     <h3>app/controllers/pages_controller.rb</h3>
-    <h4><span class="red">30.0 %</span> covered</h4>
+    <h4><span class="yellow">90.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1640,8 +1650,8 @@
           <code class="ruby">    # get only records from this username </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">    usermeetings = Usermeeting.where(user_id: User.find_by_username(params[:username]).id)</code>
         </li>
@@ -1652,20 +1662,20 @@
           <code class="ruby">    # TODO: this is for sort/ordering meeting on profile page</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
           
           <code class="ruby">    meetings = usermeetings.map { |usermeeting| usermeeting.meeting }</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
           
           <code class="ruby">    @meetings = meetings.sort_by {|meeting| meeting.time}</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
           <code class="ruby">    @user = (params[:username])</code>
         </li>
@@ -1682,14 +1692,14 @@
           <code class="ruby">    #this gives a list of saved words for current user</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
           <code class="ruby">    if user_signed_in?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">      @keywords = current_user.searches</code>
         </li>
@@ -1778,8 +1788,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="4">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
           <code class="ruby">    @user = User.new</code>
         </li>
@@ -1802,8 +1812,8 @@
           <code class="ruby">    def sign_up_params</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="8">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
           <code class="ruby">      params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar, :longitutde, :latitude, :address)</code>
         </li>
@@ -2202,6 +2212,54 @@
   </pre>
 </div>
       
+        <div class="source_table" id="8cd65294ccf5aa65511d00fab13a90e180738997">
+  <div class="header">
+    <h3>app/models/search.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Search &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :user, :presence =&gt; true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :keyword, :presence =&gt; true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="0a6d088936d40068a505427fbca46ec1294d9cce">
   <div class="header">
     <h3>app/models/user.rb</h3>
@@ -2402,8 +2460,8 @@
           <code class="ruby">  def self.new_with_session(params, session)</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="32">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
           <code class="ruby">    if session[&quot;devise.user_attributes&quot;]</code>
         </li>
@@ -2438,8 +2496,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="38">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
           <code class="ruby">      super</code>
         </li>
@@ -2468,8 +2526,8 @@
           <code class="ruby">  def password_required?</code>
         </li>
       
-        <li class="covered" data-hits="60" data-linenumber="43">
-          <span class="hits">60</span>
+        <li class="covered" data-hits="3" data-linenumber="43">
+          <span class="hits">3</span>
           
           <code class="ruby">    super &amp;&amp; provider.blank?</code>
         </li>
@@ -6069,11 +6127,11 @@
         <div class="source_table" id="a89bf37a00e314fd00e1c9ddf1c2513dff0c7b49">
   <div class="header">
     <h3>spec/features/meeting_places_spec.rb</h3>
-    <h4><span class="red">78.9 %</span> covered</h4>
+    <h4><span class="red">19.17 %</span> covered</h4>
     <div>
-      <b>218</b> relevant lines. 
-      <span class="green"><b>172</b> lines covered</span> and
-      <span class="red"><b>46</b> lines missed.</span>
+      <b>240</b> relevant lines. 
+      <span class="green"><b>46</b> lines covered</span> and
+      <span class="red"><b>194</b> lines missed.</span>
     </div>
   </div>
   
@@ -6095,7 +6153,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">RSpec.feature &quot;MeetingPlaces&quot;, type: :feature do</code>
+          <code class="ruby">RSpec.feature &quot;MeetingPlaces&quot;, type: :feature, js:true do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
@@ -6110,26 +6168,26 @@
           <code class="ruby">    it &quot;can create a new meeting&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;Meeting was successfully created.&#39;</code>
         </li>
@@ -6152,32 +6210,32 @@
           <code class="ruby">    it &quot;can create a new meeting and upload an image&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
           
           <code class="ruby">      attach_file(&#39;meeting_image&#39;, Rails.root + &#39;spec/Images/coffeecup.jpeg&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;Meeting was successfully created.&#39;</code>
         </li>
@@ -6200,26 +6258,26 @@
           <code class="ruby">    it &quot;can list current suggested meetings&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="21">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
@@ -6236,88 +6294,88 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># we need to add a show button to our confirmed meetings</code>
+          <code class="ruby">    it &quot;can list a confirmed meetings&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">    # it &quot;can list a confirmed meetings&quot; do</code>
+          <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">    #   register_and_login</code>
+          <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">    #   new_meeting</code>
+          <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby">    #   click_button &#39;Create Meeting&#39;</code>
+          <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
-          <code class="ruby">    #   click_on &#39;Log Out&#39;</code>
+          <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">    #   new_register_and_login</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
-          <code class="ruby">    #   click_on &#39;meeting_list_btn&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
-          <code class="ruby">    #   click_on &#39;Show&#39;</code>
+          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too and bring pizza.&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="37">
           
           
-          <code class="ruby">    #   click_on &#39;Join&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="38">
           
           
-          <code class="ruby">    #   click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">    #   expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
+          <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">    # end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -6332,38 +6390,38 @@
           <code class="ruby">    it &quot;can show a meeting that any user has created&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
           
           <code class="ruby">      click_on &#39;Meeting List&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
           
           <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="48">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
@@ -6386,44 +6444,44 @@
           <code class="ruby">    it &quot;can edit a meeting that the current user created&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="53">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="54">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
           
           <code class="ruby">      click_on &#39;Edit&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
           
           <code class="ruby">      fill_in &#39;Subject&#39;, with: &#39;Javascript&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
           
           <code class="ruby">      click_button &#39;Update Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;Javascript&#39;</code>
         </li>
@@ -6440,118 +6498,118 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">    # it &quot;can destroy a meeeting that the current user created&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">    #   register_and_login</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    #   new_meeting</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">    #   click_button &#39;Create Meeting&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">    #   click_on &#39;Meeting List&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby">    #   click_on &#39;Destroy&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">    #   expect(page).to have_content &#39;Meeting was successfully destroyed.&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
-          
-          
-          <code class="ruby">    # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;can join a suggested meeting and put in a post message for join&quot; do</code>
+          <code class="ruby">    it &quot;can destroy a meeeting that the current user created&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
+          
+          <code class="ruby">      click_on &#39;A&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_on &#39;Destroy&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_button &#39;OK&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
+          
+          <code class="ruby">      expect(page).to have_content &#39;Meeting was successfully destroyed.&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;can join a suggested meeting and put in a post message for join&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="72">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">      new_meeting</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
+          
+          <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="75">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
           
           <code class="ruby">      click_on &#39;Log In&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="77">
+          
           
           <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="78">
           
-          <code class="ruby">      visit &quot;/meetings&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
           
-          <code class="ruby">      find(&#39;i.fa fa fa-plus lv&#39;).click</code>
+          <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="79">
           
           
-          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too and bring pizza.&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="80">
@@ -6563,97 +6621,97 @@
         <li class="missed" data-hits="0" data-linenumber="81">
           
           
-          <code class="ruby">      expect(page).to have_content &#39;I will be there too and bring pizza.&#39;</code>
+          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too and bring pizza.&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="82">
           
           
-          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="83">
           
           
+          <code class="ruby">      expect(page).to have_content &#39;I will be there too and bring pizza.&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="84">
+          
+          
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
+          
           <code class="ruby">      expect(page).to have_content &#39;Ruby on Rails&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
           <code class="ruby">    it &quot;can join a suggested meeting and edit a post message for join&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
           
           <code class="ruby">      register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
           
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="92">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="93">
+          
           
           <code class="ruby">      click_on &#39;Log In&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="94">
+          
           
           <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="94">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="95">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="96">
           
           
-          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too and bring pizza.&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="97">
@@ -6665,463 +6723,463 @@
         <li class="missed" data-hits="0" data-linenumber="98">
           
           
-          <code class="ruby">      click_on &#39;Edit&#39;</code>
+          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too and bring pizza.&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="99">
           
           
-          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too but will not bring pizza.&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="100">
           
           
-          <code class="ruby">      click_on &#39;Edit Reply&#39;</code>
+          <code class="ruby">      click_on &#39;Edit&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="101">
           
           
-          <code class="ruby">      expect(page).to have_content &#39;I will be there too but will not bring pizza.&#39;</code>
+          <code class="ruby">      fill_in &#39;Description&#39;, with: &#39;I will be there too but will not bring pizza.&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="102">
           
           
-          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Edit Reply&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="103">
           
           
+          <code class="ruby">      expect(page).to have_content &#39;I will be there too but will not bring pizza.&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="104">
+          
+          
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
+          
           <code class="ruby">      expect(page).to have_content &#39;Ruby on Rails&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="106">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;user can see all atendees and number of attendees&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="107">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;user can see all atendees and number of attendees&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="109">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="110">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="109">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="111">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="112">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="111">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="113">
+          
           
           <code class="ruby">      click_on &#39;Log In&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="112">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="114">
+          
           
           <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="115">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="114">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="115">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="116">
           
           
-          <code class="ruby">      click_on &#39;Join&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="117">
           
           
-          <code class="ruby">      click_on &#39;Log Out&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="118">
           
           
-          <code class="ruby">      click_on &#39;Log In&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="119">
           
           
-          <code class="ruby">      new2_register_and_login</code>
+          <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="120">
           
           
-          <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
+          <code class="ruby">      click_on &#39;Log In&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="121">
           
           
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
+          <code class="ruby">      new2_register_and_login</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="122">
           
           
-          <code class="ruby">      click_on &#39;Join&#39;</code>
+          <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="123">
           
           
-          <code class="ruby">      click_on &#39;Join&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="124">
           
           
-          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="125">
           
           
-          <code class="ruby">      expect(page).to have_content &#39;3&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="126">
           
           
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="127">
           
           
-          <code class="ruby">      expect(page).to have_content &#39;B&#39;</code>
+          <code class="ruby">      expect(page).to have_content &#39;3&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="128">
           
           
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="129">
+          
+          
+          <code class="ruby">      expect(page).to have_content &#39;B&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="130">
+          
+          
           <code class="ruby">      expect(page).to have_content &#39;C&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="131">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;user cannot join meeting that user has already joined&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="132">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;user cannot join meeting that user has already joined&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="134">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="135">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="134">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="136">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="135">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="137">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="136">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="138">
+          
           
           <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="137">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="139">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="138">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="139">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="140">
           
           
-          <code class="ruby">      click_on &#39;Join&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="141">
           
           
-          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="142">
           
           
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="143">
           
           
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="144">
+          
+          
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="145">
+          
+          
           <code class="ruby">      expect(page).to have_content &#39;Unjoin&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="144">
+        <li class="never" data-hits="" data-linenumber="146">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="146">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;user cannot join his own meeting but user can edit his own meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="147">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="148">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;user cannot join his own meeting but user can edit his own meeting&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="149">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="150">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="149">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="151">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="150">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="152">
+          
           
           <code class="ruby">      click_on &#39;Meeting List&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="153">
+          
           
           <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="152">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="154">
+          
           
           <code class="ruby">      expect(page).to have_no_content &#39;Joined&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="153">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="155">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;Edit&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="never" data-hits="" data-linenumber="156">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="155">
+        <li class="never" data-hits="" data-linenumber="157">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="156">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;user can unjoin a previously joined meeting&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="157">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="158">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;user can unjoin a previously joined meeting&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="159">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="160">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="159">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="161">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="160">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="162">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="163">
+          
           
           <code class="ruby">      click_on &#39;Log In&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="162">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="164">
+          
           
           <code class="ruby">      new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="163">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="165">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="164">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="165">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="166">
           
           
-          <code class="ruby">      click_on &#39;Join&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="167">
           
           
-          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="168">
           
           
-          <code class="ruby">      find(&quot;.image&quot;).click</code>
+          <code class="ruby">      click_on &#39;Join&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="169">
           
           
-          <code class="ruby">      click_on &#39;Unjoin&#39;</code>
+          <code class="ruby">      click_on &#39;Meeting List&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="170">
           
           
-          <code class="ruby">      click_on &#39;Unjoin&#39;</code>
+          <code class="ruby">      find(&quot;.image&quot;).click</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="171">
           
           
+          <code class="ruby">      click_on &#39;Unjoin&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="172">
+          
+          
+          <code class="ruby">      click_on &#39;Unjoin&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="173">
+          
+          
           <code class="ruby">      expect(page).to have_content &#39;Sorry I will not be able to attend...&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="172">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="173">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="174">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="175">
@@ -7130,697 +7188,709 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="176">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="176">
           
-          <code class="ruby">  describe &quot;As an internet user&quot; do</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="177">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="177">
           
-          <code class="ruby">    it &quot;can visit the meetings page&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="178">
           <span class="hits">1</span>
           
-          <code class="ruby">      register_and_login</code>
+          <code class="ruby">  describe &quot;As an internet user&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="179">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;can visit the meetings page&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="180">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="181">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="180">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="182">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="181">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="183">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="182">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="184">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="183">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="185">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="184">
+        <li class="never" data-hits="" data-linenumber="186">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="never" data-hits="" data-linenumber="187">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="186">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;can see meetings happening today and this week&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="187">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="188">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;can see meetings happening today and this week&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="189">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="190">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="189">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="191">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="190">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="192">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="191">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="193">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="192">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="194">
+          
           
           <code class="ruby">      click_on &#39;Today&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="193">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="195">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="194">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="196">
+          
           
           <code class="ruby">      click_on &#39;Tomorrow&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="195">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="197">
+          
           
           <code class="ruby">      expect(page).not_to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="196">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="198">
+          
           
           <code class="ruby">      click_on &#39;This Week&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="197">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="199">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="never" data-hits="" data-linenumber="200">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="200">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;can see meetings happening tomorrow&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="201">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="202">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;can see meetings happening tomorrow&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="203">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="204">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="203">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="205">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="204">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="206">
+          
           
           <code class="ruby">      new_meeting_tomorrow</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="205">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="207">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="206">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="208">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="207">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="209">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="208">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="210">
+          
           
           <code class="ruby">      click_on &#39;Today&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="209">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="211">
+          
           
           <code class="ruby">      expect(page).not_to have_content &#39;Javascript&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="210">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="212">
+          
           
           <code class="ruby">      click_on &#39;Tomorrow&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="211">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="213">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;Javascript&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="212">
+        <li class="never" data-hits="" data-linenumber="214">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="213">
+        <li class="never" data-hits="" data-linenumber="215">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="214">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;can see meetings happening this month&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="215">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      register_and_login</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="216">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &quot;can see meetings happening this month&quot; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="217">
+          
+          
+          <code class="ruby">      register_and_login</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="218">
+          
+          
           <code class="ruby">      new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="217">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="219">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="218">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="220">
+          
           
           <code class="ruby">      new_meeting_this_month</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="219">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="221">
+          
           
           <code class="ruby">      click_button &#39;Create Meeting&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="220">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="222">
+          
           
           <code class="ruby">      click_on &#39;Log Out&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="221">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="223">
+          
           
           <code class="ruby">      click_on &#39;meeting_list_btn&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="222">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="224">
+          
           
           <code class="ruby">      click_on &#39;Today&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="223">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="225">
+          
           
           <code class="ruby">      expect(page).not_to have_content &#39;HTML&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="224">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="226">
+          
           
           <code class="ruby">      click_on &#39;This Week&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="225">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="227">
+          
           
           <code class="ruby">      expect(page).not_to have_content &#39;HTML&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="226">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="228">
+          
           
           <code class="ruby">      click_on &#39;This Month&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="227">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="229">
+          
           
           <code class="ruby">      expect(page).to have_content &#39;HTML&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="228">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="229">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="230">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="231">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="232">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="231">
+        <li class="covered" data-hits="1" data-linenumber="233">
           <span class="hits">1</span>
           
           <code class="ruby">  def register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="232">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="234">
+          <span class="hits">1</span>
           
           <code class="ruby">    visit &quot;/users/sign_up&quot;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="233">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="235">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Username&#39;, with: &#39;A&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="234">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="236">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Email&#39;, with: &#39;a@yahoo.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="235">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="237">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Password&#39;, with: &#39;password1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="236">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="238">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Password confirmation&#39;, with: &#39;password1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="237">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="239">
+          <span class="hits">1</span>
           
           <code class="ruby">    attach_file(&#39;user_avatar&#39;, Rails.root + &#39;spec/Images/coffeecup.jpeg&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="238">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="240">
+          <span class="hits">1</span>
           
           <code class="ruby">    click_button &#39;Sign Up&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="239">
+        <li class="never" data-hits="" data-linenumber="241">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="240">
+        <li class="never" data-hits="" data-linenumber="242">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="241">
+        <li class="covered" data-hits="1" data-linenumber="243">
           <span class="hits">1</span>
           
           <code class="ruby">  def new_register_and_login</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="242">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="244">
+          
           
           <code class="ruby">    visit &quot;/users/sign_up&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="243">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="245">
+          
           
           <code class="ruby">    fill_in &#39;Username&#39;, with: &#39;B&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="244">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="246">
+          
           
           <code class="ruby">    fill_in &#39;Email&#39;, with: &#39;b@yahoo.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="245">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="247">
+          
           
           <code class="ruby">    fill_in &#39;Password&#39;, with: &#39;password1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="246">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="248">
+          
           
           <code class="ruby">    fill_in &#39;Password confirmation&#39;, with: &#39;password1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="247">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="249">
+          
           
           <code class="ruby">    attach_file(&#39;user_avatar&#39;, Rails.root + &#39;spec/Images/coffeecup.jpeg&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="248">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="250">
+          
           
           <code class="ruby">    click_button &#39;Sign Up&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="249">
+        <li class="never" data-hits="" data-linenumber="251">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="250">
+        <li class="never" data-hits="" data-linenumber="252">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="251">
+        <li class="covered" data-hits="1" data-linenumber="253">
           <span class="hits">1</span>
           
           <code class="ruby">  def new2_register_and_login</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="252">
+        <li class="missed" data-hits="0" data-linenumber="254">
           
           
           <code class="ruby">    visit &quot;/users/sign_up&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="253">
+        <li class="missed" data-hits="0" data-linenumber="255">
           
           
           <code class="ruby">    fill_in &#39;Username&#39;, with: &#39;C&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="254">
+        <li class="missed" data-hits="0" data-linenumber="256">
           
           
           <code class="ruby">    fill_in &#39;Email&#39;, with: &#39;c@yahoo.com&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="255">
-          
-          
-          <code class="ruby">    fill_in &#39;Password&#39;, with: &#39;password1&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="256">
-          
-          
-          <code class="ruby">    fill_in &#39;Password confirmation&#39;, with: &#39;password1&#39;</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="257">
           
           
-          <code class="ruby">    attach_file(&#39;user_avatar&#39;, Rails.root + &#39;spec/Images/coffeecup.jpeg&#39;)</code>
+          <code class="ruby">    fill_in &#39;Password&#39;, with: &#39;password1&#39;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="258">
           
           
+          <code class="ruby">    fill_in &#39;Password confirmation&#39;, with: &#39;password1&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="259">
+          
+          
+          <code class="ruby">    attach_file(&#39;user_avatar&#39;, Rails.root + &#39;spec/Images/coffeecup.jpeg&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="260">
+          
+          
           <code class="ruby">    click_button &#39;Sign Up&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="259">
+        <li class="never" data-hits="" data-linenumber="261">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="260">
+        <li class="never" data-hits="" data-linenumber="262">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="261">
+        <li class="covered" data-hits="1" data-linenumber="263">
           <span class="hits">1</span>
           
           <code class="ruby">  def new_meeting</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="262">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="264">
+          <span class="hits">1</span>
           
           <code class="ruby">    visit &#39;meetings/new&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="263">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="265">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Address&#39;, with: &#39;100 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="264">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="266">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;Subject&#39;, with: &#39;Ruby on Rails&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="265">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="267">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;meeting_description&#39;, with: &#39;I will bring donuts&#39;</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="266">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="268">
+          <span class="hits">1</span>
           
           <code class="ruby">    fill_in &#39;datepicker&#39;, with: Date.today.strftime(&quot;%b-%d-%Y&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="267">
+        <li class="never" data-hits="" data-linenumber="269">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="268">
+        <li class="never" data-hits="" data-linenumber="270">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="269">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new_meeting_tomorrow</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="270">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    visit &#39;/meetings/new&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="271">
           <span class="hits">1</span>
           
+          <code class="ruby">  def new_meeting_tomorrow</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="272">
+          
+          
+          <code class="ruby">    visit &#39;/meetings/new&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="273">
+          
+          
           <code class="ruby">    fill_in &#39;Address&#39;, with: &#39;200 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="272">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="274">
+          
           
           <code class="ruby">    fill_in &#39;Subject&#39;, with: &#39;Javascript&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="273">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="275">
+          
           
           <code class="ruby">    fill_in &#39;meeting_description&#39;, with: &#39;I will bring roses&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="274">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="276">
+          
           
           <code class="ruby">    fill_in &#39;datepicker&#39;, with: (Date.today + 1).strftime(&quot;%b-%d-%Y&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="275">
+        <li class="never" data-hits="" data-linenumber="277">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="276">
+        <li class="never" data-hits="" data-linenumber="278">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="277">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def new_meeting_this_month</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="278">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    visit &#39;/meetings/new&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="279">
           <span class="hits">1</span>
           
+          <code class="ruby">  def new_meeting_this_month</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="280">
+          
+          
+          <code class="ruby">    visit &#39;/meetings/new&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="281">
+          
+          
           <code class="ruby">    fill_in &#39;Address&#39;, with: &#39;300 Main St. San Diego 90000&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="280">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="282">
+          
           
           <code class="ruby">    fill_in &#39;Subject&#39;, with: &#39;HTML&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="281">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="283">
+          
           
           <code class="ruby">    fill_in &#39;meeting_description&#39;, with: &#39;I will bring a cup of coffee&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="282">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="284">
+          
           
           <code class="ruby">    fill_in &#39;datepicker&#39;, with: (Date.today + 20).strftime(&quot;%b-%d-%Y&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="283">
+        <li class="never" data-hits="" data-linenumber="285">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="284">
+        <li class="never" data-hits="" data-linenumber="286">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="285">
+        <li class="covered" data-hits="1" data-linenumber="287">
           <span class="hits">1</span>
           
           <code class="ruby">  def login</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="286">
+        <li class="missed" data-hits="0" data-linenumber="288">
           
           
           <code class="ruby">    fill_in &#39;Email&#39;, with: &#39;a@yahoo.com&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="287">
+        <li class="missed" data-hits="0" data-linenumber="289">
           
           
           <code class="ruby">    fill_in &#39;Password&#39;, with: &#39;password1&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="288">
+        <li class="missed" data-hits="0" data-linenumber="290">
           
           
           <code class="ruby">    click_button &#39;Log In&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="289">
+        <li class="never" data-hits="" data-linenumber="291">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="290">
+        <li class="never" data-hits="" data-linenumber="292">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="291">
+        <li class="never" data-hits="" data-linenumber="293">
           
           
           <code class="ruby">end</code>
@@ -7833,11 +7903,11 @@
         <div class="source_table" id="64d69d4be60dc0b8a4b32c28d98d4b4c8badf7aa">
   <div class="header">
     <h3>spec/rails_helper.rb</h3>
-    <h4><span class="green">92.59 %</span> covered</h4>
+    <h4><span class="green">96.3 %</span> covered</h4>
     <div>
       <b>27</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -8186,8 +8256,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="58">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -8222,8 +8292,8 @@
           <code class="ruby">    # with the specs, so continue to use transaction strategy for speed.</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="64">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
           <code class="ruby">    driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test</code>
         </li>
@@ -8234,8 +8304,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="66">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
           
           <code class="ruby">    if !driver_shares_db_connection_with_specs</code>
         </li>
@@ -8258,8 +8328,8 @@
           <code class="ruby">      # specs, so use truncation strategy.</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
-          
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
           <code class="ruby">      DatabaseCleaner.strategy = :truncation</code>
         </li>
@@ -8288,8 +8358,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="75">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -8312,8 +8382,8 @@
           <code class="ruby">  config.append_after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="79">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>
