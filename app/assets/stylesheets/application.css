@@ -19,9 +19,12 @@
    CSS
    -  None of this is required for resizer to work.
  */
-body {
-  font-family: 'Poppins', sans-serif;
 
+
+body {
+  /*font-family: 'Poppins', sans-serif;*/
+  font-family: 'Raleway', sans-serif;
+    /*font-weight: 400;*/
 }
 
 
@@ -45,16 +48,57 @@ input{
  }
 
 
-.navbar {
+/*.navbar {
    background-color: black;
    background: rgba(0,0,0,0.30);
    border-color: rgba(0,0,0,0.09);
 
-}
-
-.navbar li { color: #000 }
+}*/
+/*
+.navbar li { color: #000 }*/
 
 .flash-message {
   position: fixed;
   top: 100px;
+}
+
+#custom-nav {
+    background-color: rgba(0,0,0,0.2);
+    border: 0;
+    box-shadow: none;
+    z-index: 999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+}
+
+#custom-nav .dropdown-menu {
+    border-radius: 0;
+    border: none;
+    border-top: 5px solid transparent;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-top: 0;
+}
+
+#custom-nav .container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-transition: padding-top .5s ease, padding-bottom .5s ease;
+    -moz-transition: padding-top .5s ease, padding-bottom .5s ease;
+    transition: padding-top .5s ease, padding-top .5s ease, padding-bottom .5s ease;
+}
+
+#custom-nav.affix {
+    top: 0;
+    min-width: 100%;
+    background-color: #000000;
+
+    opacity: 0.9;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
 }
