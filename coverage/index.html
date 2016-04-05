@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-05T09:24:17-07:00">2016-04-05T09:24:17-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-04-05T11:16:53-07:00">2016-04-05T11:16:53-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">92.47%</span></span>
+    (<span class="covered_percent"><span class="green">93.01%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.16
+         3.18
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>75</b> files in total.
-    <b>1022</b> relevant lines. 
+    <b>1016</b> relevant lines. 
     <span class="green"><b>945</b> lines covered</span> and
-    <span class="red"><b>77</b> lines missed </span>
+    <span class="red"><b>71</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -212,12 +212,12 @@
       
       <tr>
         <td class="strong"><a href="#0a6d088936d40068a505427fbca46ec1294d9cce" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">51.22 %</td>
-        <td>85</td>
-        <td>41</td>
+        <td class="red strong">60.0 %</td>
+        <td>86</td>
+        <td>35</td>
         <td>21</td>
-        <td>20</td>
-        <td>6.6</td>
+        <td>14</td>
+        <td>7.7</td>
       </tr>
       
       <tr>
@@ -363,7 +363,7 @@
       <tr>
         <td class="strong"><a href="#356cb0866a0e402947fc3f90fb39a2d88850f5ed" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>79</td>
+        <td>80</td>
         <td>11</td>
         <td>11</td>
         <td>0</td>
@@ -3873,11 +3873,11 @@
         <div class="source_table" id="0a6d088936d40068a505427fbca46ec1294d9cce">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">51.22 %</span> covered</h4>
+    <h4><span class="red">60.0 %</span> covered</h4>
     <div>
-      <b>41</b> relevant lines. 
+      <b>35</b> relevant lines. 
       <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>20</b> lines missed.</span>
+      <span class="red"><b>14</b> lines missed.</span>
     </div>
   </div>
   
@@ -3998,112 +3998,112 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="20">
           
-          <code class="ruby">  def self.from_omniauth(auth)</code>
+          
+          <code class="ruby">  # def self.from_omniauth(auth)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    if self.where(email: auth.info.email).exists?</code>
+          <code class="ruby">  #   if self.where(email: auth.info.email).exists?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">      return_user = self.where(email: auth.info.email).first</code>
+          <code class="ruby">  #     return_user = self.where(email: auth.info.email).first</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">      return_user.provider = auth.provider</code>
+          <code class="ruby">  #     return_user.provider = auth.provider</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">      return_user.uid = auth.uid</code>
+          <code class="ruby">  #     return_user.uid = auth.uid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">  #   else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">      return_user = self.create do |user|</code>
+          <code class="ruby">  #     return_user = self.create do |user|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">        user.provider = auth.provider</code>
+          <code class="ruby">  #       user.provider = auth.provider</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">        user.uid = auth.uid</code>
+          <code class="ruby">  #       user.uid = auth.uid</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">        user.username = auth.info.username</code>
+          <code class="ruby">  #       user.username = auth.info.name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">        user.email = auth.info.email</code>
+          <code class="ruby">  #       user.email = auth.info.email</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">        user.oauth_token = auth.credentials.token</code>
+          <code class="ruby">  #         user.avatar =  &quot;https://graph.facebook.com/#{auth[&quot;uid&quot;]}/picture?type=large&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">        user.oauth_expires_at = Time.at(auth.credentials.expires_at)</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">  #     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">    return_user</code>
+          <code class="ruby">  #   return_user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -4118,202 +4118,202 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # def self.from_omniauth(auth)</code>
+          <code class="ruby">  def self.from_omniauth(auth)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
-          <code class="ruby">  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|</code>
+          <code class="ruby">    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">  #     user.provider = auth.provider</code>
+          <code class="ruby">      user.provider = auth.provider</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby">  #     user.uid = auth.uid</code>
+          <code class="ruby">      user.uid = auth.uid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">  #     user.email = auth.info.email</code>
+          <code class="ruby">      user.email = auth.info.email</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">  #     user.avatar =  &quot;https://graph.facebook.com/#{auth[&quot;uid&quot;]}/picture?type=large&quot;</code>
+          <code class="ruby">      user.username = auth.info.name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby">      user.avatar =  &quot;https://graph.facebook.com/#{auth[&quot;uid&quot;]}/picture?type=large&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.new_with_session(params, session)</code>
         </li>
       
-        <li class="covered" data-hits="43" data-linenumber="51">
+        <li class="covered" data-hits="43" data-linenumber="52">
           <span class="hits">43</span>
           
           <code class="ruby">    if session[&quot;devise.user_attributes&quot;]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
+        <li class="missed" data-hits="0" data-linenumber="53">
           
           
           <code class="ruby">      new(session[&quot;devise.user_attributes&quot;], without_protection: true) do |user|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">        user.attributes = params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
           <code class="ruby">        user.valid?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="43" data-linenumber="57">
+        <li class="covered" data-hits="43" data-linenumber="58">
           <span class="hits">43</span>
           
           <code class="ruby">      super</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
           <code class="ruby">  def password_required?</code>
         </li>
       
-        <li class="covered" data-hits="164" data-linenumber="62">
+        <li class="covered" data-hits="164" data-linenumber="63">
           <span class="hits">164</span>
           
           <code class="ruby">    super &amp;&amp; provider.blank?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
           <code class="ruby">  def update_with_password(params, *options)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="66">
+        <li class="covered" data-hits="2" data-linenumber="67">
           <span class="hits">2</span>
           
           <code class="ruby">    if encrypted_password.blank?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="68">
           
           
           <code class="ruby">      update_attributes(params, *options)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="69">
+        <li class="covered" data-hits="2" data-linenumber="70">
           <span class="hits">2</span>
           
           <code class="ruby">      super</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
@@ -4322,64 +4322,64 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
           <code class="ruby">    def process_uri(uri)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="missed" data-hits="0" data-linenumber="78">
           
           
           <code class="ruby">      require &#39;open-uri&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="78">
+        <li class="missed" data-hits="0" data-linenumber="79">
           
           
           <code class="ruby">      require &#39;open_uri_redirections&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="79">
+        <li class="missed" data-hits="0" data-linenumber="80">
           
           
           <code class="ruby">      open(uri, :allow_redirections =&gt; :safe) do |r|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="80">
+        <li class="missed" data-hits="0" data-linenumber="81">
           
           
           <code class="ruby">        r.base_uri.to_s</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
@@ -4389,6 +4389,12 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">end</code>
@@ -7217,103 +7223,103 @@
         <li class="never" data-hits="" data-linenumber="7">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">  devise_for :users, controllers: {:registrations =&gt; &quot;registrations&quot;, omniauth_callbacks: &quot;omniauth_callbacks&quot;}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  resources :meetings do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    resources :posts, only: [:new, :create, :update]</code>
+          <code class="ruby">  resources :meetings do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    resources :posts, only: [:new, :create, :update]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">  root &#39;pages#index&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;pages/profile&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;registrations/new&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;users/show&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;search&#39;, to: &#39;meetings#search&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -7325,31 +7331,31 @@
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">  # The priority is based upon order of creation: first created -&gt; highest priority.</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  # See how all your routes lay out with &quot;rake routes&quot;.</code>
+          <code class="ruby">  # The priority is based upon order of creation: first created -&gt; highest priority.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # See how all your routes lay out with &quot;rake routes&quot;.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">  # You can have the root of your site routed with &quot;root&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # You can have the root of your site routed with &quot;root&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -7361,292 +7367,298 @@
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby">  # Example of regular route:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">  #   get &#39;products/:id&#39; =&gt; &#39;catalog#view&#39;</code>
+          <code class="ruby">  # Example of regular route:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   get &#39;products/:id&#39; =&gt; &#39;catalog#view&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">  # Example of named route that can be invoked with purchase_url(id: product.id)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  #   get &#39;products/:id/purchase&#39; =&gt; &#39;catalog#purchase&#39;, as: :purchase</code>
+          <code class="ruby">  # Example of named route that can be invoked with purchase_url(id: product.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   get &#39;products/:id/purchase&#39; =&gt; &#39;catalog#purchase&#39;, as: :purchase</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">  # Example resource route (maps HTTP verbs to controller actions automatically):</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">  #   resources :products</code>
+          <code class="ruby">  # Example resource route (maps HTTP verbs to controller actions automatically):</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   resources :products</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  # Example resource route with options:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">  #   resources :products do</code>
+          <code class="ruby">  # Example resource route with options:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby">  #     member do</code>
+          <code class="ruby">  #   resources :products do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">  #       get &#39;short&#39;</code>
+          <code class="ruby">  #     member do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">  #       post &#39;toggle&#39;</code>
+          <code class="ruby">  #       get &#39;short&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">  #     end</code>
+          <code class="ruby">  #       post &#39;toggle&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby">  #     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  #     collection do</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  #       get &#39;sold&#39;</code>
+          <code class="ruby">  #     collection do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  #     end</code>
+          <code class="ruby">  #       get &#39;sold&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  #     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  # Example resource route with sub-resources:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">  #   resources :products do</code>
+          <code class="ruby">  # Example resource route with sub-resources:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">  #     resources :comments, :sales</code>
+          <code class="ruby">  #   resources :products do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  #     resource :seller</code>
+          <code class="ruby">  #     resources :comments, :sales</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  #     resource :seller</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">  # Example resource route with more complex sub-resources:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">  #   resources :products do</code>
+          <code class="ruby">  # Example resource route with more complex sub-resources:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">  #     resources :comments</code>
+          <code class="ruby">  #   resources :products do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby">  #     resources :sales do</code>
+          <code class="ruby">  #     resources :comments</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">  #       get &#39;recent&#39;, on: :collection</code>
+          <code class="ruby">  #     resources :sales do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">  #     end</code>
+          <code class="ruby">  #       get &#39;recent&#39;, on: :collection</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  #     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">  # Example resource route with concerns:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">  #   concern :toggleable do</code>
+          <code class="ruby">  # Example resource route with concerns:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">  #     post &#39;toggle&#39;</code>
+          <code class="ruby">  #   concern :toggleable do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  #     post &#39;toggle&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">  #   resources :posts, concerns: :toggleable</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">  #   resources :photos, concerns: :toggleable</code>
+          <code class="ruby">  #   resources :posts, concerns: :toggleable</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #   resources :photos, concerns: :toggleable</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">  # Example resource route within a namespace:</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">  #   namespace :admin do</code>
+          <code class="ruby">  # Example resource route within a namespace:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">  #     # Directs /admin/products/* to Admin::ProductsController</code>
+          <code class="ruby">  #   namespace :admin do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">  #     # (app/controllers/admin/products_controller.rb)</code>
+          <code class="ruby">  #     # Directs /admin/products/* to Admin::ProductsController</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">  #     resources :products</code>
+          <code class="ruby">  #     # (app/controllers/admin/products_controller.rb)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">  #   end</code>
+          <code class="ruby">  #     resources :products</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">  #   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">end</code>
