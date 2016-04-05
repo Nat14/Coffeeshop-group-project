@@ -5,10 +5,13 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+
+<% if f.object.username_required? %>
   <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </div>
+  <% end %>
 
   <div class="field">
     <%= f.label :email %><br />
