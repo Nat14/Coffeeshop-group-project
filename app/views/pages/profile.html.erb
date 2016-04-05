@@ -3,10 +3,13 @@
 	<div class="row">
 		<div class="col-lg-7">
 			<h2>About <%= params[:username].capitalize %></h2>
-			<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
-	      <span id= "manage" class="glyphicon glyphicon"></span>
-	      Manage Profile
-	    <% end %>
+			<% if current_user.username == params[:username]%>
+				<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
+		      <span id= "manage" class="glyphicon glyphicon"></span>
+		      Manage Profile
+		    <% end %>
+			<% end %>
+
 			<div id="aboutme">
 				<p> <span>About Me:</span> <%= @user.aboutme %></p>
 				<p> <span>Location:</span> <%= @user.location %></p>
@@ -27,30 +30,33 @@
 </div>
 <br>
 
-<div class="container search-container">
-	<div class="row">
-		<div class="col-lg-4">
-			<h2>Search Meetings</h2>
-			<form action="/search" method="get">
-			  <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
-			  <input id: 'q' type="submit" value="search" class="btn btn-primary"/>
-			</form>
-		</div>
-		<div class="col-lg-8">
-    <h2>Saved Searches</h2>
-    <%= link_to searches_path, class: 'btn btn-primary' do %>
-      Manage Keywords
-    <% end %>
-      <% if !@keywords.empty? %>
-        <% @keywords.each do |word| %>
-        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
-          <% search_link = '/search?q=' + word.keyword %>
-          <span> <%= link_to word.keyword.capitalize, search_link %> </span>
-        <% end %>
-      <% end %>
+<% if current_user.username == params[:username]%>
+	<div class="container search-container">
+		<div class="row">
+			<div class="col-lg-4">
+				<h2>Search Meetings</h2>
+				<form action="/search" method="get">
+				  <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
+				  <input id: 'q' type="submit" value="search" class="btn btn-primary"/>
+				</form>
+			</div>
+			<div class="col-lg-8">
+	    <h2>Saved Searches</h2>
+	    <%= link_to searches_path, class: 'btn btn-primary' do %>
+	      Manage Keywords
+	    <% end %>
+	      <% if !@keywords.empty? %>
+	        <% @keywords.each do |word| %>
+	        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
+	          <% search_link = '/search?q=' + word.keyword %>
+	          <span> <%= link_to word.keyword.capitalize, search_link %> </span>
+	        <% end %>
+	      <% end %>
+			</div>
 		</div>
 	</div>
-</div>
+<% end %>
+
 
 <!-- grid layout for user meetings -->
 <div class="wrapper">
