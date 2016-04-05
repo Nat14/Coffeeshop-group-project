@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "MeetingPlaces", type: :feature do
+RSpec.feature "MeetingPlaces", type: :feature, js:true do
   describe "As a logged in user" do
     it "can create a new meeting" do
       register_and_login
@@ -24,27 +24,27 @@ RSpec.feature "MeetingPlaces", type: :feature do
       expect(page).to have_content '100 Main St. San Diego 90000'
     end
 
-# we need to add a show button to our confirmed meetings
-
-    # it "can list a confirmed meetings" do
-    #   register_and_login
-    #   new_meeting
-    #   click_button 'Create Meeting'
-    #   click_on 'Log Out'
-    #   new_register_and_login
-    #   click_on 'meeting_list_btn'
-    #   click_on 'Show'
-    #   click_on 'Join'
-    #   click_on 'Meeting List'
-    #   expect(page).to have_content '100 Main St. San Diego 90000'
-    # end
+    it "can list a confirmed meetings" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      click_on 'Log Out'
+      new_register_and_login
+      click_on 'meeting_list_btn'
+      find(".image").click
+      click_on 'Join'
+      fill_in 'Description', with: 'I will be there too and bring pizza.'
+      click_on 'Join'
+      click_on 'Meeting List'
+      expect(page).to have_content '100 Main St. San Diego 90000'
+    end
 
     it "can show a meeting that any user has created" do
       register_and_login
       new_meeting
       click_button 'Create Meeting'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content '100 Main St. San Diego 90000'
     end
 
@@ -57,15 +57,16 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_button 'Update Meeting'
       expect(page).to have_content 'Javascript'
     end
-
-    # it "can destroy a meeeting that the current user created" do
-    #   register_and_login
-    #   new_meeting
-    #   click_button 'Create Meeting'
-    #   click_on 'Meeting List'
-    #   click_on 'Destroy'
-    #   expect(page).to have_content 'Meeting was successfully destroyed.'
-    # end
+    # Test is being skipped due to capybara unable to locate the module
+    skip "can destroy a meeeting that the current user created" do
+      register_and_login
+      new_meeting
+      click_button 'Create Meeting'
+      click_on 'A'
+      click_on 'Destroy'
+      click_button 'OK'
+      expect(page).to have_content 'Meeting was successfully destroyed.'
+    end
 
     it "can join a suggested meeting and put in a post message for join" do
       register_and_login
@@ -75,7 +76,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
@@ -92,7 +93,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       fill_in 'Description', with: 'I will be there too and bring pizza.'
       click_on 'Join'
@@ -112,19 +113,19 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Log Out'
       click_on 'Log In'
       new2_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
       expect(page).to have_content '3'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content 'B'
       expect(page).to have_content 'C'
     end
@@ -136,11 +137,11 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log Out'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_content 'Unjoin'
     end
 
@@ -149,7 +150,7 @@ RSpec.feature "MeetingPlaces", type: :feature do
       new_meeting
       click_button 'Create Meeting'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       expect(page).to have_no_content 'Joined'
       expect(page).to have_content 'Edit'
     end
@@ -162,11 +163,11 @@ RSpec.feature "MeetingPlaces", type: :feature do
       click_on 'Log In'
       new_register_and_login
       click_on 'meeting_list_btn'
-      click_on 'Show'
+      find(".image").click
       click_on 'Join'
       click_on 'Join'
       click_on 'Meeting List'
-      click_on 'Show'
+      find(".image").click
       click_on 'Unjoin'
       click_on 'Unjoin'
       expect(page).to have_content 'Sorry I will not be able to attend...'

@@ -27,7 +27,7 @@ a{
 	width:auto;
   height:auto;
 	margin:30px auto 0;
-	background-color:rgba(171, 116, 44, 0.2) ;
+	background-color:rgba(0,0,0,0.20);
 	-webkit-box-sizing: border-box;
   	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -36,7 +36,7 @@ a{
 
 header{
 	text-align:center;
-	padding:10px;
+	padding:30px;
 	margin-bottom:10px;
 	background-color:rgba(0,0,0,0.50);
 }
@@ -54,7 +54,7 @@ header a{
 	color:#FFFFFF;
 	width:40px;
 	height:40px;
-	line-height:40px;
+	line-height:45px;
 	margin-left:10px;
 	text-align:center;
 	display:inline-block;
@@ -62,19 +62,19 @@ header a{
 }
 
 header a:hover, .list-mode header a.hide-list:hover{
-	background-color:#11956c;
+	background-color:rgba(205, 196, 109, 0.7);
 }
 
 header a.hide-list{
-	background-color:#11956c;
+	background-color:rgba(205, 196, 109, 0.7);
 }
 
 .list-mode header a.hide-list{
-	background-color:#5DBA9D;
+	background-color:rgba(205, 196, 109, 0.4);
 }
 
 .list-mode header a.show-list{
-	background-color:#11956c;
+	background-color:rgba(205, 196, 109, 0.7);
 }
 
 .container:after{
@@ -84,7 +84,7 @@ header a.hide-list{
 }
 
 .container{
-	padding:10px 0 10px 10px;
+	padding:0px 0px 0px 0px;
 
 }
 
@@ -93,7 +93,7 @@ header a.hide-list{
 	width:300px;
 	height:300px;
 	margin:0 10px 10px 0;
-	background-color:rgba(0,0,0,0.50);
+	/*background:rgba(171, 116, 44, 0.2) ;*/
 	-webkit-transition:all 1.0s ease;
 	-moz-transition:all 1.0s ease;
 	transition:all 1.0s ease;
@@ -103,9 +103,14 @@ header a.hide-list{
 }
 
 .wrapper.list-mode .container{
-	padding-right:10px;
+	padding-right:0px;
 }
 
 .wrapper.list-mode .box{
 	width:100%;
+}
+
+.meeting-info {
+	float: left;
+
 }
