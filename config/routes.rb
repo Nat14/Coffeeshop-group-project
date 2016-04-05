@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts, except: [:new, :create]
 
-
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"} 
-  # devise_for :users, controllers: {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
   resources :meetings do
     resources :posts, only: [:new, :create, :update]

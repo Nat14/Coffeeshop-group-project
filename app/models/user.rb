@@ -43,7 +43,6 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.email = auth.info.email
       user.username = auth.info.name
-
       user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
 
     end
