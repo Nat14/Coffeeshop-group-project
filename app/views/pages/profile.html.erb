@@ -102,11 +102,6 @@
 		        <li><i class="fa fa-clock-o"></i><%= meeting.time.to_s(:short) %></li>
 		        <li><i class="fa fa-book"></i><%= meeting.subject %></li>
 		        <li><i class="fa fa-users"></i><%= meeting.usermeetings.count %></li>
-
-		        <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
-		          <p><i class="fa fa-pencil"></i> <%= link_to 'Edit', edit_meeting_path(meeting) %></p>
-		          <p><i class="fa fa-trash"></i> <%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-		        <% end %>
 		      </ul>
 		    </div>
 		    <div class="meeting-info">
