@@ -42,14 +42,14 @@
     <dd><%= @meeting.time.to_s(:short) %></dd>
 
     <dt>Created By:</dt>
-    <dd><%= @meeting.usermeetings.find_by_owner(true).user.username%></dd>
+    <dd><%= link_to @meeting.usermeetings.find_by_owner(true).user.username.upcase , pages_profile_path(username: @meeting.usermeetings.find_by_owner(true).user.username) %></dd>
 
     <dt>Image</dt>
     <dd><%= image_tag(@meeting.image(:medium)) %></dd>
 
     <dt>Attendees:</dt>
     <% @meeting.usermeetings.each do |meeting| %>
-      <dd><%= meeting.user.username %></dd>
+      <dd><%= link_to meeting.user.username.upcase, pages_profile_path(username: meeting.user.username) %></dd>
     <% end %>
     <br/>
     <% if !@post.nil? %>
