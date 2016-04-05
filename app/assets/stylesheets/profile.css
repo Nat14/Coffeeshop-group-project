@@ -12,11 +12,43 @@
 
 
 #aboutme{
-  display: flex;
+  margin-top: 20px;
+  padding: 10px 10px 10px 30px;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  margin-top: 70px;
+#aboutme span {
+  display: inline-block;
+  width: 120px;
+}
 
+.search-container .row,
+.search-manage .row  {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
 
+.search-manage i {
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+.search-container span {
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.search-container a:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.edit_user {
+  text-align: left;
 }
 
 #profile_search {
@@ -26,7 +58,7 @@
     height: 55px;
     /*margin-left: -190px;
     margin-top: -5px;*/
-  
+
     left: 50%;
     top: 50%;
     padding-left: 15px;
