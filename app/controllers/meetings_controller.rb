@@ -122,7 +122,7 @@ class MeetingsController < ApplicationController
         @meetings = @user.first.meetings
         redirect_to pages_profile_path(username: @user.first.username)
       else
-        redirect_to meetings_path
+        redirect_to meetings_path, alert: 'Keyword was not found.'
       end
     end
   end
