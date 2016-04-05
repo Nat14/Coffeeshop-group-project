@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :searches
 
   resources :posts, except: [:new, :create]
+  
 
   devise_for :users, controllers: {:registrations => "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
