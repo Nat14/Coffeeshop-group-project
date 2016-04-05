@@ -10,12 +10,12 @@ body {
  #landing-input {
 
      color: #333;
-     width: 330px;
-     height: 55px;
+     width: 600px;
+     height: 70px;
      margin-left: -170px;
      margin-top: -5px;
      position: fixed;
-     left: 50%;
+     left: 40%;
      top: 50%;
      padding-left: 15px;
      padding-right: 10px;

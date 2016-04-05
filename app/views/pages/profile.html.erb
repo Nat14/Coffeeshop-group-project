@@ -1,28 +1,56 @@
 
 <div class="container">
 	<div class="row">
-
-		<div class="col-lg-6">
-			<div id="aboutme"><p> Hello, My name is Isaac and I love caffiene and cigarettes. Please study with me.
-			</p>
+		<div class="col-lg-7">
+			<h2>About <%= params[:username].capitalize %></h2>
+			<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
+	      <span id= "manage" class="glyphicon glyphicon"></span>
+	      Manage Profile
+	    <% end %>
+			<div id="aboutme">
+				<p> <span>About Me:</span> <%= @user.aboutme %></p>
+				<p> <span>Location:</span> <%= @user.location %></p>
+				<p> <span>Gender:</span> <%= @user.gender %></p>
+				<p> <span>Strengths:</span> <%= @user.strength %></p>
+				<p> <span>Weaknesses:</span> <%= @user.weakness %></p>
+				<p> <span>Interests:</span> <%= @user.interests %></p>
+				<p> <span>Home Page:</span> <%= @user.home_page_url %></p>
 			</div>
 		</div>
-
-		<div class="col-lg-6">
+		<div class="col-lg-4 col-lg-offset-1">
 			<div id="profile_pic"><% if current_user %>
 					<%= image_tag(current_user.avatar(:medium), class: "foundation_or_bootstrap_class") %>
 				<% end %>
 			</div>
 		</div>
-
 	</div>
 </div>
 <br>
-<form action="/search" method="get">
-  <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
-  <input id: 'q' type="submit" value="search"/>
-</form>
 
+<div class="container search-container">
+	<div class="row">
+		<div class="col-lg-4">
+			<h2>Search Meetings</h2>
+			<form action="/search" method="get">
+			  <input required id="profile_search" type='text' name="q" placeholder="Find a Place to Meet" autofocus/>
+			  <input id: 'q' type="submit" value="search" class="btn btn-primary"/>
+			</form>
+		</div>
+		<div class="col-lg-8">
+    <h2>Saved Searches</h2>
+    <%= link_to searches_path, class: 'btn btn-primary' do %>
+      Manage Keywords
+    <% end %>
+      <% if !@keywords.empty? %>
+        <% @keywords.each do |word| %>
+        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
+          <% search_link = '/search?q=' + word.keyword %>
+          <span> <%= link_to word.keyword.capitalize, search_link %> </span>
+        <% end %>
+      <% end %>
+		</div>
+	</div>
+</div>
 
 <!-- grid layout for user meetings -->
 <div class="wrapper">
@@ -51,28 +79,6 @@
 </div>
 
 <!-- end of user meeting grid layout  -->
-
-
-
-<div id="boo">
-  <div class="table-responsive">
-    <h2>Saved Searches</h2>
-    <%= link_to searches_path, class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon"></span>
-      Manage Keywords
-    <% end %>
-    <ul>
-      <% if !@keywords.empty? %>
-        <% @keywords.each do |word| %>
-        <!-- make our own link to go to search page because search feature manually created and it did not have path helper -->
-          <% search_link = '/search?q=' + word.keyword %>
-           <li> <%= link_to word.keyword, search_link %> </li>
-
-        <% end %>
-      <% end %>
-    </div>
-</div>
-
 
 
 <!-- scripts were not working in JS file, so we added it here.  -->

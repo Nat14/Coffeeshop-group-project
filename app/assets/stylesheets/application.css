@@ -53,3 +53,8 @@ input{
 }
 
 .navbar li { color: #000 }
+
+.flash-message {
+  position: fixed;
+  top: 100px;
+}
