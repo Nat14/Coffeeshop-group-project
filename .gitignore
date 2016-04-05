@@ -16,3 +16,4 @@
 /public/system/*
 /config/database.yml
 /coverage/*
+#/config/initializers/devise.rb
