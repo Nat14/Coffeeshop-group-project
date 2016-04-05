@@ -1,23 +1,16 @@
-<div class="page-header">
-  <h1>Keyword searches</h1>
-</div>
 
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-            <th>Keyword</th>
-            <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <%= content_tag_for(:tr, @searches) do |search| %>
-        <% if current_user.id == search.user_id %>
-            <td><%= search.keyword %></td>
-            <td><%= link_to 'Delete', search, method: :delete %></td>
+<div class="container search-manage">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+    <h2>Manage Keywords</h2>
+      <% if !@searches.empty? %>
+        <% @searches.each do |search| %>
+          <% if current_user.id == search.user_id %>
+            <span><%= search.keyword.upcase %></span>
+            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, search, method: :delete %>
+          <% end %>
         <% end %>
       <% end %>
-    </tbody>
-  </table>
+		</div>
+	</div>
 </div>
