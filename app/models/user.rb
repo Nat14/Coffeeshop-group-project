@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :omniauthable, :recoverable, :rememberable, :trackable, :validatable
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :large => "400x400>", :thumb => "50x50#" }, :default_url => 'Coffee_Cup_:style.png'
 
@@ -19,14 +18,34 @@ class User < ActiveRecord::Base
   has_many :posts
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
-
+    if self.where(email: auth.info.email).exists?
+      return_user = self.where(email: auth.info.email).first
+      return_user.provider = auth.provider
+      return_user.uid = auth.uid
+    else
+      return_user = self.create do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.username = auth.info.username
+        user.email = auth.info.email
+        user.oauth_token = auth.credentials.token
+        user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      end
     end
+
+    return_user
   end
+
+
+  # def self.from_omniauth(auth)
+  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  #     user.provider = auth.provider
+  #     user.uid = auth.uid
+  #     user.email = auth.info.email
+  #     user.avatar =  "https://graph.facebook.com/#{auth["uid"]}/picture?type=large"
+  #
+  #   end
+  # end
 
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
