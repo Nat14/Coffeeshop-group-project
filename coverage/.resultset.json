@@ -824,7 +824,6 @@
         null,
         1,
         null,
-        null,
         1,
         null,
         1,
@@ -843,7 +842,27 @@
         0,
         0,
         0,
+        null,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -1143,16 +1162,16 @@
         1,
         null,
         null,
-        9,
+        10,
+        null,
+        11,
+        11,
+        10,
+        10,
+        null,
         null,
         10,
         10,
-        9,
-        9,
-        null,
-        null,
-        9,
-        9,
         null,
         0,
         null,
@@ -3078,6 +3097,11 @@
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        null,
+        1,
         43,
         null,
         null,
@@ -3087,14 +3111,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "timestamp": 1459800211
-=======
-    "timestamp": 1459788255
->>>>>>> master
-=======
-    "timestamp": 1459811438
->>>>>>> master
+    "timestamp": 1459876051
   }
 }

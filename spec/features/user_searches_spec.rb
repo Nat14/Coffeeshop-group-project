@@ -53,9 +53,9 @@ RSpec.feature "user_searches", type: :feature, js:true do
       visit "/"
       click_on "B"
       click_on 'Manage Keywords'
-      expect(page).to have_content("Ruby")
-      click_on 'Delete'
-      expect(page).not_to have_content("Ruby")
+      expect(page).to have_content("RUBY")
+      find(".fa-trash").click
+      expect(page).not_to have_content("RUBY")
     end
   end
 

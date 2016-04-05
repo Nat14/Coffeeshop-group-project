@@ -6,6 +6,11 @@ class RegistrationsController < Devise::RegistrationsController
 
  private
 
+  def after_update_path_for(resource)
+    # this will take you back to profile page after update user profile
+     pages_profile_path(username: current_user.username)
+  end
+
   def sign_up_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar, :longitutde, :latitude, :address)
   end
