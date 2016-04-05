@@ -12,12 +12,12 @@
           <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
           <%= link_to new_meeting_post_path(@meeting), class: 'btn btn-primary' do %>
 
-            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="fa fa-plus"></span>
             Join
           <% end %>
         <% else %>
         <%= link_to new_meeting_post_path(@meeting), class: 'btn btn-primary' do %>
-            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="fa fa-minus"></span>
             Unjoin
         <% end %>
         <% end %>

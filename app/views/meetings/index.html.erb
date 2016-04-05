@@ -45,42 +45,38 @@
     </header>
 
     <div class="container">
-
       <% @meetings.each do |meeting| %>
-        <% if meeting.confirm == false && Meeting.all.count != 0 %>
-          <div class="box">
-            <p><%= meeting.address %></p>
-            <p>Time: <%= meeting.time.to_s(:short) %></p>
-            <p>Subject: <%= meeting.subject %>
-            <p><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></p>
-            <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-</div>
+      <% if meeting.confirm == false && Meeting.all.count != 0 %>
 
+      <div class="box">
 
-<div class="wrapper">
- 	<header>Meetings Going on Now</header>
-
-    <div class="container">
-
-      <% @meetings.each do |meeting| %>
-        <% if meeting.confirm == true && Meeting.all.count != 0 %>
-        <div class="box">
         <div class="recipe">
 
           <div class="image">
-              <%= image_tag(meeting.image(:medium)) %>
-              <div class="likes">
-                <i class="fa fa fa-plus lv" data-test="pulse"></i>
-              </div>
+            <%= link_to image_tag(meeting.image(:medium)), meeting %>
 
-            <div class="name">
-              <h3><%= meeting.address %></h3>
+            <div class="likes">
+            <% if user_signed_in? %>
+            <!--not the owner can see join, already join cannot see join -->
+              <% if current_user.email != meeting.usermeetings.find_by_owner(true).user.email %>
+                <% if meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
+                  <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
+                  <%= link_to new_meeting_post_path(meeting) do %>
+
+                    <i class="fa fa fa-plus lv" data-test="pulse"></i>
+                  <% end %>
+                <% else %>
+                <%= link_to new_meeting_post_path(meeting) do %>
+                    <i class="fa fa fa-minus lv" data-test="pulse"></i>
+                <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
             </div>
+
+          <div class="name">
+            <h3><%= meeting.address %></h3>
+          </div>
 
           </div>
 
@@ -88,13 +84,22 @@
             <li><i class="fa fa-clock-o"></i><%= meeting.time.to_s(:short) %></li>
      		    <li><i class="fa fa-book"></i><%= meeting.subject %></li>
      		    <li><i class="fa fa-users"></i><%= meeting.usermeetings.count %></li>
-            <li><i class="fa fa-coffee"></i> <%= link_to 'Show', meeting %></li>
+
             <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
             <% end %>
           </ul>
         </div>
+        <div class="meeting-info">
+          <p>Created by: <%= meeting.usermeetings.find_by_owner(true).user.username %></p>
+          <% post = Post.where(meeting: meeting.id) %>
+          <% post.each do |post_info| %>
+            <dd><%= User.find(post_info.user_id).username + "(#{post_info.updated_at.to_s(:short)}): " + post_info.description %></dd>
+          <% end %>
+        </div>
+
       </div>
-        <% end %>
+
+      <% end %>
       <% end %>
     </div>
 </div>
@@ -102,13 +107,94 @@
 
 
 
+
+
+
+
+
+
+<div class="wrapper">
+ 	<header>Meetings Going on Now
+    <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+      <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
+  </header>
+
+  <div class="container">
+    <% @meetings.each do |meeting| %>
+    <% if meeting.confirm == true && Meeting.all.count != 0 %>
+    <div class="box">
+      <div class="recipe">
+
+        <div class="image">
+          <%= link_to image_tag(meeting.image(:medium)), meeting %>
+
+          <div class="likes">
+          <% if user_signed_in? %>
+          <!--not the owner can see join, already join cannot see join -->
+            <% if current_user.email != meeting.usermeetings.find_by_owner(true).user.email %>
+              <% if meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
+                <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
+                <%= link_to new_meeting_post_path(meeting) do %>
+
+                  <i id="plus" class="fa fa fa-plus lv" data-test="pulse"></i>
+                <% end %>
+              <% else %>
+              <%= link_to new_meeting_post_path(meeting) do %>
+                  <i class="fa fa fa-minus lv" data-test="pulse"></i>
+              <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+          </div>
+
+        <div class="name">
+          <h3><%= meeting.address %></h3>
+        </div>
+
+        </div>
+
+        <ul class="media">
+          <li><i class="fa fa-clock-o"></i><%= meeting.time.to_s(:short) %></li>
+   		    <li><i class="fa fa-book"></i><%= meeting.subject %></li>
+   		    <li><i class="fa fa-users"></i><%= meeting.usermeetings.count %></li>
+
+          <% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="meeting-info">
+        <p>Created by: <%= meeting.usermeetings.find_by_owner(true).user.username %></p>
+        <% post = Post.where(meeting: meeting.id) %>
+        <% post.each do |post_info| %>
+          <dd><%= User.find(post_info.user_id).username + "(#{post_info.updated_at.to_s(:short)}): " + post_info.description %></dd>
+        <% end %>
+        <br/>
+        <p>Attendees: |
+        <% meeting.usermeetings.each do |meetingx| %>
+          <%= meetingx.user.username %> |
+        <% end %>
+        </p>
+
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+
 <!-- scripts were not working in JS file, so we added it here.  -->
 <script>
+  $('.meeting-info').hide();
   $('.show-list').click(function(){
+    $('.meeting-info').fadeIn(3000).show(0);
   	$('.wrapper').addClass('list-mode');
+
+
   });
 
   $('.hide-list').click(function(){
+    $('.meeting-info').hide(0);
   	$('.wrapper').removeClass('list-mode');
   });
 
@@ -219,7 +305,7 @@
       // handler.map.centerOn(markers[temp.length-1]);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(5);
+      handler.getMap().setZoom(4);
     });
   });
 </script>
