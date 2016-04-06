@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery-ui/datepicker
-//= require meetings
+//= require jquery.turbolinks
 //= clock
 //= require bootstrap
 //= require underscore
