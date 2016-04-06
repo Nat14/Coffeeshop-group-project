@@ -26,7 +26,7 @@ gem 'jquery-rails'
 # for using jquery function
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -64,6 +64,10 @@ group :test do
   gem 'factory_girl_rails', '~> 4.6'
   #gem 'factory_girl_rails', '~> 4.0', :require => false
 
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development do
