@@ -1,55 +1,55 @@
 <body>
 
-<div id="landingfont">
- <h1> Welcome to Coffee Shop </h1>
- <h5> Connecting you with other people to study with.</h5>
-</div>
+  <div id="landingfont">
+   <h1> Welcome to StudyCup </h1>
+   <h5> Connecting you with other people to study with.</h5>
+  </div>
 
 
-<div class="clock">
-    <div class="numbers">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    <div id="clock">
+  <div class="clock">
+      <div class="numbers">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div id="clock">
 
-    <div class="clockwise">
-      <div class="center"></div>
-      <div class="hand-second" id="analogsecond"></div>
-      <div class="hand-minute" id="analogminute"></div>
-      <div class="hand-hour" id="analoghour"></div>
+      <div class="clockwise">
+        <div class="center"></div>
+        <div class="hand-second" id="analogsecond"></div>
+        <div class="hand-minute" id="analogminute"></div>
+        <div class="hand-hour" id="analoghour"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<form action="/search" method="get">
-  <input id="landing-input" type='text' name="q" placeholder="What are you looking to study today?" autofocus/>
-  <input id: 'q' type="submit" name="commit" style="visibility:hidden;" value="search"/>
-</form>
+  <form action="/search" method="get">
+    <input id="landing-input" type='text' name="q" placeholder="What are you looking to study today?" autofocus/>
+    <input id: 'q' type="submit" name="commit" style="visibility:hidden;" value="search"/>
+  </form>
 
-<script type="text/javascript">
+  <script type="text/javascript">
 
-$('#landing-input').keypress(function(event){
+  $('#landing-input').keypress(function(event){
 
-	var keycode = (event.keyCode ? event.keyCode : event.which);
-	if(keycode == '13')
-	event.stopPropagation();
-});
+  	var keycode = (event.keyCode ? event.keyCode : event.which);
+  	if(keycode == '13')
+  	event.stopPropagation();
+  });
 
-$(document).keypress(function(event){
+  $(document).keypress(function(event){
 
-	var keycode = (event.keyCode ? event.keyCode : event.which);
-	if(keycode == '13')
-  event.stopPropagation();
-});
+  	var keycode = (event.keyCode ? event.keyCode : event.which);
+  	if(keycode == '13')
+    event.stopPropagation();
+  });
 
-</script>
+  </script>
 
-<!-- <button id="meeting_list_btn" type="submit" class="btn btn-default">Find Me a Spot Nearby</button> -->
-<%= button_to '', meetings_path, id: 'meeting_list_btn', method: :get %>
+  <!-- <button id="meeting_list_btn" type="submit" class="btn btn-default">Find Me a Spot Nearby</button> -->
+  <%= button_to '', meetings_path, id: 'meeting_list_btn', method: :get %>
 
 </body>

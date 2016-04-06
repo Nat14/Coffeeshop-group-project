@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Coffee Shop | Find a place to study</title>
+  <title>Study Cup | Find a place to study</title>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
@@ -60,7 +60,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-          <%= link_to "☕️ Coffee Shop Study Group", "/", class: "navbar-brand" %>
+          <%= link_to "☕️ StudyCup", "/", class: "navbar-brand" %>
         </div>
 
         <div id="navbar" class="collapse navbar-collapse">
@@ -72,7 +72,7 @@
                 <li><%= link_to "Sign Up", new_user_registration_path, method: :get %></li>
                 <li id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </li>
               <% else %>
-                <li id="profile"><%= link_to current_user.username, pages_profile_path(username: current_user.username), method: :get %></li>
+                <li id="profile"><%= link_to current_user.username.capitalize, pages_profile_path(username: current_user.username), method: :get %></li>
                 <li id="logout"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
               <% end %>
               <% if current_user %>

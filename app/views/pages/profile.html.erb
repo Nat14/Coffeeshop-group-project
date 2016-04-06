@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-7">
-			<h2>About <%= params[:username].capitalize %></h2>
+			<h2 class="profile-header">About <%= params[:username].capitalize %></h2>
 			<% if current_user.username == params[:username]%>
 				<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
 		      <span id= "manage" class="glyphicon glyphicon"></span>
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 <br>
 
 <% if current_user.username == params[:username]%>
@@ -60,14 +60,21 @@
 
 <!-- grid layout for user meetings -->
 <div class="wrapper">
-  <header>Welcome <%= current_user.username %>! Here are your upcoming meetings.
-      <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
-        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
-    </header>
+	<% if current_user.username == params[:username] %>
+	  <header>Welcome <%= current_user.username %>! Here are your upcoming meetings.
+	      <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+	        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
+	  </header>
+	<% else %>
+		<header>Upcoming Meetings.
+				<span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+					<a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
+		</header>
+	<% end %>
 
 		<div class="container">
 		  <% @meetings.each do |meeting| %>
-		  <% if Meeting.all.count != 0 && user_signed_in? %>
+		  <% if Meeting.all.count != 0 && user_signed_in? && meeting.time > Time.zone.now %>
 
 		  <div class="box">
 
@@ -126,6 +133,72 @@
 
 </div>
 
+<div class="wrapper">
+  <header>Previous meetings.
+      <span class="tableicons"><a href="javascript:void(0)" class="show-list"><i class="fa fa-th-list"></i></a>
+        <a href="javascript:void(0)" class="hide-list"><i class="fa fa-th"></i></a></span>
+    </header>
+
+		<div class="container">
+		  <% @meetings.each do |meeting| %>
+		  <% if Meeting.all.count != 0 && user_signed_in? && meeting.time <= Time.zone.now %>
+
+		  <div class="box">
+
+		    <div class="recipe">
+
+		      <div class="image">
+		        <%= link_to image_tag(meeting.image(:medium)), meeting %>
+
+		        <div class="likes">
+		        <% if user_signed_in? %>
+		        <!--not the owner can see join, already join cannot see join -->
+							<% if user_signed_in? && current_user.email == meeting.usermeetings.find_by_owner(true).user.email %>
+								<%= link_to '<i class="fa fa fa-trash lv" data-test="pulse"></i>'.html_safe, meeting, method: :delete, data: { confirm: 'Are you sure?' } %>
+							<% else %>
+			          <% if current_user.email != meeting.usermeetings.find_by_owner(true).user.email %>
+			            <% if meeting.usermeetings.find_by_user_id(current_user.id).nil? %>
+			              <!-- < % = link_to meeting_join_meeting_path(@meeting), class: 'btn btn-primary', method: :post do %> -->
+			              <%= link_to new_meeting_post_path(meeting) do %>
+
+			                <i class="fa fa fa-plus lv" data-test="pulse"></i>
+			              <% end %>
+			            <% elsif %>
+			            <%= link_to new_meeting_post_path(meeting) do %>
+			                <i class="fa fa fa-minus lv" data-test="pulse"></i>
+			            <% end %>
+			            <% end %>
+								<% end %>
+			        <% end %>
+		        <% end %>
+		        </div>
+		      <div class="name">
+		        <h3><%= meeting.address %></h3>
+		      </div>
+
+		      </div>
+
+		      <ul class="media">
+		        <li><i class="fa fa-clock-o"></i><%= meeting.time.to_s(:short) %></li>
+		        <li><i class="fa fa-book"></i><%= meeting.subject %></li>
+		        <li><i class="fa fa-users"></i><%= meeting.usermeetings.count %></li>
+		      </ul>
+		    </div>
+		    <div class="meeting-info">
+		      <p>Created by: <%= meeting.usermeetings.find_by_owner(true).user.username %></p>
+		      <% post = Post.where(meeting: meeting.id) %>
+		      <% post.each do |post_info| %>
+		        <dd><%= User.find(post_info.user_id).username + "(#{post_info.updated_at.to_s(:short)}): " + post_info.description %></dd>
+		      <% end %>
+		    </div>
+
+		  </div>
+
+		  <% end %>
+		  <% end %>
+		</div>
+
+</div>
 <!-- end of user meeting grid layout  -->
 
 
@@ -145,3 +218,5 @@
   });
 
 </script>
+
+</div>
