@@ -168,6 +168,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.5.1)
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
@@ -228,8 +233,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -268,6 +271,7 @@ DEPENDENCIES
   paperclip
   pg (~> 0.15)
   rails (= 4.2.5.1)
+  rails_12factor
   rake (~> 11.1, >= 11.1.1)
   rspec-rails
   sass-rails (~> 5.0)
@@ -276,7 +280,6 @@ DEPENDENCIES
   simplecov
   spring
   textacular (~> 3.0)
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
