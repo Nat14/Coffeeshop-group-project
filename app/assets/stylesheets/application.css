@@ -19,6 +19,18 @@
    CSS
    -  None of this is required for resizer to work.
  */
+.dropdown-menu{
+  background-color:rgba(0, 0, 0, 0.8);
+
+}
+
+.dropdown{
+  float:left;
+}
+
+li{
+  margin-left: 10px;
+}
 
 select{
   color:black;
@@ -34,12 +46,12 @@ select{
 
  .btn {
     color: #ffffff;
-    background-color: rgba(240, 228, 102, 0.31);
+    background-color: rgba(0, 0, 0, 0.8);
     border-color: transparent;
   }
 
   #uglybutton input {
-    background-color: rgba(240, 228, 102, 0.31);
+    background-color: rgba(205, 196, 109, 0.9);
     padding: 5px;
     border-radius:5%;
     /*margin-right: 230px;*/

@@ -51,7 +51,7 @@
 
       <dt>Attendees:</dt>
       <% @meeting.usermeetings.each do |meeting| %>
-        <dd><%= link_to meeting.user.username.upcase, pages_profile_path(username: meeting.user.username) %></dd>
+        <dd class="attendees"><%= link_to meeting.user.username.upcase, pages_profile_path(username: meeting.user.username) %></dd>
       <% end %>
       <br/>
       <% if !@post.nil? %>
