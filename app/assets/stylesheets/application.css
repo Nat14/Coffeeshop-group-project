@@ -20,6 +20,10 @@
    -  None of this is required for resizer to work.
  */
 
+select{
+  color:black;
+}
+
  .dl-horizontal dt {
    text-align: center;
  }
@@ -32,6 +36,19 @@
     color: #ffffff;
     background-color: rgba(240, 228, 102, 0.31);
     border-color: transparent;
+  }
+
+  #uglybutton input {
+    background-color: rgba(240, 228, 102, 0.31);
+    padding: 5px;
+    border-radius:5%;
+    /*margin-right: 230px;*/
+  }
+
+  #user_avatar {
+    text-align: center;
+    display: inline-block;
+    margin-left: 160px;
   }
 
  .row {
@@ -49,6 +66,7 @@ body {
 
 .actions {
   color: black;
+
 
 }
 

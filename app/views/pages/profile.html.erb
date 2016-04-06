@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-7">
-			<h2 class="profile-header">About <%= params[:username].capitalize %></h2>
+			<h1 class="profile-header">☕️ About <%= params[:username].capitalize %></h1>
 			<% if current_user.username == params[:username]%>
 				<%= link_to edit_user_registration_path, class: 'btn btn-primary' do %>
 		      <span id= "manage" class="glyphicon glyphicon"></span>
@@ -20,6 +20,7 @@
 				<p> <span>Home Page:</span> <%= @user.home_page_url %></p>
 			</div>
 		</div>
+
 		<div class="col-lg-4 col-lg-offset-1">
 			<div id="profile_pic"><% if current_user %>
 					<%= image_tag(current_user.avatar(:medium), class: "foundation_or_bootstrap_class") %>
@@ -197,8 +198,9 @@
 		  <% end %>
 		  <% end %>
 		</div>
-
 </div>
+
+<br></br>
 <!-- end of user meeting grid layout  -->
 
 
