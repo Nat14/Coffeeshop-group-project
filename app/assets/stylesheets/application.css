@@ -20,6 +20,25 @@
    -  None of this is required for resizer to work.
  */
 
+ .dl-horizontal dt {
+   text-align: center;
+ }
+
+ .navbar-inverse .navbar-brand {
+     color: rgba(255, 255, 255, 0.9);
+ }
+
+ .btn {
+    color: #ffffff;
+    background-color: rgba(240, 228, 102, 0.31);
+    border-color: transparent;
+  }
+
+ .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 
 body {
   /*font-family: 'Poppins', sans-serif;*/

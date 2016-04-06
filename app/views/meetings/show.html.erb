@@ -1,4 +1,5 @@
-<div id="boo">
+<div class="container">
+ <div id="boo">
   <div class="page-header">
     <%= link_to meetings_path, class: 'btn btn-default' do %>
       <span class="glyphicon glyphicon-list-alt"></span>
@@ -28,45 +29,54 @@
         <% end %>
       <% end %>
     <% end %>
-    <br><h1>Show meeting</h1>
+    <br><h1>Meeting Info</h1>
   </div>
+</div>
+<div id="boo">
+  <dl class="dl-horizontal show-page">
+  <div class="row">
+    <div class="col-sm-6">
+      <br>
+      <dt>Address:</dt>
+      <dd><%= @meeting.address %></dd>
 
-  <dl class="dl-horizontal">
-    <dt>Address:</dt>
-    <dd><%= @meeting.address %></dd>
+      <dt>Subject:</dt>
+      <dd><%= @meeting.subject %></dd>
 
-    <dt>Subject:</dt>
-    <dd><%= @meeting.subject %></dd>
+      <dt>Time:</dt>
+      <dd><%= @meeting.time.to_s(:short) %></dd>
 
-    <dt>Time:</dt>
-    <dd><%= @meeting.time.to_s(:short) %></dd>
+      <dt>Created By:</dt>
+      <dd><%= link_to @meeting.usermeetings.find_by_owner(true).user.username.upcase , pages_profile_path(username: @meeting.usermeetings.find_by_owner(true).user.username) %></dd>
 
-    <dt>Created By:</dt>
-    <dd><%= link_to @meeting.usermeetings.find_by_owner(true).user.username.upcase , pages_profile_path(username: @meeting.usermeetings.find_by_owner(true).user.username) %></dd>
-
-    <dt>Image</dt>
-    <dd><%= image_tag(@meeting.image(:medium)) %></dd>
-
-    <dt>Attendees:</dt>
-    <% @meeting.usermeetings.each do |meeting| %>
-      <dd><%= link_to meeting.user.username.upcase, pages_profile_path(username: meeting.user.username) %></dd>
-    <% end %>
-    <br/>
-    <% if !@post.nil? %>
-      <dt>Post:</dt>
-      <% @post.each do |post| %>
-        <dd><%= User.find(post.user_id).username + "(#{post.updated_at.to_s(:short)}): " + post.description %></dd>
+      <dt>Attendees:</dt>
+      <% @meeting.usermeetings.each do |meeting| %>
+        <dd><%= link_to meeting.user.username.upcase, pages_profile_path(username: meeting.user.username) %></dd>
       <% end %>
-    <% end %>
+      <br/>
+      <% if !@post.nil? %>
+      <dt>Comments:</dt>
+        <% @post.each do |post| %>
+          <dd><%= User.find(post.user_id).username + "(#{post.updated_at.to_s(:short)}): " + post.description %></dd>
+        <% end %>
+      <% end %>
+    </br>
+     </div>
 
-  </dl>
+     <div class="col-sm-6">
+       <br>
+          <dd><%= image_tag(@meeting.image(:medium)) %></dd>
+        </br>
+     </div>
+    </dl>
+  </div>
 </div>
 
-<div style='width: 100%;'>
-  <div id="map" style='width: 100%; height: 400px; color: black;'></div>
-</div>
-
-
+  <!-- <div class="row">
+    <div class="col-sm-12"> -->
+      <div style='width: 100%;'>
+        <div id="map" style='width: 100%; height: 400px; color: black;'></div>
+      </div>
 
 <script type="text/javascript">
   handler = Gmaps.build('Google');
@@ -88,7 +98,3 @@
     });
   });
 </script>
-
-
-
-</br>
