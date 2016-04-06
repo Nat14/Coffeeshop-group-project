@@ -55,7 +55,7 @@
       <% end %>
       <br/>
       <% if !@post.nil? %>
-        <dt>Post:</dt>
+      <dt>Comments:</dt>
         <% @post.each do |post| %>
           <dd><%= User.find(post.user_id).username + "(#{post.updated_at.to_s(:short)}): " + post.description %></dd>
         <% end %>

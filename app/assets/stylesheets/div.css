@@ -2,6 +2,14 @@ header{
   font-size: 30px;
 }
 
+.dl-horizontal dd {
+     margin-right: 0px;
+
+}
+
+.center{
+  margin-top: 200px;
+}
 
 * {
   margin: 0;
@@ -20,6 +28,7 @@ h3 {
   font-size:1.2em;
   font-weight:200;
   color:#FFF;
+  margin-top: 15px;
 }
 ​
 #content {
