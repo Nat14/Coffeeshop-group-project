@@ -1,3 +1,8 @@
+header{
+  font-size: 30px;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +30,7 @@ h3 {
   text-align: center;
 }
 .recipe {
-  background:rgba(0,0,0,0.3);
+  background:rgba(0,0,0,0.6);
   height:300px;
   position:relative;
   display:inline-block;
@@ -104,6 +109,7 @@ h3 {
   line-height: 50px;
   text-shadow: 1px 1px 2px rgba(54, 53, 0, 1);
   border-bottom:1px dotted rgba(#1a1702, 0.7);
+
 }
 .media {
   width:100%;

@@ -20,6 +20,17 @@
    -  None of this is required for resizer to work.
  */
 
+ .btn {
+    color: #ffffff;
+    background-color: rgba(240, 228, 102, 0.31);
+    border-color: transparent;
+  }
+
+ .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
 
 body {
   /*font-family: 'Poppins', sans-serif;*/
