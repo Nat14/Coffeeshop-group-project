@@ -78,23 +78,23 @@
         <div id="map" style='width: 100%; height: 400px; color: black;'></div>
       </div>
 
-      <script type="text/javascript">
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}},
-
-        function(){
-          markers = handler.addMarkers(<%=raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.getMap().setZoom(12);
-        });
-
-        navigator.geolocation.getCurrentPosition(function(position){
-          handler.addMarkers([{"lat":position.coords.latitude,"lng":position.coords.longitude,"infowindow":"Your Location"}]);
-        });
-      </script>
-      </br>
-    <!-- </div>
-  </div> -->
- </div>
-</div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}},
+  function(){
+    navigator.geolocation.getCurrentPosition(function(position){
+      new_marker = {"lat":position.coords.latitude,"lng":position.coords.longitude,"infowindow":"Your Location", "picture": {
+          "url": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+          "width":  32,
+          "height": 32
+        }};
+      temp = <%=raw @hash.to_json %>
+      temp.push(new_marker)
+      markers = handler.addMarkers(temp);
+      // handler.map.centerOn(markers[temp.length-1]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(4);
+    });
+  });
+</script>

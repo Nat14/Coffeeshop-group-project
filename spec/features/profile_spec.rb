@@ -51,23 +51,6 @@ RSpec.feature "Profile", type: :feature, js:true do
       first(:link, 'APPLE').click
       expect(page).to have_content("Hello")
     end
-
-    it "will not allow a user to update other user profile page" do
-      register_and_login
-      new_meeting
-      click_on 'Create Meeting'
-      new_profile
-      fill_in 'user_current_password', with: 'password1'
-      click_button 'Update'
-      click_on 'Log Out'
-      register_and_login2
-      click_on 'meeting_list_btn'
-      expect(page).to have_content("Bat")
-      find(".image").click
-      first(:link, 'APPLE').click
-      expect(page).to have_content("Hello")
-      expect(page).not_to have_content("Manage Profile")
-    end
   end
 
   def register_and_login
