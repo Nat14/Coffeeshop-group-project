@@ -1,9 +1,12 @@
 
 #profile_pic{
-  display: flex;
   margin-top: 70px;
   align-content: center;
   align-items: center;
+}
+
+.col-lg-7 {
+  padding-left: 0px;
 }
 
 .row{
