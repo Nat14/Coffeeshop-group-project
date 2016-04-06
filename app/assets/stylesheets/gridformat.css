@@ -84,22 +84,21 @@ header a.hide-list{
 }
 
 .container{
-	padding:0px 0px 0px 0px;
+	padding:10px 0px 0px 0px;
 
 }
 
 .wrapper .box{
-  float:left;
+  display:inline-block;
 	width:auto;
 	height:auto;
-	margin:0 10px 10px 0;
+	margin:10px 5px 0px 0;
 	/*background:rgba(171, 116, 44, 0.2) ;*/
 	-webkit-transition:all 1.0s ease;
 	-moz-transition:all 1.0s ease;
 	transition:all 1.0s ease;
 	transition:all 1.0s ease;
-
-
+	/*border-bottom: 1px solid rgba(241, 216, 51, 0.1);*/
 }
 
 .wrapper.list-mode .container{
@@ -115,6 +114,7 @@ header a.hide-list{
 	margin-left: 70px;
 	margin-top: 30px;
 	text-align: left;
+	width: 50%;
 
 
 }
