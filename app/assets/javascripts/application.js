@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-ui/datepicker
-//= require jquery.turbolinks
 //= clock
 //= require bootstrap
 //= require underscore
