@@ -22,9 +22,10 @@
 		</div>
 
 		<div class="col-lg-4 col-lg-offset-1">
-			<div id="profile_pic"><% if current_user %>
-					<%= image_tag(current_user.avatar(:medium), class: "foundation_or_bootstrap_class") %>
-				<% end %>
+			<div id="profile_pic">
+
+					<%= image_tag(User.find_by_username(params[:username]).avatar(:medium), class: "foundation_or_bootstrap_class") %>
+
 			</div>
 		</div>
 	</div>
